@@ -50,11 +50,13 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 * Tela de login
 
-![image](https://user-images.githubusercontent.com/111543077/189552927-d0abc643-6a93-4e48-8235-bea628ba5dcc.png)
+![THUNDER_WIREFRAME_pages-to-jpg-0015](https://user-images.githubusercontent.com/108765052/189554255-55065fed-cf5c-4e1f-9841-62ecaa09a764.jpg)
+
 
 * Tela de cadastro
 
-![image](https://user-images.githubusercontent.com/111543077/189552920-d089552c-2e0f-4e26-a9ed-799341a495fd.png)
+![THUNDER_WIREFRAME_pages-to-jpg-0014](https://user-images.githubusercontent.com/108765052/189554265-8ec30880-b482-4741-b697-6cc2fd310aa5.jpg)
+
 
 # Entregas
 
