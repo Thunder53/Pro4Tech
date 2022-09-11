@@ -24,13 +24,37 @@ A Pro4tech é uma empresa que visa a transformação digital como um de seus pil
 
 
 # Contexto do projeto
-
+A Pro4tech está abrindo varias vagas para contratação de novos funcionários, com isso sentiu a necessidade de ter um software onde pudesse registrar e ter todo o controle das vagas que estão ofertando no mercado.
 
 # Solução para o problema
+A solução para essa demanda será a criação de um sistema desktop onde será possível cadastrar vagas, excluir vagas, editar vagas, cadastrar usuários, aplicação da vaga pelo usuário e extrair relatórios.
 
+# Requisitos do projeto
+* Sistema desktop
+* Sistema CRUD
+* Cadastro de vagas pelo RH
+* Aplicação de vagas pelo candidato
+* Extração de relatórios
 
-# Utilização do projeto
+#Product Backlog
 
+--------xxxxxxxxxx---------
+
+# Story cards
+
+## Sprint 01
+* Wireframe das telas - Imprecindível
+* Primeira tela de login/cadastro - Importante
+
+### Wireframe
+
+* Tela de login
+
+![image](https://user-images.githubusercontent.com/111543077/189552927-d0abc643-6a93-4e48-8235-bea628ba5dcc.png)
+
+* Tela de cadastro
+
+![image](https://user-images.githubusercontent.com/111543077/189552920-d089552c-2e0f-4e26-a9ed-799341a495fd.png)
 
 # Entregas
 
@@ -50,3 +74,7 @@ A Pro4tech é uma empresa que visa a transformação digital como um de seus pil
 * [Marcela Ribeiro](https://github.com/marcelarmelo)
 * [Vitória Brancatti](http://github.com/vitoriabrancatti)
 * [Tobias Sousa](https://github.com/tobiassousa)
+
+#Tecnologias
+* Java
+* MySQL
