@@ -75,6 +75,6 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * [Vitória Brancatti](http://github.com/vitoriabrancatti)
 * [Tobias Sousa](https://github.com/tobiassousa)
 
-#Tecnologias
+# Tecnologias
 * Java
 * MySQL
