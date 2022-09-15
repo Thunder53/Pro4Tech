@@ -36,9 +36,45 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * Aplicação de vagas pelo candidato
 * Extração de relatórios
 
-#Product Backlog
+# Product Backlog
 
---------xxxxxxxxxx---------
+<table align="center">
+  <tr>
+   <td>Tasks</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Cadastrar usuário</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>Cadastrar competências do usuário</td>
+   <td>Alta</td>
+  </tr>
+
+  <tr>
+   <td>RH pode cadastrar vagas</td>
+   <td>Alta</td>
+  </tr>
+ 
+  <tr>
+    <td>RH aprova ou reprova o candidato</td>
+    <td>Média</td>
+  </tr>
+  
+  <tr>
+     <td>Extração de relatórios</td>
+     <td>Média</td>
+  </tr>
+  
+  <tr>
+    <td>Candidato tem visibilidade se foi ou não aprovado</td>
+    <td>Baixa</td>
+  </tr>
+    
+</table>
 
 # Story cards
 
