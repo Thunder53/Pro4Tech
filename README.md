@@ -46,7 +46,7 @@ A Pro4tech é uma empresa que visa a transformação digital como um de seus pil
 * [Alan Morato](https://github.com/alanfmorato)
 * [Ariane Sousa](https://github.com/Ariane-Sousa)
 * [Elizabeth Leite](https://github.com/elizabethleite)
-* [Luis Henrique](https://github.com/hberti97)
+* [Luiz Henrique](https://github.com/hberti97)
 * [Marcela Ribeiro](https://github.com/marcelarmelo)
 * [Vitória Brancatti](http://github.com/vitoriabrancatti)
 * [Tobias Sousa](https://github.com/tobiassousa)
