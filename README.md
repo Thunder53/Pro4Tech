@@ -108,7 +108,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * [Alan Morato](https://github.com/alanfmorato)
 * [Ariane Sousa](https://github.com/Ariane-Sousa)
 * [Elizabeth Leite](https://github.com/elizabethleite)
-* [Luis Henrique](https://github.com/hberti97)
+* [Luiz Henrique](https://github.com/hberti97)
 * [Marcela Ribeiro](https://github.com/marcelarmelo)
 * [Vitória Brancatti](http://github.com/vitoriabrancatti)
 * [Tobias Sousa](https://github.com/tobiassousa)
