@@ -93,7 +93,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 * Tela de cadastro
 
-![THUNDER_WIREFRAME_pages-to-jpg-0014](https://user-images.githubusercontent.com/108765052/189554265-8ec30880-b482-4741-b697-6cc2fd310aa5.jpg)
+![Tela_cadastro](https://user-images.githubusercontent.com/102201672/190932270-10bba40d-33b2-462e-8655-2b18103d6b1b.JPG)
 
 ## Modelagem do Banco
 
