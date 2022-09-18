@@ -88,12 +88,11 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 * Tela de login
 
-![THUNDER_WIREFRAME_pages-to-jpg-0015](https://user-images.githubusercontent.com/108765052/189554255-55065fed-cf5c-4e1f-9841-62ecaa09a764.jpg)
-
+![Tela_login](https://user-images.githubusercontent.com/102201672/190932653-2cdbfa8f-d22d-41b8-bb73-10a20ae2cbe8.jpg)
 
 * Tela de cadastro
 
-![Tela_cadastro](https://user-images.githubusercontent.com/102201672/190932270-10bba40d-33b2-462e-8655-2b18103d6b1b.JPG)
+![Tela_de_cadastro](https://user-images.githubusercontent.com/102201672/190932662-3d95f933-3c4c-45a2-a38b-bb84405da211.jpg)
 
 ## Modelagem do Banco
 
