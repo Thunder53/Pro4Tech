@@ -6,7 +6,7 @@
 
 * *Product Owner* - [Alan Morato](https://www.linkedin.com/in/alan-morato-37b214154/)
 
-* *Scrum Master* - [Marcela Ribeiro](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
+* *Scrum Master* - [Marcela Ribeiro de Melo](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
 
 * *Dev. Team* - [Ariane Cristine](https://www.linkedin.com/in/ariane-sousa77)
 
@@ -95,7 +95,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ## Modelagem do Banco
 
-![Modelagem Banco](https://user-images.githubusercontent.com/100934496/190919782-ae71a0a4-0cd3-4c22-9447-7df9d774d91c.jpeg)
+![Modelagem_banco](https://user-images.githubusercontent.com/102201672/190922297-8eeaa9c2-7dfc-41a7-b92b-f1fcf80a9e43.jpg)
 
 
 ## Entregas
