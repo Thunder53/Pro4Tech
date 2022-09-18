@@ -93,6 +93,10 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ![THUNDER_WIREFRAME_pages-to-jpg-0014](https://user-images.githubusercontent.com/108765052/189554265-8ec30880-b482-4741-b697-6cc2fd310aa5.jpg)
 
+## Modelagem do Banco
+
+![Modelagem Banco](https://user-images.githubusercontent.com/100934496/190919782-ae71a0a4-0cd3-4c22-9447-7df9d774d91c.jpeg)
+
 
 ## Entregas
 
