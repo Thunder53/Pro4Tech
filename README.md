@@ -6,7 +6,7 @@
 
 * *Product Owner* - [Alan Morato](https://www.linkedin.com/in/alan-morato-37b214154/)
 
-* *Scrum Master* - [Marcela Ribeiro](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
+* *Scrum Master* - [Marcela Ribeiro de Melo](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
 
 * *Dev. Team* - [Ariane Cristine](https://www.linkedin.com/in/ariane-sousa77)
 
