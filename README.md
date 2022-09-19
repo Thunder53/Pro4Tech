@@ -102,7 +102,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 ## Entregas
 
 - [x] **Kick-off** - 18/08/2022
-- [ ] **Sprint 01** - 18/09/2022
+- [x] **Sprint 01** - 18/09/2022
 - [ ] **Sprint 02** - 09/10/2022
 - [ ] **Sprint 03** - 06/11/2022
 - [ ] **Sprint 04** - 27/11/2022
