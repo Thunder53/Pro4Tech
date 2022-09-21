@@ -82,7 +82,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * Wireframe das telas - Imprecindível
 * Primeira tela de login/cadastro - Importante
 
-![Burndown](https://user-images.githubusercontent.com/102201672/190924660-c4f80ac1-33a4-4716-b7a0-fd9110916af8.JPG)
+![Slide1](https://user-images.githubusercontent.com/102201672/191403408-db31cb26-c96f-47f7-962b-011d3cbd878e.JPG)
 
 ## Wireframe
 
