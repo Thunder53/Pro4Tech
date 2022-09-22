@@ -82,18 +82,17 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * Wireframe das telas - Imprecindível
 * Primeira tela de login/cadastro - Importante
 
-![Burndown](https://user-images.githubusercontent.com/102201672/190924660-c4f80ac1-33a4-4716-b7a0-fd9110916af8.JPG)
+![Slide1](https://user-images.githubusercontent.com/102201672/191403408-db31cb26-c96f-47f7-962b-011d3cbd878e.JPG)
 
 ## Wireframe
 
 * Tela de login
 
-![THUNDER_WIREFRAME_pages-to-jpg-0015](https://user-images.githubusercontent.com/108765052/189554255-55065fed-cf5c-4e1f-9841-62ecaa09a764.jpg)
-
+![Tela_login](https://user-images.githubusercontent.com/102201672/190932653-2cdbfa8f-d22d-41b8-bb73-10a20ae2cbe8.jpg)
 
 * Tela de cadastro
 
-![THUNDER_WIREFRAME_pages-to-jpg-0014](https://user-images.githubusercontent.com/108765052/189554265-8ec30880-b482-4741-b697-6cc2fd310aa5.jpg)
+![Tela_de_cadastro](https://user-images.githubusercontent.com/102201672/190932662-3d95f933-3c4c-45a2-a38b-bb84405da211.jpg)
 
 ## Modelagem do Banco
 
@@ -103,7 +102,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 ## Entregas
 
 - [x] **Kick-off** - 18/08/2022
-- [ ] **Sprint 01** - 18/09/2022
+- [x] **Sprint 01** - 18/09/2022
 - [ ] **Sprint 02** - 09/10/2022
 - [ ] **Sprint 03** - 06/11/2022
 - [ ] **Sprint 04** - 27/11/2022
