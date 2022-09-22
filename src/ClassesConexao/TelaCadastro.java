@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -13,13 +14,18 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import javax.swing.JList;
+import javax.swing.JScrollBar;
+import javax.swing.JComboBox;
 
 public class TelaCadastro extends JFrame {
 
@@ -93,11 +99,35 @@ public class TelaCadastro extends JFrame {
 		tfemail.setBounds(1009, 236, 489, 33);
 		contentPane.add(tfemail);
 		
-		tfcpf = new JTextField();
+		JFormattedTextField tfcpf = new JFormattedTextField();
+	    MaskFormatter mfCPF = new MaskFormatter();
+	    try {
+	        mfCPF.setMask("###.###.###-##");
+	        mfCPF.install(tfcpf);
+	        tfcpf.setText("");
+	    } catch (ParseException e1) {
+	        e1.printStackTrace();
+	    }
+	    contentPane.add(tfcpf, "cell 0 1,growx");
 		tfcpf.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfcpf.setColumns(10);
 		tfcpf.setBounds(239, 236, 489, 33);
 		contentPane.add(tfcpf);
+		 
+		JFormattedTextField tftelefone = new JFormattedTextField();
+	    MaskFormatter mfTELEFONE = new MaskFormatter();
+	    try {
+	        mfTELEFONE.setMask("(##)#####-####");
+	        mfTELEFONE.install(tftelefone);
+	        tftelefone.setText("");
+	    } catch (ParseException e1) {
+	        e1.printStackTrace();
+	    }
+	    contentPane.add(tftelefone, "cell 0 1,growx");
+		tftelefone.setFont(new Font("Arial", Font.PLAIN, 18));
+		tftelefone.setColumns(10);
+		tftelefone.setBounds(1009, 322, 489, 33);
+		contentPane.add(tftelefone);
 		
 		pfsenha = new JPasswordField();
 		pfsenha.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -116,11 +146,54 @@ public class TelaCadastro extends JFrame {
 		lblSenha.setBounds(933, 279, 76, 33);
 		contentPane.add(lblSenha);
 		
+		tfformaçao = new JTextField();
+		tfformaçao.setHorizontalAlignment(SwingConstants.LEFT);
+		tfformaçao.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfformaçao.setColumns(10);
+		tfformaçao.setBounds(239, 369, 489, 131);
+		contentPane.add(tfformaçao);
+		
+		JFormattedTextField tfprentensaosalarial = new JFormattedTextField();
+	    MaskFormatter mfSALARIO = new MaskFormatter();
+	    try {
+	        mfSALARIO.setMask("");
+	        mfSALARIO.install(tfprentensaosalarial);
+	        tfprentensaosalarial.setText("");
+	    } catch (ParseException e1) {
+	        e1.printStackTrace();
+	    }
+	    contentPane.add(tfprentensaosalarial, "cell 0 1,growx");
+	    tfprentensaosalarial.setFont(new Font("Arial", Font.PLAIN, 18));
+	    tfprentensaosalarial.setColumns(10);
+	    tfprentensaosalarial.setBounds(239, 322, 489, 33);
+		contentPane.add(tfprentensaosalarial);
+		
+		JFormattedTextField tfdatanasc = new JFormattedTextField();
+	    MaskFormatter mfDATA = new MaskFormatter();
+	    try {
+	        mfDATA.setMask("##/##/####");
+	        mfDATA.install(tfdatanasc);
+	        tfdatanasc.setText("");
+	    } catch (ParseException e1) {
+	        e1.printStackTrace();
+	    }
+	    contentPane.add(tfdatanasc, "cell 0 1,growx");
+		tfdatanasc.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfdatanasc.setColumns(10);
+		tfdatanasc.setBounds(1009, 193, 489, 33);
+		contentPane.add(tfdatanasc);
+		
+		tfcargo = new JTextField();
+		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfcargo.setColumns(10);
+		tfcargo.setBounds(239, 279, 489, 33);
+		contentPane.add(tfcargo);
+		
 		JButton btnNewButton = new JButton("CADASTRAR");
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				System.out.println(tftelefone.getText());
 				try {
 					
 					Connection con = Conexao.faz_conexao();
@@ -139,13 +212,15 @@ public class TelaCadastro extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
-					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Retornando a tela de Login.");
 					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
-				
+				} 
+				TelaLogin abrir = new TelaLogin();
+				abrir.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 140, 0));
@@ -154,8 +229,8 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Pictures\\PRO4TECH.jpeg"));
-		lblNewLabel_1.setBounds(0, 0, 819, 140);
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Pictures\\PRO4TECH 22.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 531, 120);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO:");
@@ -163,12 +238,6 @@ public class TelaCadastro extends JFrame {
 		lblDataNascimento.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblDataNascimento.setBounds(826, 193, 182, 33);
 		contentPane.add(lblDataNascimento);
-		
-		tfdatanasc = new JTextField();
-		tfdatanasc.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfdatanasc.setColumns(10);
-		tfdatanasc.setBounds(1009, 193, 489, 33);
-		contentPane.add(tfdatanasc);
 		
 		JLabel lblExperienciaProfissional = new JLabel("EXPERIÊNCIA PROFISSIONAL:");
 		lblExperienciaProfissional.setForeground(Color.BLACK);
@@ -182,12 +251,6 @@ public class TelaCadastro extends JFrame {
 		lblCargo.setBounds(153, 279, 76, 33);
 		contentPane.add(lblCargo);
 		
-		tfcargo = new JTextField();
-		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfcargo.setColumns(10);
-		tfcargo.setBounds(239, 279, 489, 33);
-		contentPane.add(tfcargo);
-		
 		tfexperiencia = new JTextField();
 		tfexperiencia.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfexperiencia.setColumns(10);
@@ -200,24 +263,11 @@ public class TelaCadastro extends JFrame {
 		lblPretensoSalarial.setBounds(20, 322, 210, 33);
 		contentPane.add(lblPretensoSalarial);
 		
-		tfprentensaosalarial = new JTextField();
-		tfprentensaosalarial.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfprentensaosalarial.setColumns(10);
-		tfprentensaosalarial.setBounds(239, 322, 489, 33);
-		contentPane.add(tfprentensaosalarial);
-		
 		JLabel lblFormaoAcadmica = new JLabel("FORMAÇÃO ACADÊMICA:");
 		lblFormaoAcadmica.setForeground(Color.BLACK);
 		lblFormaoAcadmica.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblFormaoAcadmica.setBounds(10, 365, 231, 33);
 		contentPane.add(lblFormaoAcadmica);
-		
-		tfformaçao = new JTextField();
-		tfformaçao.setHorizontalAlignment(SwingConstants.LEFT);
-		tfformaçao.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfformaçao.setColumns(10);
-		tfformaçao.setBounds(239, 369, 489, 131);
-		contentPane.add(tfformaçao);
 		
 		JLabel lblTelefone = new JLabel("TELEFONE:");
 		lblTelefone.setForeground(Color.BLACK);
@@ -225,10 +275,6 @@ public class TelaCadastro extends JFrame {
 		lblTelefone.setBounds(897, 322, 102, 33);
 		contentPane.add(lblTelefone);
 		
-		tftelefone = new JTextField();
-		tftelefone.setFont(new Font("Arial", Font.PLAIN, 18));
-		tftelefone.setColumns(10);
-		tftelefone.setBounds(1009, 322, 489, 33);
-		contentPane.add(tftelefone);
+		
 	}
 }
