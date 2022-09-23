@@ -1,22 +1,23 @@
-# Pro4tech
-
+<div align="center">
+<img src="https://user-images.githubusercontent.com/102263593/191995841-9f650051-e7e6-4a91-89a7-d3023661af0b.png" width="450px" />
 </div>
 
+-------
 ## Equipe
 
-* *Product Owner* - [Alan Morato](https://www.linkedin.com/in/alan-morato-37b214154/)
+> *Product Owner* - [Alan Morato](https://www.linkedin.com/in/alan-morato-37b214154/)
 
-* *Scrum Master* - [Marcela Ribeiro de Melo](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
+> *Scrum Master* - [Marcela Ribeiro de Melo](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
 
-* *Dev. Team* - [Ariane Cristine](https://www.linkedin.com/in/ariane-sousa77)
+> *Dev. Team* - [Ariane Cristine](https://www.linkedin.com/in/ariane-sousa77)
 
-* *Dev. Team* - [Elizabeth Cristina Alves Leite](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
+> *Dev. Team* - [Elizabeth Cristina Alves Leite](https://www.linkedin.com/in/elizabeth-cristina-alves-leite-176a9416a)
 
-* *Dev. Team* - [Luiz Henrique Berti](https://www.linkedin.com/in/luiz-henrique-berti-235a7a19b/)
+> *Dev. Team* - [Luiz Henrique Berti](https://www.linkedin.com/in/luiz-henrique-berti-235a7a19b/)
 
-* *Dev. Team* - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
+> *Dev. Team* - [Tobias Fernandes Bezerra Sousa](https://www.linkedin.com/in/tobias-sousa-23bba822a)
 
-* *Dev. Team* - [Vitória Brancatti Ramos Lopes Batista](https://www.linkedin.com/in/vit%C3%B3ria-brancatti-198795178/)
+> *Dev. Team* - [Vitória Brancatti Ramos Lopes Batista](https://www.linkedin.com/in/vit%C3%B3ria-brancatti-198795178/)
 
 ## Empresa parceira
 
@@ -86,11 +87,11 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ## Wireframe
 
-* Tela de login
+> **Tela de login**
 
 ![Tela_login](https://user-images.githubusercontent.com/102201672/190932653-2cdbfa8f-d22d-41b8-bb73-10a20ae2cbe8.jpg)
 
-* Tela de cadastro
+> **Tela de cadastro**
 
 ![Tela_de_cadastro](https://user-images.githubusercontent.com/102201672/190932662-3d95f933-3c4c-45a2-a38b-bb84405da211.jpg)
 
