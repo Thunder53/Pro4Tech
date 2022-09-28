@@ -80,8 +80,26 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 # Story cards
 
 ## Sprint 01
-* Wireframe das telas - Imprecindível
-* Primeira tela de login/cadastro - Importante
+* Primeira tela de login/cadastro
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Como candidato desejo me cadastrar  no sistema para os concorrer a vagas</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Como candidato desejo fazer login no sistema para entrar no sistema</td>
+   <td>02</td>
+  </tr>
+</table>
 
 ![Slide1](https://user-images.githubusercontent.com/102201672/191403408-db31cb26-c96f-47f7-962b-011d3cbd878e.JPG)
 
@@ -98,6 +116,30 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 ## Modelagem do Banco
 
 ![Modelagem_banco](https://user-images.githubusercontent.com/102201672/190922297-8eeaa9c2-7dfc-41a7-b92b-f1fcf80a9e43.jpg)
+
+## Sprint 02
+* Tela de cadastro de vagas
+* Tela de seleção e aplicação das vagas - Importante
+* Modelagem do banco de dados
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador desejo cadastrar vagas no sistema para os candidatos aplicarem</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Como candidato desejo encontrar as vagas no sistema para verificar os requisitos</td>
+   <td>02</td>
+  </tr>
+</table>
 
 
 ## Entregas
