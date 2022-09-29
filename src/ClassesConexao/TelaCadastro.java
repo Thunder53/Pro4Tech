@@ -23,9 +23,6 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
-import javax.swing.JList;
-import javax.swing.JScrollBar;
-import javax.swing.JComboBox;
 
 public class TelaCadastro extends JFrame {
 
@@ -75,16 +72,16 @@ public class TelaCadastro extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lbfnome = new JLabel("NOME COMPLETO:");
+		JLabel lbfnome = new JLabel("NOME COMPLETO *");
 		lbfnome.setForeground(Color.BLACK);
 		lbfnome.setFont(new Font("Arial", Font.PLAIN, 18));
-		lbfnome.setBounds(61, 193, 168, 33);
+		lbfnome.setBounds(47, 193, 182, 33);
 		contentPane.add(lbfnome);
 		
-		JLabel lbfemail = new JLabel("E-MAIL:");
+		JLabel lbfemail = new JLabel("E-MAIL *");
 		lbfemail.setForeground(Color.BLACK);
 		lbfemail.setFont(new Font("Arial", Font.PLAIN, 18));
-		lbfemail.setBounds(933, 236, 66, 33);
+		lbfemail.setBounds(922, 236, 87, 33);
 		contentPane.add(lbfemail);
 		
 		tfnome = new JTextField();
@@ -134,16 +131,16 @@ public class TelaCadastro extends JFrame {
 		pfsenha.setBounds(1009, 279, 489, 33);
 		contentPane.add(pfsenha);
 		
-		JLabel lblCpf = new JLabel("CPF:");
+		JLabel lblCpf = new JLabel("CPF *");
 		lblCpf.setForeground(Color.BLACK);
 		lblCpf.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblCpf.setBounds(181, 236, 50, 33);
+		lblCpf.setBounds(173, 236, 56, 33);
 		contentPane.add(lblCpf);
 		
-		JLabel lblSenha = new JLabel("SENHA:");
+		JLabel lblSenha = new JLabel("SENHA *");
 		lblSenha.setForeground(Color.BLACK);
 		lblSenha.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblSenha.setBounds(933, 279, 76, 33);
+		lblSenha.setBounds(922, 279, 87, 33);
 		contentPane.add(lblSenha);
 		
 		tfformaçao = new JTextField();
@@ -156,7 +153,7 @@ public class TelaCadastro extends JFrame {
 		JFormattedTextField tfprentensaosalarial = new JFormattedTextField();
 	    MaskFormatter mfSALARIO = new MaskFormatter();
 	    try {
-	        mfSALARIO.setMask("");
+	        mfSALARIO.setMask("####.##");
 	        mfSALARIO.install(tfprentensaosalarial);
 	        tfprentensaosalarial.setText("");
 	    } catch (ParseException e1) {
@@ -197,7 +194,7 @@ public class TelaCadastro extends JFrame {
 				try {
 					
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into login_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, tfemail.getText());
 					stmt.setString(2, new String(pfsenha.getPassword()));
@@ -213,14 +210,14 @@ public class TelaCadastro extends JFrame {
 					stmt.close();
 					con.close();
 					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Retornando a tela de Login.");
-					
+					TelaLogin abrir = new TelaLogin();
+					abrir.setVisible(true);
+					setVisible(false);
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
+					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 				} 
-				TelaLogin abrir = new TelaLogin();
-				abrir.setVisible(true);
-				setVisible(false);
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 140, 0));
@@ -233,19 +230,19 @@ public class TelaCadastro extends JFrame {
 		lblNewLabel_1.setBounds(0, 0, 531, 120);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO:");
+		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO *");
 		lblDataNascimento.setForeground(Color.BLACK);
 		lblDataNascimento.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblDataNascimento.setBounds(826, 193, 182, 33);
+		lblDataNascimento.setBounds(815, 193, 194, 33);
 		contentPane.add(lblDataNascimento);
 		
-		JLabel lblExperienciaProfissional = new JLabel("EXPERIÊNCIA PROFISSIONAL:");
+		JLabel lblExperienciaProfissional = new JLabel("EXPERIÊNCIA PROFISSIONAL");
 		lblExperienciaProfissional.setForeground(Color.BLACK);
 		lblExperienciaProfissional.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblExperienciaProfissional.setBounds(742, 365, 267, 33);
 		contentPane.add(lblExperienciaProfissional);
 		
-		JLabel lblCargo = new JLabel("CARGO:");
+		JLabel lblCargo = new JLabel("CARGO");
 		lblCargo.setForeground(Color.BLACK);
 		lblCargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblCargo.setBounds(153, 279, 76, 33);
@@ -257,23 +254,29 @@ public class TelaCadastro extends JFrame {
 		tfexperiencia.setBounds(1009, 369, 489, 131);
 		contentPane.add(tfexperiencia);
 		
-		JLabel lblPretensoSalarial = new JLabel("PRETENSÃO SALARIAL:");
+		JLabel lblPretensoSalarial = new JLabel("PRETENSÃO SALARIAL");
 		lblPretensoSalarial.setForeground(Color.BLACK);
 		lblPretensoSalarial.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblPretensoSalarial.setBounds(20, 322, 210, 33);
 		contentPane.add(lblPretensoSalarial);
 		
-		JLabel lblFormaoAcadmica = new JLabel("FORMAÇÃO ACADÊMICA:");
+		JLabel lblFormaoAcadmica = new JLabel("FORMAÇÃO ACADÊMICA *");
 		lblFormaoAcadmica.setForeground(Color.BLACK);
 		lblFormaoAcadmica.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblFormaoAcadmica.setBounds(10, 365, 231, 33);
+		lblFormaoAcadmica.setBounds(0, 365, 241, 33);
 		contentPane.add(lblFormaoAcadmica);
 		
-		JLabel lblTelefone = new JLabel("TELEFONE:");
+		JLabel lblTelefone = new JLabel("TELEFONE");
 		lblTelefone.setForeground(Color.BLACK);
 		lblTelefone.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblTelefone.setBounds(897, 322, 102, 33);
 		contentPane.add(lblTelefone);
+		
+		JLabel lblCamposObrigatrios = new JLabel("Campos obrigatórios *");
+		lblCamposObrigatrios.setForeground(Color.RED);
+		lblCamposObrigatrios.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblCamposObrigatrios.setBounds(1007, 510, 194, 33);
+		contentPane.add(lblCamposObrigatrios);
 		
 		
 	}

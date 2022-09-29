@@ -9,9 +9,9 @@ public class Conexao {
 	public static Connection faz_conexao() throws SQLException {
 		
 		try {
-		Class.forName("com.mysql.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost/pro4tech","root","");
+		return DriverManager.getConnection("jdbc:mysql://localhost/pro4tech","root","39339533");
 			
 		} catch (ClassNotFoundException e) {
 			
