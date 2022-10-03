@@ -21,8 +21,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+
 
 public class TelaCadastro extends JFrame {
 
@@ -31,7 +33,7 @@ public class TelaCadastro extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField tfnome;
+	private JTextField nome;
 	private JTextField tfemail;
 	private JTextField tfcpf;
 	private JPasswordField pfsenha;
@@ -84,11 +86,11 @@ public class TelaCadastro extends JFrame {
 		lbfemail.setBounds(922, 236, 87, 33);
 		contentPane.add(lbfemail);
 		
-		tfnome = new JTextField();
-		tfnome.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfnome.setBounds(239, 193, 489, 33);
-		contentPane.add(tfnome);
-		tfnome.setColumns(10);
+		nome = new JTextField();
+		nome.setFont(new Font("Arial", Font.PLAIN, 18));
+		nome.setBounds(239, 193, 489, 33);
+		contentPane.add(nome);
+		nome.setColumns(10);
 		
 		tfemail = new JTextField();
 		tfemail.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -150,16 +152,8 @@ public class TelaCadastro extends JFrame {
 		tfformaçao.setBounds(239, 369, 489, 131);
 		contentPane.add(tfformaçao);
 		
-		JFormattedTextField tfprentensaosalarial = new JFormattedTextField();
-	    MaskFormatter mfSALARIO = new MaskFormatter();
-	    try {
-	        mfSALARIO.setMask("####.##");
-	        mfSALARIO.install(tfprentensaosalarial);
-	        tfprentensaosalarial.setText("");
-	    } catch (ParseException e1) {
-	        e1.printStackTrace();
-	    }
-	    contentPane.add(tfprentensaosalarial, "cell 0 1,growx");
+		tfprentensaosalarial = new JTextField();
+		tfprentensaosalarial.setHorizontalAlignment(SwingConstants.LEFT);
 	    tfprentensaosalarial.setFont(new Font("Arial", Font.PLAIN, 18));
 	    tfprentensaosalarial.setColumns(10);
 	    tfprentensaosalarial.setBounds(239, 322, 489, 33);
@@ -190,34 +184,54 @@ public class TelaCadastro extends JFrame {
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println(tftelefone.getText());
-				try {
+				
+				CadastroUsuario c1 = new CadastroUsuario();
+				c1.setEmail(tfemail.getText());
+				c1.setSenha(new String(pfsenha.getPassword()));
+				c1.setNome(nome.getText());
+				c1.setCpf(tfcpf.getText());
+				c1.setData_nasc(tfdatanasc.getText());
+				c1.setFormaçao_acad(tfformaçao.getText());
+				c1.setPretensao_salarial(tfprentensaosalarial.getText());
+				c1.setCargo_interesse(tfcargo.getText());
+				c1.setExperiencia_profissional(tfexperiencia.getText());
+				c1.setTelefone(tftelefone.getText());
+				
+				
+				if (c1.isCPF()) {
+					try {
+						
+						Connection con = Conexao.faz_conexao();
+						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						
+						PreparedStatement stmt = con.prepareStatement(sql);
+						stmt.setString(1, c1.getEmail());
+						stmt.setString(2, c1.getSenha());
+						stmt.setString(3, c1.getNome());
+						stmt.setString(4, c1.getCpf());
+						stmt.setString(5, c1.getData_nasc());
+						stmt.setString(6, c1.getFormaçao_acad());
+						stmt.setString(7, c1.getPretensao_salarial());
+						stmt.setString(8, c1.getCargo_interesse());
+						stmt.setString(9, c1.getExperiencia_profissional());
+						stmt.setString(10, c1.getTelefone());
 					
-					Connection con = Conexao.faz_conexao();
-					String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-					PreparedStatement stmt = con.prepareStatement(sql);
-					stmt.setString(1, tfemail.getText());
-					stmt.setString(2, new String(pfsenha.getPassword()));
-					stmt.setString(4, tfcpf.getText());
-					stmt.setString(3, tfnome.getText());
-					stmt.setString(5, tfdatanasc.getText());
-					stmt.setString(6, tfformaçao.getText());
-					stmt.setString(7, tfprentensaosalarial.getText());
-					stmt.setString(8, tfcargo.getText());
-					stmt.setString(9, tfexperiencia.getText());
-					stmt.setString(10, tftelefone.getText());
-					stmt.execute();
-					stmt.close();
-					con.close();
-					JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Retornando a tela de Login.");
-					TelaLogin abrir = new TelaLogin();
-					abrir.setVisible(true);
-					setVisible(false);
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
-				} 
+						stmt.execute();
+						stmt.close();
+						con.close();
+						JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Retornando a tela de Login.");
+						TelaLogin abrir = new TelaLogin();
+						abrir.setVisible(true);
+						setVisible(false);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+						JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
+					} 
+				} else {
+					JOptionPane.showMessageDialog(null, "CPF INVÁLIDO");
+				}
+				
 			}
 		});
 		btnNewButton.setBackground(new Color(255, 140, 0));
@@ -242,10 +256,10 @@ public class TelaCadastro extends JFrame {
 		lblExperienciaProfissional.setBounds(742, 365, 267, 33);
 		contentPane.add(lblExperienciaProfissional);
 		
-		JLabel lblCargo = new JLabel("CARGO");
+		JLabel lblCargo = new JLabel("CARGO DESEJADO");
 		lblCargo.setForeground(Color.BLACK);
 		lblCargo.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblCargo.setBounds(153, 279, 76, 33);
+		lblCargo.setBounds(47, 279, 182, 33);
 		contentPane.add(lblCargo);
 		
 		tfexperiencia = new JTextField();
@@ -277,6 +291,10 @@ public class TelaCadastro extends JFrame {
 		lblCamposObrigatrios.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblCamposObrigatrios.setBounds(1007, 510, 194, 33);
 		contentPane.add(lblCamposObrigatrios);
+		
+		
+		
+		
 		
 		
 	}

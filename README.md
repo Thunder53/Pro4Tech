@@ -82,6 +82,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 ## Sprint 01
 * Primeira tela de login/cadastro
 
+<<<<<<< HEAD
 ## User stories
 
 <table align="center">
@@ -102,6 +103,9 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
 ![Slide1](https://user-images.githubusercontent.com/102201672/191403408-db31cb26-c96f-47f7-962b-011d3cbd878e.JPG)
+=======
+![Slide1](https://user-images.githubusercontent.com/102201672/191403170-9d5e530b-e704-48df-a5f9-887470e6b4e1.JPG)
+>>>>>>> 0e75097c751d63cd8cde7600c30adc233b9b865d
 
 ## Wireframe
 

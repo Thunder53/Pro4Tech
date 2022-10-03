@@ -182,7 +182,7 @@ public class TelaCadastroVagas extends JFrame {
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
 		btnNewButton.setBackground(Color.ORANGE);
-		btnNewButton.setBounds(827, 623, 156, 52);
+		btnNewButton.setBounds(833, 623, 156, 52);
 		btnNewButton.setForeground(new Color(0, 0, 0));
 		contentPane.add(btnNewButton);
 	}
