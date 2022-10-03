@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.BevelBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCadastroVagas extends JFrame {
 
@@ -173,11 +175,15 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnNewButton = new JButton("OK");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
-		btnNewButton.setBackground(new Color(255, 128, 0));
+		btnNewButton.setBackground(Color.ORANGE);
 		btnNewButton.setBounds(827, 623, 156, 52);
-		btnNewButton.setForeground(Color.BLACK);
+		btnNewButton.setForeground(new Color(0, 0, 0));
 		contentPane.add(btnNewButton);
 	}
 }
