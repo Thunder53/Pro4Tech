@@ -34,7 +34,7 @@ public class TelaCadastroVagas extends JFrame {
 	private JTextField tSoft;
 	private JTextField tHard;
 	private JTextField tResponsavel;
-
+	
 	/**
 	 * Launch the application.
 	 */
