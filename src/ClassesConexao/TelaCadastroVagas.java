@@ -175,8 +175,18 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnNewButton = new JButton("OK");
+		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					Connection con = Conexao.faz_conexao();
+					
+				} 
+				catch (SQLException e1) {
+					
+				}
+				
+			
 			}
 		});
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
