@@ -16,6 +16,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import java.awt.event.ActionEvent;
 
 public class TelaCadastroVagas extends JFrame {
@@ -180,13 +181,23 @@ public class TelaCadastroVagas extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Connection con = Conexao.faz_conexao();
+					String sql = "insert into cadastro_vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?)";
+					
+					PreparedStatement stmt = con.prepareStatement(sql);
+					stmt.setString(1, c1.getNome_vaga());
+					stmt.setString(2, c1.getCarga_horaria());
+					stmt.setString(3, c1.getModelo());
+					stmt.setString(4, c1.getSalario());
+					stmt.setString(5, c1.getResponsavel());
+					stmt.setString(6, c1.get());
+					stmt.setString(7, c1.getPretensao_salarial());
+					stmt.setString(8, c1.getCargo_interesse());
 					
 				} 
 				catch (SQLException e1) {
 					
 				}
 				
-			
 			}
 		});
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
