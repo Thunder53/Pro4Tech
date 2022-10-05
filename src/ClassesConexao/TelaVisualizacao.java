@@ -14,13 +14,13 @@ import javax.swing.event.AncestorEvent;
 
 import javax.swing.border.LineBorder;
 
-public class VisualizaoVagas extends JFrame {
+public class TelaVisualizacao extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public VisualizaoVagas() {
+	public TelaVisualizacao() {
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
