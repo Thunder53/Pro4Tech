@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
@@ -16,21 +17,23 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class TelaCadastroVagas extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
+	private JTextField tNome;
+	private JTextField tCargaHr;
+	private JTextField tModelo;
+	private JTextField tSalario;
+	private JTextField tRequisitos;
+	private JTextField tEscolaridade;
+	private JTextField tSoft;
+	private JTextField tHard;
+	private JTextField tResponsavel;
 
 	/**
 	 * Launch the application.
@@ -123,50 +126,50 @@ public class TelaCadastroVagas extends JFrame {
 		lblNewLabel_11.setBounds(442, 570, 137, 28);
 		contentPane.add(lblNewLabel_11);
 		
-		textField = new JTextField();
-		textField.setBounds(589, 250, 400, 28);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		tNome = new JTextField();
+		tNome.setBounds(589, 250, 400, 28);
+		contentPane.add(tNome);
+		tNome.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(589, 289, 400, 28);
-		contentPane.add(textField_1);
+		tCargaHr = new JTextField();
+		tCargaHr.setColumns(10);
+		tCargaHr.setBounds(589, 289, 400, 28);
+		contentPane.add(tCargaHr);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(589, 328, 400, 28);
-		contentPane.add(textField_2);
+		tModelo = new JTextField();
+		tModelo.setColumns(10);
+		tModelo.setBounds(589, 328, 400, 28);
+		contentPane.add(tModelo);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(589, 367, 400, 28);
-		contentPane.add(textField_3);
+		tSalario = new JTextField();
+		tSalario.setColumns(10);
+		tSalario.setBounds(589, 367, 400, 28);
+		contentPane.add(tSalario);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(589, 406, 400, 28);
-		contentPane.add(textField_4);
+		tRequisitos = new JTextField();
+		tRequisitos.setColumns(10);
+		tRequisitos.setBounds(589, 406, 400, 28);
+		contentPane.add(tRequisitos);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(589, 445, 400, 28);
-		contentPane.add(textField_5);
+		tEscolaridade = new JTextField();
+		tEscolaridade.setColumns(10);
+		tEscolaridade.setBounds(589, 445, 400, 28);
+		contentPane.add(tEscolaridade);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(589, 489, 400, 28);
-		contentPane.add(textField_6);
+		tSoft = new JTextField();
+		tSoft.setColumns(10);
+		tSoft.setBounds(589, 489, 400, 28);
+		contentPane.add(tSoft);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(589, 531, 400, 28);
-		contentPane.add(textField_7);
+		tHard = new JTextField();
+		tHard.setColumns(10);
+		tHard.setBounds(589, 531, 400, 28);
+		contentPane.add(tHard);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(589, 572, 400, 28);
-		contentPane.add(textField_8);
+		tResponsavel = new JTextField();
+		tResponsavel.setColumns(10);
+		tResponsavel.setBounds(589, 572, 400, 28);
+		contentPane.add(tResponsavel);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("SE ESTIVER TUDO CERTO, CLIQUE NO BOTÃO \"OK\"");
 		lblNewLabel_2_1.setBackground(Color.ORANGE);
@@ -179,9 +182,21 @@ public class TelaCadastroVagas extends JFrame {
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				CadastroVaga c1 = new CadastroVaga();
+				c1.setNome_vaga(tNome.getText());
+				c1.setCarga_horaria(tCargaHr.getText());
+				c1.setModelo(tModelo.getText());
+				c1.setSalario(tSalario.getText());
+				c1.setRequisitos(tSalario.getText());
+				c1.setEscolaridade(tEscolaridade.getText());
+				c1.setSoft_skills(tSoft.getText());
+				c1.setHard_skills(tHard.getText());
+				c1.setResponsavel(tResponsavel.getText());			
+				
 				try {
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into cadastro_vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into cadastro_vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 					
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, c1.getNome_vaga());
@@ -189,12 +204,21 @@ public class TelaCadastroVagas extends JFrame {
 					stmt.setString(3, c1.getModelo());
 					stmt.setString(4, c1.getSalario());
 					stmt.setString(5, c1.getResponsavel());
-					stmt.setString(6, c1.get());
-					stmt.setString(7, c1.getPretensao_salarial());
-					stmt.setString(8, c1.getCargo_interesse());
+					stmt.setString(6, c1.getEscolaridade());
+					stmt.setString(7, c1.getSoft_skills());
+					stmt.setString(8, c1.getHard_skills());
 					
-				} 
-				catch (SQLException e1) {
+				stmt.close();
+				con.close();
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
+				TelaVisualizacao abrir = new TelaVisualizacao();
+				abrir.setVisible(true);
+				setVisible(false);
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 					
 				}
 				
