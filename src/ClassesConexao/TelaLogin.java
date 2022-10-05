@@ -99,7 +99,7 @@ public class TelaLogin extends JFrame {
 					try {
 					
 					Connection con = Conexao.faz_conexao();
-					String sql = "select *from login_usuario where email=? and senha=?";
+					String sql = "select *from cadastro_usuario where email=? and senha=?";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, tfUsuario.getText());
 					stmt.setString(2, new String(pfSenha.getPassword()));

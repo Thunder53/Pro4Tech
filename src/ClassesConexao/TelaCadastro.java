@@ -21,7 +21,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
@@ -35,14 +34,11 @@ public class TelaCadastro extends JFrame {
 	private JPanel contentPane;
 	private JTextField nome;
 	private JTextField tfemail;
-	private JTextField tfcpf;
 	private JPasswordField pfsenha;
-	private JTextField tfdatanasc;
 	private JTextField tfcargo;
 	private JTextField tfexperiencia;
 	private JTextField tfprentensaosalarial;
 	private JTextField tfformaçao;
-	private JTextField tftelefone;
 
 	/**
 	 * Launch the application.
@@ -196,7 +192,6 @@ public class TelaCadastro extends JFrame {
 				c1.setCargo_interesse(tfcargo.getText());
 				c1.setExperiencia_profissional(tfexperiencia.getText());
 				c1.setTelefone(tftelefone.getText());
-				
 				
 				if (c1.isCPF()) {
 					try {
