@@ -14,13 +14,13 @@ import javax.swing.event.AncestorEvent;
 
 import javax.swing.border.LineBorder;
 
-public class TelaVisualizacao extends JFrame {
+public class VisualizaoVagas extends JFrame {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public TelaVisualizacao() {
+	public VisualizaoVagas() {
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
@@ -55,7 +55,7 @@ public class TelaVisualizacao extends JFrame {
 		});
 		CAIXASELECAO.setModel(new DefaultComboBoxModel(new String[] {"VAGAS"}));
 		CAIXASELECAO.setToolTipText("");
-		CAIXASELECAO.setBounds(184, 229, 405, 27);
+		CAIXASELECAO.setBounds(108, 230, 405, 27);
 		getContentPane().add(CAIXASELECAO);
 		
 		JLabel icon1 = new JLabel("");
@@ -108,3 +108,4 @@ public class TelaVisualizacao extends JFrame {
 		getContentPane().add(requisito);
 	}
 }
+
