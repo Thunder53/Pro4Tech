@@ -59,6 +59,7 @@ public class TelaOpcoes extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("SELECIONE \r\nNOS BOTÕES ABAIXO O QUE DESEJA FAZER:");
+		lblNewLabel_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblNewLabel_1_1.setBounds(424, 246, 591, 52);
 		contentPane.add(lblNewLabel_1_1);

@@ -106,6 +106,9 @@ public class TelaLogin extends JFrame {
 					ResultSet rs = stmt.executeQuery();
 					if(rs.next()) {
 						JOptionPane.showMessageDialog(null, "Entrando!");
+						TelaOpcoes exibir = new TelaOpcoes();
+						exibir.setVisible(true);
+						setVisible(false);
 					} else {
 						JOptionPane.showMessageDialog(null, "E-mail ou senha incorreto!");
 					}
