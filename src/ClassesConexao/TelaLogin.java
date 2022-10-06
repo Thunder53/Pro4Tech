@@ -162,7 +162,7 @@ public class TelaLogin extends JFrame {
 		contentPane.add(lblFaaSeuLogin_1);
 		
 		lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Pictures\\PRO4TECH.jpeg"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1);
 	}

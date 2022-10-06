@@ -287,6 +287,11 @@ public class TelaCadastro extends JFrame {
 		lblCamposObrigatrios.setBounds(1007, 510, 194, 33);
 		contentPane.add(lblCamposObrigatrios);
 		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
+		lblNewLabel_1_1.setBounds(0, 0, 517, 100);
+		contentPane.add(lblNewLabel_1_1);
+		
 		
 		
 		

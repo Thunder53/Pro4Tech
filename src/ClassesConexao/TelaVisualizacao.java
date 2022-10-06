@@ -26,7 +26,7 @@ public class TelaVisualizacao extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(10, 21, 579, 109);
-		lblNewLabel.setIcon(new ImageIcon("D:\\Users\\Henrique\\eclipse-workspace\\PRO4TECH 22.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZAÇÃO DE VAGAS!\r\n\r\n");
@@ -60,7 +60,7 @@ public class TelaVisualizacao extends JFrame {
 		
 		JLabel icon1 = new JLabel("");
 		icon1.setLabelFor(icon1);
-		icon1.setIcon(new ImageIcon("D:\\Users\\Henrique\\eclipse-workspace\\172584_clock_icon (1).png"));
+		icon1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (4).jpeg"));
 		icon1.setBounds(20, 318, 48, 55);
 		getContentPane().add(icon1);
 		
@@ -79,12 +79,12 @@ public class TelaVisualizacao extends JFrame {
 		getContentPane().add(beneficios);
 		
 		JLabel icon2 = new JLabel("");
-		icon2.setIcon(new ImageIcon("D:\\Users\\Henrique\\eclipse-workspace\\9876808_hand_delivery box_box_interaction_package_icon.png"));
+		icon2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (2).jpeg"));
 		icon2.setBounds(20, 384, 48, 55);
 		getContentPane().add(icon2);
 		
 		JLabel icon3 = new JLabel("");
-		icon3.setIcon(new ImageIcon("D:\\Users\\Henrique\\eclipse-workspace\\4579059_check_list_marketing_outline_todo_icon.png"));
+		icon3.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (1).jpeg"));
 		icon3.setBounds(327, 318, 64, 55);
 		getContentPane().add(icon3);
 		
@@ -96,7 +96,7 @@ public class TelaVisualizacao extends JFrame {
 		getContentPane().add(atividades);
 		
 		JLabel icon4 = new JLabel("");
-		icon4.setIcon(new ImageIcon("D:\\Users\\Henrique\\eclipse-workspace\\9027041_student_thin_icon.png"));
+		icon4.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (3).jpeg"));
 		icon4.setBounds(327, 384, 64, 55);
 		getContentPane().add(icon4);
 		

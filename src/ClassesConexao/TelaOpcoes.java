@@ -12,6 +12,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
+import javax.swing.SwingConstants;
 
 public class TelaOpcoes extends JFrame {
 
@@ -37,6 +38,7 @@ public class TelaOpcoes extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaOpcoes() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -47,39 +49,44 @@ public class TelaOpcoes extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\Users\\Vitoria Brancatti\\Documents\\FATEC\\PRO4TEC\\PRO4TECH 22.jpg"));
-		lblNewLabel.setBounds(20, 11, 819, 140);
-		contentPane.add(lblNewLabel);
+		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("SEJA BEM VINDO!");
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(424, 205, 169, 40);
+		lblNewLabel_1.setForeground(Color.BLACK);
+		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(490, 206, 211, 40);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("SELECIONE \r\nNOS BOTÕES ABAIXO O QUE DESEJA FAZER:");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setForeground(Color.BLACK);
-		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_1_1.setBounds(424, 246, 591, 52);
+		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 20));
+		lblNewLabel_1_1.setBounds(0, 246, 1540, 52);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
+		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setAutoscrolls(true);
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setBackground(Color.ORANGE);
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 16));
-		btnNewButton.setBounds(614, 320, 194, 35);
+		btnNewButton.setBounds(506, 360, 195, 72);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizarStatus = new JButton("VISUALIZAR STATUS");
+		btnVisualizarStatus.setForeground(Color.BLACK);
 		btnVisualizarStatus.setActionCommand("VISUALIZAR STATUS");
 		btnVisualizarStatus.setFont(new Font("Arial", Font.BOLD, 16));
 		btnVisualizarStatus.setBorderPainted(false);
 		btnVisualizarStatus.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnVisualizarStatus.setBackground(Color.ORANGE);
-		btnVisualizarStatus.setBounds(614, 366, 194, 35);
+		btnVisualizarStatus.setBounds(783, 359, 195, 75);
 		contentPane.add(btnVisualizarStatus);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("");
+		lblNewLabel_1_2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
+		lblNewLabel_1_2.setBounds(0, 0, 517, 100);
+		contentPane.add(lblNewLabel_1_2);
 	}
 }
