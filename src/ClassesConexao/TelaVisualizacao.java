@@ -17,9 +17,39 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class TelaVisualizacao extends JFrame {
+		
+		
+	private JPanel contentPane;
 
-<<<<<<< HEAD
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaVisualizacao frame = new TelaVisualizacao();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
 	public TelaVisualizacao() {
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1920, 1080);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
@@ -42,60 +72,14 @@ public class TelaVisualizacao extends JFrame {
 		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 18));
 		getContentPane().add(lblNewLabel_1_1);
 		
-		JComboBox CAIXASELECAO = new JComboBox();
-		CAIXASELECAO.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent event) {
-				
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-=======
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TelaVisualizacao frame = new TelaVisualizacao();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
->>>>>>> 4bbaecdcecd3446c8e4f8dff186b27dda48bafbc
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public TelaVisualizacao() {
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1920, 1080);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-<<<<<<< HEAD
 		JLabel icon1 = new JLabel("");
 		icon1.setLabelFor(icon1);
 		icon1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (4).jpeg"));
 		icon1.setBounds(20, 318, 48, 55);
 		getContentPane().add(icon1);
-=======
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\Pro4Tech\\ef079cea-4d4d-45fc-b4e6-91f633774f6b.jfif"));
-		lblNewLabel.setBounds(21, 10, 500, 115);
-		contentPane.add(lblNewLabel);
->>>>>>> 4bbaecdcecd3446c8e4f8dff186b27dda48bafbc
 		
+		
+
 		JComboBox cbxvaga = new JComboBox();
 		cbxvaga.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -108,7 +92,6 @@ public class TelaVisualizacao extends JFrame {
 		contentPane.add(cbxvaga);
 		
 		
-<<<<<<< HEAD
 		JLabel icon2 = new JLabel("");
 		icon2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (2).jpeg"));
 		icon2.setBounds(20, 384, 48, 55);
@@ -118,34 +101,28 @@ public class TelaVisualizacao extends JFrame {
 		icon3.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (1).jpeg"));
 		icon3.setBounds(327, 318, 64, 55);
 		getContentPane().add(icon3);
-=======
-		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZÃO DE VAGAS!");
-		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 18));
-		lblNewLabel_1.setBounds(127, 138, 646, 70);
-		contentPane.add(lblNewLabel_1);
+	
 		
 		JLabel lblNewLabel_2 = new JLabel("SELECIONE A VAGA DE SEU INTERESSE!");
 		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 18));
 		lblNewLabel_2.setBounds(127, 180, 646, 70);
 		contentPane.add(lblNewLabel_2);
->>>>>>> 4bbaecdcecd3446c8e4f8dff186b27dda48bafbc
 		
 		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43 (2).jpeg"));
 		lblNewLabel_3.setBounds(307, 474, 53, 64);
 		contentPane.add(lblNewLabel_3);
 		
-<<<<<<< HEAD
+
 		JLabel icon4 = new JLabel("");
 		icon4.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (3).jpeg"));
 		icon4.setBounds(327, 384, 64, 55);
 		getContentPane().add(icon4);
-=======
 		JLabel lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
 		lblNewLabel_4.setBounds(370, 461, 339, 83);
 		contentPane.add(lblNewLabel_4);
->>>>>>> 4bbaecdcecd3446c8e4f8dff186b27dda48bafbc
+
 		
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43.jpeg"));
@@ -176,6 +153,10 @@ public class TelaVisualizacao extends JFrame {
 		lblNewLabel_10.setBorder(new LineBorder(new Color(0, 0, 0)));
 		lblNewLabel_10.setBounds(899, 616, 339, 83);
 		contentPane.add(lblNewLabel_10);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(626, 141, 195, 83);
+		contentPane.add(comboBox);
 		setLocationRelativeTo(null);
 	}
 }
