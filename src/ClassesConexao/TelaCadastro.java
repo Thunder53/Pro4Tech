@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import com.toedter.calendar.JDateChooser;
 
 
 public class TelaCadastro extends JFrame {
@@ -60,7 +61,6 @@ public class TelaCadastro extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastro() {
-		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -154,27 +154,22 @@ public class TelaCadastro extends JFrame {
 	    tfprentensaosalarial.setColumns(10);
 	    tfprentensaosalarial.setBounds(239, 322, 489, 33);
 		contentPane.add(tfprentensaosalarial);
-		
-		JFormattedTextField tfdatanasc = new JFormattedTextField();
 	    MaskFormatter mfDATA = new MaskFormatter();
 	    try {
 	        mfDATA.setMask("##/##/####");
-	        mfDATA.install(tfdatanasc);
-	        tfdatanasc.setText("");
 	    } catch (ParseException e1) {
 	        e1.printStackTrace();
 	    }
-	    contentPane.add(tfdatanasc, "cell 0 1,growx");
-		tfdatanasc.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfdatanasc.setColumns(10);
-		tfdatanasc.setBounds(1009, 193, 489, 33);
-		contentPane.add(tfdatanasc);
 		
 		tfcargo = new JTextField();
 		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfcargo.setColumns(10);
 		tfcargo.setBounds(239, 279, 489, 33);
 		contentPane.add(tfcargo);
+		
+		JDateChooser data_nasc = new JDateChooser();
+		data_nasc.setBounds(1009, 193, 489, 33);
+		contentPane.add(data_nasc);
 		
 		JButton btnNewButton = new JButton("CADASTRAR");
 		btnNewButton.setForeground(Color.BLACK);
@@ -186,7 +181,7 @@ public class TelaCadastro extends JFrame {
 				c1.setSenha(new String(pfsenha.getPassword()));
 				c1.setNome(nome.getText());
 				c1.setCpf(tfcpf.getText());
-				c1.setData_nasc(tfdatanasc.getText());
+				c1.setData_nasc(data_nasc.getToolTipText());
 				c1.setFormaçao_acad(tfformaçao.getText());
 				c1.setPretensao_salarial(tfprentensaosalarial.getText());
 				c1.setCargo_interesse(tfcargo.getText());
@@ -195,7 +190,6 @@ public class TelaCadastro extends JFrame {
 				
 				if (c1.isCPF()) {
 					try {
-						
 						Connection con = Conexao.faz_conexao();
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 						
@@ -219,7 +213,6 @@ public class TelaCadastro extends JFrame {
 						abrir.setVisible(true);
 						setVisible(false);
 					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 						JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 					} 
@@ -291,6 +284,8 @@ public class TelaCadastro extends JFrame {
 		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1_1);
+		
+		
 		
 		
 		
