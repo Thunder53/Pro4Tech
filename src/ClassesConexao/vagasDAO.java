@@ -18,7 +18,7 @@ public class vagasDAO {
 	 //bd db4free.net
 	   String url = "jdbc:mysql://localhost/teste1";
 	   String user = "root";
-	   String password = "Tobias*2004";
+	   String password = "39339533";
 	   
 	public ArrayList <String>vagas() {
         ArrayList <String> vg = new ArrayList <String>();
