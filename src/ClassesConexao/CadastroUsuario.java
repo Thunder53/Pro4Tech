@@ -68,7 +68,7 @@ public class CadastroUsuario {
 	}
 	
 	public String getData_nasc() {
-		return data_nasc;
+		return new String(data_nasc);
 	}
 	
 	public void setData_nasc(String data_nasc) {

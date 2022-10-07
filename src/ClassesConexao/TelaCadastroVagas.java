@@ -58,9 +58,9 @@ public class TelaCadastroVagas extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
+		contentPane.setBorder(null);
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(255, 255, 255));
-		contentPane.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -204,7 +204,7 @@ public class TelaCadastroVagas extends JFrame {
 				c1.setCarga_horaria(tCargaHr.getText());
 				c1.setModelo(tModelo.getText());
 				c1.setSalario(tSalario.getText());
-				c1.setRequisitos(tSalario.getText());
+				c1.setRequisitos(tRequisitos.getText());
 				c1.setEscolaridade(tEscolaridade.getText());
 				c1.setSoft_skills(tSoft.getText());
 				c1.setHard_skills(tHard.getText());
@@ -212,18 +212,20 @@ public class TelaCadastroVagas extends JFrame {
 				
 				try {
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into cadastro_vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into Vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 					
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, c1.getNome_vaga());
 					stmt.setString(2, c1.getCarga_horaria());
 					stmt.setString(3, c1.getModelo());
 					stmt.setString(4, c1.getSalario());
+					stmt.setString(6, c1.getRequisitos());
 					stmt.setString(5, c1.getResponsavel());
-					stmt.setString(6, c1.getEscolaridade());
-					stmt.setString(7, c1.getSoft_skills());
-					stmt.setString(8, c1.getHard_skills());
+					stmt.setString(7, c1.getEscolaridade());
+					stmt.setString(8, c1.getSoft_skills());
+					stmt.setString(9, c1.getHard_skills());
 					
+				stmt.execute();
 				stmt.close();
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
@@ -249,7 +251,7 @@ public class TelaCadastroVagas extends JFrame {
 		
 		JLabel lblNewLabel_1_1 = new JLabel("");
 		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
-		lblNewLabel_1_1.setBounds(0, 0, 517, 100);
+		lblNewLabel_1_1.setBounds(0, 0, 500, 95);
 		contentPane.add(lblNewLabel_1_1);
 	}
 }

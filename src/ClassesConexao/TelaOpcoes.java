@@ -13,6 +13,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.border.BevelBorder;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaOpcoes extends JFrame {
 
@@ -65,6 +67,13 @@ public class TelaOpcoes extends JFrame {
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaVisualizacao exibir = new TelaVisualizacao();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setAutoscrolls(true);

@@ -61,6 +61,7 @@ public class TelaCadastro extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastro() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -154,13 +155,7 @@ public class TelaCadastro extends JFrame {
 	    tfprentensaosalarial.setColumns(10);
 	    tfprentensaosalarial.setBounds(239, 322, 489, 33);
 		contentPane.add(tfprentensaosalarial);
-	    MaskFormatter mfDATA = new MaskFormatter();
-	    try {
-	        mfDATA.setMask("##/##/####");
-	    } catch (ParseException e1) {
-	        e1.printStackTrace();
-	    }
-		
+	    
 		tfcargo = new JTextField();
 		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfcargo.setColumns(10);
@@ -168,8 +163,16 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(tfcargo);
 		
 		JDateChooser data_nasc = new JDateChooser();
+		data_nasc.getCalendarButton().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		data_nasc.setFont(new Font("Arial", Font.PLAIN, 18));
 		data_nasc.setBounds(1009, 193, 489, 33);
 		contentPane.add(data_nasc);
+		
+		
 		
 		JButton btnNewButton = new JButton("CADASTRAR");
 		btnNewButton.setForeground(Color.BLACK);
@@ -181,7 +184,7 @@ public class TelaCadastro extends JFrame {
 				c1.setSenha(new String(pfsenha.getPassword()));
 				c1.setNome(nome.getText());
 				c1.setCpf(tfcpf.getText());
-				c1.setData_nasc(data_nasc.getToolTipText());
+				c1.setData_nasc(new String(data_nasc.getToolTipText()));
 				c1.setFormaçao_acad(tfformaçao.getText());
 				c1.setPretensao_salarial(tfprentensaosalarial.getText());
 				c1.setCargo_interesse(tfcargo.getText());
