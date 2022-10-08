@@ -18,6 +18,7 @@ import javax.swing.JFormattedTextField;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -165,11 +166,7 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(tfcargo);
 		
 		JDateChooser data_nasc = new JDateChooser();
-		data_nasc.getCalendarButton().addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+		data_nasc.setDateFormatString("dd'/' MM '/' yyyy");
 		data_nasc.setFont(new Font("Arial", Font.PLAIN, 18));
 		data_nasc.setBounds(1009, 193, 489, 33);
 		contentPane.add(data_nasc);
@@ -186,7 +183,7 @@ public class TelaCadastro extends JFrame {
 				
 				c1.setNome(nome.getText());
 				c1.setCpf(tfcpf.getText());
-				c1.setData_nasc(new String(data_nasc.getToolTipText()));
+				c1.setData_nasc(data_nasc.getDate());
 				c1.setFormaçao_acad(tfformaçao.getText());
 				c1.setPretensao_salarial(tfprentensaosalarial.getText());
 				c1.setCargo_interesse(tfcargo.getText());
@@ -200,7 +197,7 @@ public class TelaCadastro extends JFrame {
 			        JOptionPane.showMessageDialog(null, "E-mail não confere.");
 				}
 				
-				if (pfsenha.getPassword().equals(pfsenha2.getPassword())) {
+				if (new String(pfsenha.getPassword()).equals(new String(pfsenha2.getPassword()))) {
 					c1.setSenha(new String(pfsenha.getPassword()));
 				}
 			    else{
@@ -217,7 +214,7 @@ public class TelaCadastro extends JFrame {
 						stmt.setString(2, c1.getSenha());
 						stmt.setString(3, c1.getNome());
 						stmt.setString(4, c1.getCpf());
-						stmt.setString(5, c1.getData_nasc());
+						stmt.setDate(5, new Date(c1.getData_nasc().getTime()));
 						stmt.setString(6, c1.getFormaçao_acad());
 						stmt.setString(7, c1.getPretensao_salarial());
 						stmt.setString(8, c1.getCargo_interesse());
