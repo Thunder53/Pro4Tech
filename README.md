@@ -80,9 +80,10 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 # Story cards
 
 ## Sprint 01
-* Primeira tela de login/cadastro
+* Tela de login
+* Tela de cadastro
 
-<<<<<<< HEAD
+
 ## User stories
 
 <table align="center">
@@ -104,8 +105,8 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ![Slide1](https://user-images.githubusercontent.com/102201672/191403408-db31cb26-c96f-47f7-962b-011d3cbd878e.JPG)
 =======
-![Slide1](https://user-images.githubusercontent.com/102201672/191403170-9d5e530b-e704-48df-a5f9-887470e6b4e1.JPG)
->>>>>>> 0e75097c751d63cd8cde7600c30adc233b9b865d
+
+
 
 ## Wireframe
 
@@ -123,8 +124,23 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ## Sprint 02
 * Tela de cadastro de vagas
-* Tela de seleção e aplicação das vagas - Importante
+* Tela de seleção e aplicação das vagas
 * Modelagem do banco de dados
+
+## Wireframe
+
+* Tela de cadastro de vagas
+![image(2)](https://user-images.githubusercontent.com/111543077/194674311-c8ded2f9-59dc-4fed-bf35-c48fa31c31f9.png)
+
+
+* Tela de consulta de vagas
+![image(1)](https://user-images.githubusercontent.com/111543077/194674277-a79a2fb4-ab4d-4748-94c3-2b16979672e0.png)
+
+## Modelagem do Banco
+
+* Cadastro de vagas
+![image](https://user-images.githubusercontent.com/111543077/194676398-67598284-0627-48d4-a3be-b5039eef3b2c.png)
+
 
 ## User stories
 
@@ -146,11 +162,53 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
 
+## Sprint 03
+* Tela de consulta de vagas e candidatos pelo RH
+* Tela de visualização de currículo
+* Tela de consulta de status da vaga
+
+## Wireframe
+* Tela de consulta de vagas e candidatos pelo RH
+
+![image](https://user-images.githubusercontent.com/111543077/194675490-99405407-94de-4bde-bcc7-71166c1ca27d.png)
+
+* Tela de visualização de currículo
+
+![image](https://user-images.githubusercontent.com/111543077/194675840-f46768f1-1333-4256-9415-c6cc7d5b1d31.png)
+
+* Tela de consulta de status da vaga
+
+![image](https://user-images.githubusercontent.com/111543077/194675978-60d06b01-816f-4f7c-954c-bcdb204ec8c7.png)
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador desejo consultar as vagas e os candidatos no sistema para conseguir visualizar o currículo</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador desejo visualizar os currículos no sistema para avaliar os candidatos</td>
+   <td>02</td>
+  </tr>
+    <tr>
+   <td>Como candidato desejo consultar os status das minhas candidaturas no sistema para acompanhar os processos</td>
+   <td>03</td>
+  </tr>
+  
+</table>
+
 ## Entregas
 
 - [x] **Kick-off** - 18/08/2022
 - [x] **Sprint 01** - 18/09/2022
-- [ ] **Sprint 02** - 09/10/2022
+- [x] **Sprint 02** - 09/10/2022
 - [ ] **Sprint 03** - 06/11/2022
 - [ ] **Sprint 04** - 27/11/2022
 
