@@ -213,7 +213,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 - [ ] **Sprint 04** - 27/11/2022
 
 
-## GitHub
+## GitHub    
 
 * [Alan Morato](https://github.com/alanfmorato)
 * [Ariane Sousa](https://github.com/Ariane-Sousa)
@@ -224,7 +224,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * [Tobias Sousa](https://github.com/tobiassousa)
 
 
-## Tecnologias
+## Tecnologias      
 <div style: inline_block"><br/>
   <img src="https://user-images.githubusercontent.com/108765052/189555941-f7b71a6f-8c76-4576-b7c9-690965392f59.png" width="150px" />
   <img src="https://user-images.githubusercontent.com/108765052/189556175-c9d617be-e639-44ec-b05a-ab374efedf4f.png" width="150px" />
