@@ -133,11 +133,10 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 ![image(2)](https://user-images.githubusercontent.com/111543077/194674311-c8ded2f9-59dc-4fed-bf35-c48fa31c31f9.png)
 
 * Tela de Menu canditado
-![Sprint02_Wireframe_TelaMenu_v1](https://user-images.githubusercontent.com/102201672/194776818-84ee5083-685c-4d60-b1d3-8899da8b0124.jpg)
+![Sprint02_Wireframe_TelaMenu_v1](https://user-images.githubusercontent.com/102201672/194777353-95cb77a5-258d-4b0a-8c81-b26e3ec5f7ab.jpg)
 
 * Tela de consulta de vagas
-![Sprint02_Wireframe_TelaBuscarVagas_v1](https://user-images.githubusercontent.com/102201672/194776753-62b3d885-5a2c-4185-a80f-9fc9e5e1306b.jpg)
-
+![Sprint02_Wireframe_TelaBuscarVagas_v1](https://user-images.githubusercontent.com/102201672/194777359-69c92eb4-04f2-4074-a382-06a969bcaa58.jpg)
 
 ## Modelagem do Banco
 
