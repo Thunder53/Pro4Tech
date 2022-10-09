@@ -90,7 +90,7 @@ public class TelaDescVaga extends JFrame {
 		));
 		scrollPane.setViewportView(tbVagas);
 		
-		JButton btnNewButton_1 = new JButton("VIZUALIZAR");
+		JButton btnNewButton_1 = new JButton("VISUALIZAR");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
