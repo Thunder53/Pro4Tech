@@ -132,9 +132,12 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * Tela de cadastro de vagas
 ![image(2)](https://user-images.githubusercontent.com/111543077/194674311-c8ded2f9-59dc-4fed-bf35-c48fa31c31f9.png)
 
+* Tela de Menu canditado
+![Sprint02_Wireframe_TelaMenu_v1](https://user-images.githubusercontent.com/102201672/194776818-84ee5083-685c-4d60-b1d3-8899da8b0124.jpg)
 
 * Tela de consulta de vagas
-![image(1)](https://user-images.githubusercontent.com/111543077/194674277-a79a2fb4-ab4d-4748-94c3-2b16979672e0.png)
+![Sprint02_Wireframe_TelaBuscarVagas_v1](https://user-images.githubusercontent.com/102201672/194776753-62b3d885-5a2c-4185-a80f-9fc9e5e1306b.jpg)
+
 
 ## Modelagem do Banco
 
