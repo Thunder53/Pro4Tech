@@ -148,17 +148,17 @@ public class TelaInfoVagas extends JFrame {
 		contentPane.add(tfNomeVaga);
 		tfNomeVaga.setColumns(10);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("APERTE NO BOTÃO DE BUSCAR PARA VIZUALIZAR AS VAGAS ABERTAS!");
+		JLabel lblNewLabel_1_1 = new JLabel("DIGITE O NOME DA VAGA DESEJADA E CLIQUE EM BUSCAR VAGAS.");
 		lblNewLabel_1_1.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel_1_1.setBounds(144, 166, 840, 33);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("DIGITE A VAGA DESEJADA E APERTE O BOTÃO CANDIDATAR OU VISUZALIZAR!");
+		JLabel lblNewLabel_1_1_1 = new JLabel("SELECIONE A VAGA PARA VISUALIZAR DETALHES E SE CANDIDATAR.");
 		lblNewLabel_1_1_1.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel_1_1_1.setBounds(144, 243, 910, 33);
 		contentPane.add(lblNewLabel_1_1_1);
 		
-		JButton btnVizualizar = new JButton("VIZUALIZAR");
+		JButton btnVizualizar = new JButton("VISUALIZAR");
 		btnVizualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					CadastroVaga c1 = new CadastroVaga();
