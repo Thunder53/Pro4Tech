@@ -55,15 +55,16 @@ public class TelaCadastroVagas extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaCadastroVagas() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
-		contentPane.setBorder(null);
-		contentPane.setBackground(new Color(255, 255, 255));
-		contentPane.setForeground(new Color(255, 255, 255));
-
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setBorder(null);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE CADASTRO DE VAGAS!\r\n");
 		lblNewLabel_1.setForeground(Color.BLACK);
@@ -117,70 +118,79 @@ public class TelaCadastroVagas extends JFrame {
 		JLabel lblNewLabel_9 = new JLabel("SOFT SKILLS DESEJADAS");
 		lblNewLabel_9.setForeground(Color.BLACK);
 		lblNewLabel_9.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_9.setBounds(357, 486, 247, 28);
+		lblNewLabel_9.setBounds(346, 486, 247, 28);
 		contentPane.add(lblNewLabel_9);
 		
 		JLabel lblNewLabel_10 = new JLabel("HARD SKILLS DESEJADAS");
 		lblNewLabel_10.setForeground(Color.BLACK);
 		lblNewLabel_10.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_10.setBounds(357, 534, 247, 28);
+		lblNewLabel_10.setBounds(346, 534, 247, 28);
 		contentPane.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("RESPONSÁVEL");
 		lblNewLabel_11.setForeground(Color.BLACK);
 		lblNewLabel_11.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_11.setBounds(447, 572, 143, 28);
+		lblNewLabel_11.setBounds(433, 569, 156, 28);
 		contentPane.add(lblNewLabel_11);
 		
 		tNome = new JTextField();
+		tNome.setFont(new Font("Arial", Font.PLAIN, 20));
 		tNome.setForeground(Color.BLACK);
 		tNome.setBounds(589, 250, 400, 28);
 		contentPane.add(tNome);
 		tNome.setColumns(10);
 		
 		tCargaHr = new JTextField();
+		tCargaHr.setFont(new Font("Arial", Font.PLAIN, 20));
 		tCargaHr.setForeground(Color.BLACK);
 		tCargaHr.setColumns(10);
 		tCargaHr.setBounds(589, 289, 400, 28);
 		contentPane.add(tCargaHr);
 		
 		tModelo = new JTextField();
+		tModelo.setFont(new Font("Arial", Font.PLAIN, 20));
 		tModelo.setForeground(Color.BLACK);
 		tModelo.setColumns(10);
 		tModelo.setBounds(589, 328, 400, 28);
 		contentPane.add(tModelo);
 		
 		tSalario = new JTextField();
+		tSalario.setFont(new Font("Arial", Font.PLAIN, 20));
 		tSalario.setForeground(Color.BLACK);
 		tSalario.setColumns(10);
 		tSalario.setBounds(589, 367, 400, 28);
 		contentPane.add(tSalario);
 		
 		tRequisitos = new JTextField();
+		tRequisitos.setFont(new Font("Arial", Font.PLAIN, 20));
 		tRequisitos.setForeground(Color.BLACK);
 		tRequisitos.setColumns(10);
 		tRequisitos.setBounds(589, 406, 400, 28);
 		contentPane.add(tRequisitos);
 		
 		tEscolaridade = new JTextField();
+		tEscolaridade.setFont(new Font("Arial", Font.PLAIN, 20));
 		tEscolaridade.setForeground(Color.BLACK);
 		tEscolaridade.setColumns(10);
 		tEscolaridade.setBounds(589, 445, 400, 28);
 		contentPane.add(tEscolaridade);
 		
 		tSoft = new JTextField();
+		tSoft.setFont(new Font("Arial", Font.PLAIN, 20));
 		tSoft.setForeground(Color.BLACK);
 		tSoft.setColumns(10);
 		tSoft.setBounds(589, 489, 400, 28);
 		contentPane.add(tSoft);
 		
 		tHard = new JTextField();
+		tHard.setFont(new Font("Arial", Font.PLAIN, 20));
 		tHard.setForeground(Color.BLACK);
 		tHard.setColumns(10);
 		tHard.setBounds(589, 531, 400, 28);
 		contentPane.add(tHard);
 		
 		tResponsavel = new JTextField();
+		tResponsavel.setFont(new Font("Arial", Font.PLAIN, 20));
 		tResponsavel.setForeground(Color.BLACK);
 		tResponsavel.setColumns(10);
 		tResponsavel.setBounds(589, 572, 400, 28);
@@ -229,9 +239,6 @@ public class TelaCadastroVagas extends JFrame {
 				stmt.close();
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
-				TelaVisualizacao abrir = new TelaVisualizacao();
-				abrir.setVisible(true);
-				setVisible(false);
 				
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block

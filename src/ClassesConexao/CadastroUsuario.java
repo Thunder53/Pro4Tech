@@ -1,5 +1,7 @@
 package ClassesConexao;
 
+import java.util.Date;
+
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
@@ -8,7 +10,7 @@ public class CadastroUsuario {
 	private String senha;
 	private String nome;
 	private String cpf;
-	private String data_nasc;
+	private Date data_nasc;
 	private String formaçao_acad;
 	private String pretensao_salarial;
 	private String cargo_interesse;
@@ -19,7 +21,7 @@ public class CadastroUsuario {
 	public CadastroUsuario() {
 	}
 	    
-	public CadastroUsuario(String email, String senha, String nome, String cpf, String data_nasc, String formaçao_acad, String pretensao_salarial,
+	public CadastroUsuario(String email, String senha, String nome, String cpf, Date data_nasc, String formaçao_acad, String pretensao_salarial,
 		String cargo_interesse, String experiencia_profissional, String telefone, Boolean isCPF) {
 	       this.email = email;
 	       this.senha = senha;
@@ -67,11 +69,11 @@ public class CadastroUsuario {
 		this.cpf = this.Format(C, false);
 	}
 	
-	public String getData_nasc() {
-		return new String(data_nasc);
+	public Date getData_nasc() {
+		return data_nasc;
 	}
 	
-	public void setData_nasc(String data_nasc) {
+	public void setData_nasc(Date data_nasc) {
 		this.data_nasc = data_nasc;
 	}
 	

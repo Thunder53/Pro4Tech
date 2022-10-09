@@ -110,7 +110,29 @@ public class TelaLogin extends JFrame {
 						exibir.setVisible(true);
 						setVisible(false);
 					} else {
-						JOptionPane.showMessageDialog(null, "E-mail ou senha incorreto!");
+						try {
+							
+							Connection con1 = Conexao.faz_conexao();
+							String sql1 = "select *from cadastro_funcionario where email=? and senha=?";
+							PreparedStatement stmt1 = con.prepareStatement(sql1);
+							stmt1.setString(1, tfUsuario.getText());
+							stmt1.setString(2, new String(pfSenha.getPassword()));
+							ResultSet rs1 = stmt1.executeQuery();
+							if(rs1.next()) {
+								JOptionPane.showMessageDialog(null, "Entrando!");
+								TelaCadastroVagas exibir = new TelaCadastroVagas();
+								exibir.setVisible(true);
+								setVisible(false);
+							} else {
+								JOptionPane.showMessageDialog(null, "E-mail ou senha incorreto!");
+							}
+							stmt1.close();
+							con1.close();
+									
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 					stmt.close();
 					con.close();

@@ -12,13 +12,25 @@ import javax.swing.JComboBox;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
+import com.mysql.cj.protocol.a.StringValueEncoder;
+
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
-public class TelaVisualizacao extends JFrame {
+public class TelaVisualizacao extends JFrame implements ActionListener {
 		
 		
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private static final String JLabel = null;
 	private JPanel contentPane;
 
 	/**
@@ -36,7 +48,21 @@ public class TelaVisualizacao extends JFrame {
 			}
 		});
 	}
-
+	
+	JLabel lblNewLabel = new JLabel("");
+	JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZAÇÃO DE VAGAS!\r\n\r\n");
+	JLabel lblNewLabel_1_1 = new JLabel("SELECIONE ABAIXO A VAGA DE INTERESSE \r\n\r\n");
+	JLabel icon2 = new JLabel("");
+	JLabel lblNewLabel_3 = new JLabel("");
+	JLabel lblNewLabel_5 = new JLabel("");
+	JLabel lblNewLabel_7 = new JLabel("");
+	JLabel lblNewLabel_9 = new JLabel("");
+	private final JButton btnNewButton = new JButton("Detalhes");
+	
+	
+	
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -53,98 +79,81 @@ public class TelaVisualizacao extends JFrame {
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(0, 0, 579, 109);
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZAÇÃO DE VAGAS!\r\n\r\n");
 		lblNewLabel_1.setBounds(108, 119, 673, 46);
 		lblNewLabel_1.setForeground(new Color(0, 0, 0));
 		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("SELECIONE ABAIXO A VAGA DE INTERESSE \r\n\r\n");
+		
 		lblNewLabel_1_1.setBounds(108, 159, 471, 46);
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_1_1.setForeground(Color.BLACK);
 		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 20));
 		getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel icon1 = new JLabel("");
-		icon1.setLabelFor(icon1);
-		icon1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (4).jpeg"));
-		icon1.setBounds(284, 474, 48, 55);
-		getContentPane().add(icon1);
-		
 		vagasDAO c1 = new vagasDAO();
 		ArrayList<String >vg = c1.vagas();
+		
 		
 
 		JComboBox<String> cbxvaga = new JComboBox<String>();
 		for(String item: vg) {
 			cbxvaga.addItem(item);
 		}
-		cbxvaga.setBounds(409, 291, 726, 55);
+		cbxvaga.setBounds(409, 237, 726, 55);
+		cbxvaga.addActionListener(this);
 		contentPane.add(cbxvaga);
 		
 		
-		JLabel icon2 = new JLabel("");
-		icon2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (2).jpeg"));
 		icon2.setBounds(284, 633, 48, 55);
 		getContentPane().add(icon2);
 		
-		JLabel icon3 = new JLabel("");
-		icon3.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (1).jpeg"));
-		icon3.setBounds(792, 474, 64, 55);
-		getContentPane().add(icon3);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
 		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43 (2).jpeg"));
 		lblNewLabel_3.setBounds(307, 474, 53, 64);
 		contentPane.add(lblNewLabel_3);
 		
-
-		JLabel icon4 = new JLabel("");
-		icon4.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconTelaVizualizacao (3).jpeg"));
-		icon4.setBounds(811, 633, 64, 55);
-		getContentPane().add(icon4);
-		JLabel lblNewLabel_4 = new JLabel("");
-		lblNewLabel_4.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lblNewLabel_4.setBounds(370, 461, 339, 83);
-		contentPane.add(lblNewLabel_4);
+		
 
 		
-		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43.jpeg"));
 		lblNewLabel_5.setBounds(307, 635, 53, 53);
 		contentPane.add(lblNewLabel_5);
 		
-		JLabel lblNewLabel_6 = new JLabel("");
-		lblNewLabel_6.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lblNewLabel_6.setBounds(375, 616, 339, 83);
-		contentPane.add(lblNewLabel_6);
-		
-		JLabel lblNewLabel_7 = new JLabel("");
 		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43 (1).jpeg"));
 		lblNewLabel_7.setBounds(822, 474, 53, 64);
 		contentPane.add(lblNewLabel_7);
 		
-		JLabel lblNewLabel_8 = new JLabel("");
-		lblNewLabel_8.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lblNewLabel_8.setBounds(899, 461, 339, 83);
-		contentPane.add(lblNewLabel_8);
-		
-		JLabel lblNewLabel_9 = new JLabel("");
 		lblNewLabel_9.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.42.jpeg"));
 		lblNewLabel_9.setBounds(822, 624, 53, 64);
 		contentPane.add(lblNewLabel_9);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaDescVaga exibir = new TelaDescVaga();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnNewButton.setBounds(1174, 241, 169, 46);
 		
-		JLabel lblNewLabel_10 = new JLabel("");
-		lblNewLabel_10.setBorder(new LineBorder(new Color(0, 0, 0)));
-		lblNewLabel_10.setBounds(899, 616, 339, 83);
-		contentPane.add(lblNewLabel_10);
+		contentPane.add(btnNewButton);
 		setLocationRelativeTo(null);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		CadastroVaga c1 = new CadastroVaga();
+		JComboBox comboBox = (JComboBox) e.getSource();
+		Object selected = comboBox.getSelectedItem();
+		String nome = String.valueOf(selected);
+		c1.setNome_vaga(nome);
+        System.out.println("Selected Item  = " + selected);
+
+
 	}
 }

@@ -40,7 +40,6 @@ public class TelaOpcoes extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaOpcoes() {
-		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -69,7 +68,7 @@ public class TelaOpcoes extends JFrame {
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaVisualizacao exibir = new TelaVisualizacao();
+				TelaInfoVagas exibir = new TelaInfoVagas();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
