@@ -151,16 +151,17 @@ A solução para essa demanda será a criação de um sistema desktop onde será
   </tr>
 
   <tr>
-   <td>Como administrador desejo cadastrar vagas no sistema para os candidatos aplicarem</td>
+   <td>Como administrador desejo cadastrar vagas no sistema para que os candidatos aplicarem</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Como candidato desejo encontrar as vagas no sistema para verificar os requisitos</td>
+   <td>Como candidato desejo pesquisar as vagas no sistema e verificar os requisitos para que seja possivel me candidatar</td>
    <td>02</td>
   </tr>
 </table>
 
+![Burndown_Sprint02](https://user-images.githubusercontent.com/102201672/194774758-ecd38f34-445f-4891-b8a6-b0cc698af63d.JPG)
 
 ## Sprint 03
 * Tela de consulta de vagas e candidatos pelo RH
