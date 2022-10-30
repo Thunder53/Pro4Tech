@@ -83,16 +83,88 @@ public class TelaVisualizaçao extends JFrame {
 		btnNewButton.setBounds(645, 746, 247, 60);
 		contentPane.add(btnNewButton);
 		
+<<<<<<< HEAD:src/ClassesConexao/TelaVisualizaçao.java
 		JLabel lblNewLabel_1_1 = new JLabel("APERTE NO BOTÃO DE BUSCAR PARA VIZUALIZAR AS VAGAS ABERTAS!");
+=======
+		JButton btnBuscar = new JButton("BUSCAR VAGAS");
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "select * from Vagas";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					ResultSet rs = stmt.executeQuery();
+					
+					
+					DefaultTableModel modelo = (DefaultTableModel) tbVaga.getModel();
+					modelo.setNumRows(0);
+					
+					while (rs.next()) {
+						modelo.addRow(new Object[] {rs.getString("nome_vaga")});
+					}
+					rs.close();
+					con.close();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnBuscar.setForeground(Color.BLACK);
+		btnBuscar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnBuscar.setBackground(new Color(255, 128, 64));
+		btnBuscar.setBounds(1228, 319, 241, 43);
+		contentPane.add(btnBuscar);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setFont(new Font("Arial", Font.PLAIN, 18));
+		scrollPane.setBounds(321, 384, 878, 101);
+		contentPane.add(scrollPane);
+		
+		tbVaga = new JTable();
+		tbVaga.setSelectionForeground(Color.WHITE);
+		tbVaga.setBackground(Color.WHITE);
+		tbVaga.setFont(new Font("Arial", Font.PLAIN, 20));
+		tbVaga.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"VAGAS"
+			}
+		) {
+			Class[] columnTypes = new Class[] {
+				String.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+			boolean[] columnEditables = new boolean[] {
+				false
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		tbVaga.getColumnModel().getColumn(0).setMinWidth(50);
+		scrollPane.setViewportView(tbVaga);
+		
+		tfNomeVaga = new JTextField();
+		tfNomeVaga.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfNomeVaga.setBounds(321, 321, 878, 43);
+		contentPane.add(tfNomeVaga);
+		tfNomeVaga.setColumns(10);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("DIGITE O NOME DA VAGA DESEJADA E CLIQUE EM BUSCAR VAGAS.");
+>>>>>>> b0d5dce31ad24ee3af393ece0dc287d384ac057c:src/ClassesConexao/TelaInfoVagas.java
 		lblNewLabel_1_1.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel_1_1.setBounds(144, 166, 840, 33);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("DIGITE A VAGA DESEJADA E APERTE O BOTÃO CANDIDATAR OU VISUZALIZAR!");
+		JLabel lblNewLabel_1_1_1 = new JLabel("SELECIONE A VAGA PARA VISUALIZAR DETALHES E SE CANDIDATAR.");
 		lblNewLabel_1_1_1.setFont(new Font("Arial", Font.BOLD, 20));
 		lblNewLabel_1_1_1.setBounds(144, 243, 910, 33);
 		contentPane.add(lblNewLabel_1_1_1);
 		
+<<<<<<< HEAD:src/ClassesConexao/TelaVisualizaçao.java
 		JComboBox cbxvagas = new JComboBox();
 		cbxvagas.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
@@ -117,6 +189,10 @@ public class TelaVisualizaçao extends JFrame {
 		
 		JButton btnVisualizar = new JButton("VISUALIZAR");
 		btnVisualizar.addActionListener(new ActionListener() {
+=======
+		JButton btnVizualizar = new JButton("VISUALIZAR");
+		btnVizualizar.addActionListener(new ActionListener() {
+>>>>>>> b0d5dce31ad24ee3af393ece0dc287d384ac057c:src/ClassesConexao/TelaInfoVagas.java
 			public void actionPerformed(ActionEvent e) {
 				Object vaga = cbxvagas.getSelectedItem();
 					try {

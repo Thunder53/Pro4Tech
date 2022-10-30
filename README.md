@@ -132,9 +132,11 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 * Tela de cadastro de vagas
 ![image(2)](https://user-images.githubusercontent.com/111543077/194674311-c8ded2f9-59dc-4fed-bf35-c48fa31c31f9.png)
 
+* Tela de Menu canditado
+![Sprint02_Wireframe_TelaMenu_v1](https://user-images.githubusercontent.com/102201672/194777353-95cb77a5-258d-4b0a-8c81-b26e3ec5f7ab.jpg)
 
 * Tela de consulta de vagas
-![image(1)](https://user-images.githubusercontent.com/111543077/194674277-a79a2fb4-ab4d-4748-94c3-2b16979672e0.png)
+![Sprint02_Wireframe_TelaBuscarVagas_v1](https://user-images.githubusercontent.com/102201672/194777359-69c92eb4-04f2-4074-a382-06a969bcaa58.jpg)
 
 ## Modelagem do Banco
 
@@ -151,16 +153,17 @@ A solução para essa demanda será a criação de um sistema desktop onde será
   </tr>
 
   <tr>
-   <td>Como administrador desejo cadastrar vagas no sistema para os candidatos aplicarem</td>
+   <td>Como administrador desejo cadastrar vagas no sistema para que os candidatos aplicarem</td>
    <td>01</td>
   </tr>
 
   <tr>
-   <td>Como candidato desejo encontrar as vagas no sistema para verificar os requisitos</td>
+   <td>Como candidato desejo pesquisar as vagas no sistema e verificar os requisitos para que seja possivel me candidatar</td>
    <td>02</td>
   </tr>
 </table>
 
+![Burndown_Sprint02](https://user-images.githubusercontent.com/102201672/194774758-ecd38f34-445f-4891-b8a6-b0cc698af63d.JPG)
 
 ## Sprint 03
 * Tela de consulta de vagas e candidatos pelo RH
