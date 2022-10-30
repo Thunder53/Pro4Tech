@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.sql.DriverManager;
 
 
@@ -56,33 +57,8 @@ public class vagasDAO {
         }
         return vg;
     }
-	public static void main(String[] args) {
-		vagasDAO c1 = new vagasDAO();
-		System.out.println("teste" + c1.vagas().get(0));
-
-	}
-
-	  public String buscCargaHoraria() {
-		  try {
-				Connection con = Conexao.faz_conexao();
-				String sql = "SELECT carga_horaria FROM Vagas WHERE nome_vaga = ?";
-				PreparedStatement stmt = con.prepareStatement(sql);
-				stmt.setString(1, getCarga_horaria());
-				stmt.execute();
-				ResultSet result = stmt.executeQuery();
-				if (result.next()) {
-					this.carga_horaria = result.getString(1);
-				}
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
-		System.out.println(this.carga_horaria);
-		return this.carga_horaria; 
-		  
-	  }
-	  
-	  
 	
+	 	  	
 }
 
 
