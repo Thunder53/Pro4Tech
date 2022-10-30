@@ -66,6 +66,7 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.setBorder(null);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE CADASTRO DE VAGAS!\r\n");
 		lblNewLabel_1.setForeground(Color.BLACK);

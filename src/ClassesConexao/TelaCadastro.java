@@ -73,6 +73,7 @@ public class TelaCadastro extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lbfnome = new JLabel("NOME COMPLETO *");
 		lbfnome.setBounds(47, 193, 182, 33);

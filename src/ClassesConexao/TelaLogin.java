@@ -37,6 +37,7 @@ public class TelaLogin extends JFrame {
 	private JLabel lblOlSejaBemvindo;
 	private JLabel lblFaaSeuLogin_1;
 	private JLabel lblNewLabel_1;
+	private JButton btnSair;
 
 	/**
 	 * Launch the application.
@@ -58,6 +59,7 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
+		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
@@ -67,6 +69,7 @@ public class TelaLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel = new JLabel("E-MAIL:");
 		lblNewLabel.setForeground(Color.BLACK);
@@ -187,5 +190,17 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1);
+		
+		btnSair = new JButton("SAIR");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnSair.setForeground(Color.BLACK);
+		btnSair.setFont(new Font("Arial", Font.BOLD, 18));
+		btnSair.setBackground(new Color(255, 140, 0));
+		btnSair.setBounds(1320, 744, 183, 72);
+		contentPane.add(btnSair);
 	}
 }

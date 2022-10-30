@@ -58,6 +58,7 @@ public class TelaDescVaga extends JFrame {
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
 		contentPane.setLayout(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
