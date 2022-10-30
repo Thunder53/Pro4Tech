@@ -124,7 +124,7 @@ public class TelaCadastroVagas extends JFrame {
 		JLabel lblNewLabel_10 = new JLabel("HARD SKILLS DESEJADAS");
 		lblNewLabel_10.setForeground(Color.BLACK);
 		lblNewLabel_10.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_10.setBounds(346, 534, 247, 28);
+		lblNewLabel_10.setBounds(346, 531, 247, 28);
 		contentPane.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("RESPONSÁVEL");

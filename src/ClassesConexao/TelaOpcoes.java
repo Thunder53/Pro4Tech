@@ -68,7 +68,7 @@ public class TelaOpcoes extends JFrame {
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaInfoVagas exibir = new TelaInfoVagas();
+				TelaVisualizaçao exibir = new TelaVisualizaçao();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
