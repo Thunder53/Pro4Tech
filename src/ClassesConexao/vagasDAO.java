@@ -58,6 +58,27 @@ public class vagasDAO {
         return vg;
     }
 	
+	public ArrayList <String>candidato() {
+        ArrayList <String> candidato = new ArrayList <String>();
+
+		try {
+			con = DriverManager.getConnection(url, user, password);
+            ps = con.prepareStatement("SELECT nome FROM cadastro_usuario");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                candidato.add(rs.getString("nome"));
+            }
+            rs.close();
+            ps.close();
+            con.close();
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,
+                    "Ocorreu erro ao carregar a Combo Box", "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        return candidato;
+    }
 	 	  	
 }
 
