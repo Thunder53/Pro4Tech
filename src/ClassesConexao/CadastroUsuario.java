@@ -16,13 +16,14 @@ public class CadastroUsuario {
 	private String cargo_interesse;
 	private String experiencia_profissional;
 	private String telefone;
+	private String quemsoueu;
     private static final String Formato = "###.###.###-##";
 	
 	public CadastroUsuario() {
 	}
 	    
 	public CadastroUsuario(String email, String senha, String nome, String cpf, Date data_nasc, String formaçao_acad, String pretensao_salarial,
-		String cargo_interesse, String experiencia_profissional, String telefone, Boolean isCPF) {
+		String cargo_interesse, String experiencia_profissional, String telefone, String quemsoueu, Boolean isCPF) {
 	       this.email = email;
 	       this.senha = senha;
 	       this.nome = nome;
@@ -33,6 +34,7 @@ public class CadastroUsuario {
 	       this.cargo_interesse = cargo_interesse;
 	       this.experiencia_profissional = experiencia_profissional;
 	       this.telefone = telefone;
+	       this.quemsoueu = quemsoueu;
 	       
 	}
 	    
@@ -116,6 +118,14 @@ public class CadastroUsuario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	public String getQuemsoueu() {
+		return this.quemsoueu;
+	}
+	
+	public void setQuemsoueu(String quemsoueu) {
+		this.quemsoueu = quemsoueu;
+	}
+	
 	
 	public boolean isCPF(){
 	        

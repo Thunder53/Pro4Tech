@@ -43,6 +43,7 @@ public class TelaCadastro extends JFrame {
 	private JTextField tfformaçao;
 	private JTextField tfemail2;
 	private JPasswordField pfsenha2;
+	private JTextField tfquemsoueu;
 
 	/**
 	 * Launch the application.
@@ -73,7 +74,6 @@ public class TelaCadastro extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
-		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lbfnome = new JLabel("NOME COMPLETO *");
 		lbfnome.setBounds(47, 193, 182, 33);
@@ -88,19 +88,19 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lbfemail);
 		
 		nome = new JTextField();
-		nome.setBounds(239, 193, 489, 33);
+		nome.setBounds(239, 193, 351, 33);
 		nome.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(nome);
 		nome.setColumns(10);
 		
 		tfemail = new JTextField();
-		tfemail.setBounds(239, 280, 489, 33);
+		tfemail.setBounds(239, 280, 351, 33);
 		tfemail.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfemail.setColumns(10);
 		contentPane.add(tfemail);
 		
 		JFormattedTextField tfcpf = new JFormattedTextField();
-		tfcpf.setBounds(239, 236, 489, 33);
+		tfcpf.setBounds(239, 236, 351, 33);
 	    MaskFormatter mfCPF = new MaskFormatter();
 	    try {
 	        mfCPF.setMask("###.###.###-##");
@@ -115,7 +115,7 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(tfcpf);
 		 
 		JFormattedTextField tftelefone = new JFormattedTextField();
-		tftelefone.setBounds(1009, 370, 489, 33);
+		tftelefone.setBounds(1009, 370, 351, 33);
 	    MaskFormatter mfTELEFONE = new MaskFormatter();
 	    try {
 	        mfTELEFONE.setMask("(##)#####-####");
@@ -130,7 +130,7 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(tftelefone);
 		
 		pfsenha = new JPasswordField();
-		pfsenha.setBounds(1009, 279, 489, 33);
+		pfsenha.setBounds(1009, 279, 351, 33);
 		pfsenha.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(pfsenha);
 		
@@ -147,32 +147,36 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lblSenha);
 		
 		tfformaçao = new JTextField();
-		tfformaçao.setBounds(239, 417, 489, 131);
+		tfformaçao.setBounds(239, 417, 351, 82);
 		tfformaçao.setHorizontalAlignment(SwingConstants.LEFT);
 		tfformaçao.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfformaçao.setColumns(10);
 		contentPane.add(tfformaçao);
 		
 		tfprentensaosalarial = new JTextField();
-		tfprentensaosalarial.setBounds(239, 370, 489, 33);
+		tfprentensaosalarial.setBounds(239, 370, 351, 33);
 		tfprentensaosalarial.setHorizontalAlignment(SwingConstants.LEFT);
 	    tfprentensaosalarial.setFont(new Font("Arial", Font.PLAIN, 18));
 	    tfprentensaosalarial.setColumns(10);
 		contentPane.add(tfprentensaosalarial);
 	    
 		tfcargo = new JTextField();
-		tfcargo.setBounds(1009, 236, 489, 33);
+		tfcargo.setBounds(1009, 236, 351, 33);
 		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfcargo.setColumns(10);
 		contentPane.add(tfcargo);
 		
+		tfquemsoueu = new JTextField();
+		tfquemsoueu.setBounds(1009, 236, 351, 33);
+		tfquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfquemsoueu.setColumns(11);
+		contentPane.add(tfquemsoueu);
+		
 		JDateChooser data_nasc = new JDateChooser();
 		data_nasc.setDateFormatString("dd'/' MM '/' yyyy");
 		data_nasc.setFont(new Font("Arial", Font.PLAIN, 18));
-		data_nasc.setBounds(1009, 193, 489, 33);
+		data_nasc.setBounds(1009, 193, 351, 33);
 		contentPane.add(data_nasc);
-		
-		
 		
 		JButton btnNewButton = new JButton("CADASTRAR");
 		btnNewButton.setBounds(685, 623, 210, 71);
@@ -190,6 +194,7 @@ public class TelaCadastro extends JFrame {
 				c1.setCargo_interesse(tfcargo.getText());
 				c1.setExperiencia_profissional(tfexperiencia.getText());
 				c1.setTelefone(tftelefone.getText());
+				c1.setQuemsoueu(tfquemsoueu.getText());
 				
 				if (tfemail.getText().equals(tfemail2.getText())) {
 					c1.setEmail(tfemail.getText());
@@ -208,7 +213,7 @@ public class TelaCadastro extends JFrame {
 				if (c1.isCPF()) {
 					try {
 						Connection con = Conexao.faz_conexao();
-						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 						
 						PreparedStatement stmt = con.prepareStatement(sql);
 						stmt.setString(1, c1.getEmail());
@@ -221,7 +226,8 @@ public class TelaCadastro extends JFrame {
 						stmt.setString(8, c1.getCargo_interesse());
 						stmt.setString(9, c1.getExperiencia_profissional());
 						stmt.setString(10, c1.getTelefone());
-					
+						stmt.setString(11, c1.getQuemsoueu());
+						
 						stmt.execute();
 						stmt.close();
 						con.close();
@@ -268,7 +274,7 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lblCargo);
 		
 		tfexperiencia = new JTextField();
-		tfexperiencia.setBounds(1009, 417, 489, 131);
+		tfexperiencia.setBounds(1009, 417, 351, 82);
 		tfexperiencia.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfexperiencia.setColumns(10);
 		contentPane.add(tfexperiencia);
@@ -292,7 +298,7 @@ public class TelaCadastro extends JFrame {
 		contentPane.add(lblTelefone);
 		
 		JLabel lblCamposObrigatrios = new JLabel("Campos obrigatórios *");
-		lblCamposObrigatrios.setBounds(1007, 558, 194, 33);
+		lblCamposObrigatrios.setBounds(1009, 592, 194, 33);
 		lblCamposObrigatrios.setForeground(Color.RED);
 		lblCamposObrigatrios.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblCamposObrigatrios);
@@ -311,7 +317,7 @@ public class TelaCadastro extends JFrame {
 		tfemail2 = new JTextField();
 		tfemail2.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfemail2.setColumns(10);
-		tfemail2.setBounds(239, 324, 489, 33);
+		tfemail2.setBounds(239, 324, 351, 33);
 		contentPane.add(tfemail2);
 		
 		JLabel lblSenha2 = new JLabel("CONFIRMAÇÃO SENHA *");
@@ -322,15 +328,21 @@ public class TelaCadastro extends JFrame {
 		
 		pfsenha2 = new JPasswordField();
 		pfsenha2.setFont(new Font("Arial", Font.PLAIN, 18));
-		pfsenha2.setBounds(1009, 323, 489, 33);
+		pfsenha2.setBounds(1009, 323, 351, 33);
 		contentPane.add(pfsenha2);
 		
+		tfquemsoueu = new JTextField();
+		tfquemsoueu.setHorizontalAlignment(SwingConstants.LEFT);
+		tfquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfquemsoueu.setColumns(10);
+		tfquemsoueu.setBounds(239, 510, 1121, 58);
+		contentPane.add(tfquemsoueu);
 		
-		
-		
-		
-		
-		
-		
+		JLabel lblquemsoueu = new JLabel("QUEM SOU EU? *");
+		lblquemsoueu.setForeground(Color.BLACK);
+		lblquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblquemsoueu.setBounds(77, 510, 162, 33);
+		contentPane.add(lblquemsoueu);
+
 	}
 }
