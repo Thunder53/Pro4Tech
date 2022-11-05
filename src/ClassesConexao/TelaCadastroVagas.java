@@ -20,8 +20,11 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
 public class TelaCadastroVagas extends JFrame {
 
@@ -192,10 +195,12 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.add(tHard);
 		
 		tResponsavel = new JTextField();
+		tResponsavel.setText(Singleton.getInstance().nomeFuncionario);
+		tResponsavel.setEditable(false);
 		tResponsavel.setFont(new Font("Arial", Font.PLAIN, 20));
 		tResponsavel.setForeground(Color.BLACK);
 		tResponsavel.setColumns(10);
-		tResponsavel.setBounds(589, 572, 400, 28);
+		tResponsavel.setBounds(589, 568, 400, 28);
 		contentPane.add(tResponsavel);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("SE ESTIVER TUDO CERTO, CLIQUE NO BOTÃO \"OK\"");
@@ -220,7 +225,7 @@ public class TelaCadastroVagas extends JFrame {
 				c1.setEscolaridade(tEscolaridade.getText());
 				c1.setSoft_skills(tSoft.getText());
 				c1.setHard_skills(tHard.getText());
-				c1.setResponsavel(tResponsavel.getText());			
+				c1.setResponsavel(Singleton.getInstance().nomeFuncionario);			
 				
 				try {
 					Connection con = Conexao.faz_conexao();
