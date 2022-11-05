@@ -72,19 +72,6 @@ public class TelaVisualizacao extends JFrame {
 		lblNewLabel_1.setBounds(144, 138, 634, 33);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("CANDIDATAR");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnNewButton.setBackground(new Color(255, 128, 64));
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
-		btnNewButton.setBounds(645, 746, 247, 60);
-		contentPane.add(btnNewButton);
-		
-
 		JLabel lblNewLabel_1_1 = new JLabel("APERTE NO BOTÃO DE BUSCAR PARA VIZUALIZAR AS VAGAS ABERTAS!");
 		
 		
@@ -99,6 +86,7 @@ public class TelaVisualizacao extends JFrame {
 		contentPane.add(lblNewLabel_1_1_1);
 		
 		JComboBox cbxvagas = new JComboBox();
+		cbxvagas.setFont(new Font("Arial", Font.PLAIN, 18));
 		cbxvagas.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
 				 vagasDAO dao = new vagasDAO();
@@ -119,6 +107,36 @@ public class TelaVisualizacao extends JFrame {
 		});
 		cbxvagas.setBounds(321, 320, 878, 43);
 		contentPane.add(cbxvagas);
+		
+		JButton btnNewButton = new JButton("CANDIDATAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "insert into candidato_vaga(cpf, nome_vaga) values (?, ?)";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					
+					Object vaga = cbxvagas.getSelectedItem();
+					String vagas = String.valueOf(vaga);
+					
+					stmt.setString(2, vagas);
+					stmt.setString(1, Singleton.getInstance().cpfUsuario);
+					stmt.execute();
+					stmt.close();
+					con.close();
+					
+				} catch (Exception e2) {
+					
+				}
+				
+				
+			}
+		});
+		btnNewButton.setBackground(new Color(255, 128, 64));
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
+		btnNewButton.setBounds(645, 746, 247, 60);
+		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizar = new JButton("VISUALIZAR");
 		btnVisualizar.addActionListener(new ActionListener() {
