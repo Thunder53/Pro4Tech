@@ -59,7 +59,6 @@ public class TelaLogin extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaLogin() {
-		setUndecorated(true);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
@@ -109,20 +108,26 @@ public class TelaLogin extends JFrame {
 					ResultSet rs = stmt.executeQuery();
 					if(rs.next()) {
 						JOptionPane.showMessageDialog(null, "Entrando!");
+						Singleton.getInstance().nomeUsuario = rs.getString("nome");
+						Singleton.getInstance().cpfUsuario = rs.getString("cpf");
+						System.out.println(Singleton.getInstance().nomeUsuario);
 						TelaOpcoes exibir = new TelaOpcoes();
 						exibir.setVisible(true);
 						setVisible(false);
+						
 					} else {
 						try {
 							
 							Connection con1 = Conexao.faz_conexao();
-							String sql1 = "select *from cadastro_funcionario where email=? and senha=?";
+							String sql1 = "select * from cadastro_funcionario where email=? and senha=?";
 							PreparedStatement stmt1 = con.prepareStatement(sql1);
 							stmt1.setString(1, tfUsuario.getText());
 							stmt1.setString(2, new String(pfSenha.getPassword()));
 							ResultSet rs1 = stmt1.executeQuery();
+							
 							if(rs1.next()) {
 								JOptionPane.showMessageDialog(null, "Entrando!");
+								Singleton.getInstance().nomeFuncionario = rs1.getString("nome");
 								TelaCadastroVagas exibir = new TelaCadastroVagas();
 								exibir.setVisible(true);
 								setVisible(false);
