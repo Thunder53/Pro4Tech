@@ -185,7 +185,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ## Modelagem do Banco
 
-![Sprint03_Modelo_logico](https://user-images.githubusercontent.com/102201672/200177454-ef1f0149-df1a-4e7d-a6a7-aa9cc16f65b1.png)
+![Sprint03_Modelo_logico](https://user-images.githubusercontent.com/102201672/200177628-4c9fbe66-1714-42cf-aea0-4035a49b0ae1.png)
 
 ## User stories
 
