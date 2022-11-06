@@ -83,6 +83,13 @@ public class TelaOpcoes extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizarStatus = new JButton("VISUALIZAR STATUS");
+		btnVisualizarStatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaStatusCandidato exibir = new TelaStatusCandidato();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnVisualizarStatus.setForeground(Color.BLACK);
 		btnVisualizarStatus.setActionCommand("VISUALIZAR STATUS");
 		btnVisualizarStatus.setFont(new Font("Arial", Font.BOLD, 16));
