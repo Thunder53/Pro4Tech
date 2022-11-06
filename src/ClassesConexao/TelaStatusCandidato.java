@@ -115,24 +115,6 @@ public class TelaStatusCandidato extends JFrame {
 		setLocationRelativeTo(null);
 		
 		
-			try {
-				Connection con = Conexao.faz_conexao();
-				
-				String sql1 = "select * from Inscricao";
-				PreparedStatement stmt = con.prepareStatement(sql1);
-				stmt.getString(2, c1.getAvaliacao());
-				stmt.getString(3, c1.getStatus_vaga());
-				stmt.getString(4, c1.getFeedback_pontual());
-				stmt.getString(6, c1.getFeedback_geral());
-				ResultSet rs = stmt.executeQuery();
-				
-				String sql2 = "select * from Vagas";
-				PreparedStatement stmt = con.prepareStatement(sql2);
-				stmt.getString(2, c1.getNome_vaga());
-				ResultSet rs = stmt.executeQuery();
-				
-			} catch (SQLException e1) {
-				e1.printStackTrace();
 		}
 	}
-}
+

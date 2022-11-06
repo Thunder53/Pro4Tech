@@ -16,21 +16,14 @@ public class CadastroUsuario {
 	private String cargo_interesse;
 	private String experiencia_profissional;
 	private String telefone;
-<<<<<<< HEAD
 	private String quemsoueu;
-=======
->>>>>>> d33735987c57a237b51304faf108e4102168269c
     private static final String Formato = "###.###.###-##";
 	
 	public CadastroUsuario() {
 	}
 	    
 	public CadastroUsuario(String email, String senha, String nome, String cpf, Date data_nasc, String formaçao_acad, String pretensao_salarial,
-<<<<<<< HEAD
 		String cargo_interesse, String experiencia_profissional, String telefone, String quemsoueu, Boolean isCPF) {
-=======
-		String cargo_interesse, String experiencia_profissional, String telefone, Boolean isCPF) {
->>>>>>> d33735987c57a237b51304faf108e4102168269c
 	       this.email = email;
 	       this.senha = senha;
 	       this.nome = nome;
@@ -41,11 +34,7 @@ public class CadastroUsuario {
 	       this.cargo_interesse = cargo_interesse;
 	       this.experiencia_profissional = experiencia_profissional;
 	       this.telefone = telefone;
-<<<<<<< HEAD
-	       this.quemsoueu = quemsoueu;
-=======
->>>>>>> d33735987c57a237b51304faf108e4102168269c
-	       
+	       this.quemsoueu = quemsoueu;     
 	}
 	    
 	
@@ -128,7 +117,6 @@ public class CadastroUsuario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-<<<<<<< HEAD
 	public String getQuemsoueu() {
 		return this.quemsoueu;
 	}
@@ -137,8 +125,7 @@ public class CadastroUsuario {
 		this.quemsoueu = quemsoueu;
 	}
 	
-=======
->>>>>>> d33735987c57a237b51304faf108e4102168269c
+
 	
 	public boolean isCPF(){
 	        

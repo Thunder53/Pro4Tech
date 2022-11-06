@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TelaOpcoes extends JFrame {
+public class TelaOpcoesFuncionario extends JFrame {
 
 	private JPanel contentPane;
 
@@ -39,7 +39,7 @@ public class TelaOpcoes extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaOpcoes() {
+	public TelaOpcoesFuncionario() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1920, 1080);
 		contentPane = new JPanel();
@@ -65,10 +65,10 @@ public class TelaOpcoes extends JFrame {
 		lblNewLabel_1_1.setBounds(0, 246, 1540, 52);
 		contentPane.add(lblNewLabel_1_1);
 		
-		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
+		JButton btnNewButton = new JButton("CADASTRAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaInfoVagas exibir = new TelaInfoVagas();
+				TelaCadastroVagas exibir = new TelaCadastroVagas();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
@@ -82,7 +82,14 @@ public class TelaOpcoes extends JFrame {
 		btnNewButton.setBounds(506, 360, 195, 72);
 		contentPane.add(btnNewButton);
 		
-		JButton btnVisualizarStatus = new JButton("VISUALIZAR STATUS");
+		JButton btnVisualizarStatus = new JButton("AVALIAR CANDIDATOS");
+		btnVisualizarStatus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaVagasCandidato exibir = new TelaVagasCandidato();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnVisualizarStatus.setForeground(Color.BLACK);
 		btnVisualizarStatus.setActionCommand("VISUALIZAR STATUS");
 		btnVisualizarStatus.setFont(new Font("Arial", Font.BOLD, 16));
