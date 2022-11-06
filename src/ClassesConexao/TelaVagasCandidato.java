@@ -148,6 +148,7 @@ public class TelaVagasCandidato extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Object vaga = cbxVaga.getSelectedItem();
+				Singleton.getInstance().nomeVaga = vaga.toString();
 				try {
 				
 				Connection con = Conexao.faz_conexao();
@@ -193,7 +194,7 @@ public class TelaVagasCandidato extends JFrame {
 		btnVisualizarCurrculo.setForeground(Color.BLACK);
 		btnVisualizarCurrculo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Singleton.getInstance().VisuCurriculo = tfCandidato.getText();
+				Singleton.getInstance().Candidato = tfCandidato.getText();
 				TelaVisualizacaoCurriculo exibir = new TelaVisualizacaoCurriculo();
 				exibir.setVisible(true);
 				setVisible(false);
