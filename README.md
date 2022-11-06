@@ -209,9 +209,9 @@ A solução para essa demanda será a criação de um sistema desktop onde será
    <td>03</td>
   </tr>
   
-  ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
-  
 </table>
+
+  ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
 
 ## Entregas
 
