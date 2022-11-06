@@ -183,6 +183,10 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ![image](https://user-images.githubusercontent.com/111543077/194675978-60d06b01-816f-4f7c-954c-bcdb204ec8c7.png)
 
+## Modelagem do Banco
+
+![Sprint03_Modelo_logico](https://user-images.githubusercontent.com/102201672/200177454-ef1f0149-df1a-4e7d-a6a7-aa9cc16f65b1.png)
+
 ## User stories
 
 <table align="center">
@@ -204,6 +208,8 @@ A solução para essa demanda será a criação de um sistema desktop onde será
    <td>Como candidato desejo consultar os status das minhas candidaturas no sistema para acompanhar os processos</td>
    <td>03</td>
   </tr>
+  
+  ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
   
 </table>
 
