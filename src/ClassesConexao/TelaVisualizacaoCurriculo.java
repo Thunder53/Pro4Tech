@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
@@ -16,17 +15,12 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.awt.Color;
 
 public class TelaVisualizacaoCurriculo extends JFrame {
 
 	private JPanel contentPane;
-	private JTable Experiencia;
+	private JTable table;
 	private JTextField txtEscrevaBrevementeSobre;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -66,47 +60,9 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		scrollPane.setBounds(102, 414, 563, 138);
 		contentPane.add(scrollPane);
 		
-		Experiencia = new JTable();
-		Experiencia.setFont(new Font("Arial", Font.PLAIN, 18) {
-			public void actionPerformed(ActionEvent e) {
-				try {
-				
-				Connection con = Conexao.faz_conexao();
-				String sql = "select *from cadastro_usuario where experiencia_profissional=?";
-				PreparedStatement stmt = con.prepareStatement(sql);
-				stmt.setString(1, Experiencia.getText());
-				ResultSet rs = stmt.executeQuery();
-				if(rs.next()) {
-					
-				} else {
-					try {
-						
-						Connection con1 = Conexao.faz_conexao();
-						String sql1 = "select * from cadastro_usuario where formacao=?";
-						PreparedStatement stmt1 = con.prepareStatement(sql1);
-						stmt1.setString(1, textField.getText());
-						ResultSet rs1 = stmt1.executeQuery();
-						
-		
-						stmt1.close();
-						con1.close();
-								
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
-				stmt.close();
-				con.close();
-						
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		
-	
-			}});
-		Experiencia.setModel(new DefaultTableModel(
+		table = new JTable();
+		table.setFont(new Font("Arial", Font.PLAIN, 18));
+		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null},
 				{null, null, null, null},
@@ -119,11 +75,8 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 			new String[] {
 				"PER\u00CDODO", "CARGO", "EMPRESA", "ATIVIDADES"
 			}
-			
-
-			
 		));
-		scrollPane.setViewportView(Experiencia);
+		scrollPane.setViewportView(table);
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\Pro4Tech\\Pro4Tech\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel.setBounds(10, 10, 500, 109);
