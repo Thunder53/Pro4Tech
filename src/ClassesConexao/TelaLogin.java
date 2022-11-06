@@ -37,7 +37,10 @@ public class TelaLogin extends JFrame {
 	private JLabel lblOlSejaBemvindo;
 	private JLabel lblFaaSeuLogin_1;
 	private JLabel lblNewLabel_1;
+<<<<<<< HEAD
 	private JButton btnSair;
+=======
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 
 	/**
 	 * Launch the application.
@@ -68,7 +71,10 @@ public class TelaLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+<<<<<<< HEAD
 		setExtendedState(MAXIMIZED_BOTH);
+=======
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 		
 		JLabel lblNewLabel = new JLabel("E-MAIL:");
 		lblNewLabel.setForeground(Color.BLACK);
@@ -108,6 +114,7 @@ public class TelaLogin extends JFrame {
 					ResultSet rs = stmt.executeQuery();
 					if(rs.next()) {
 						JOptionPane.showMessageDialog(null, "Entrando!");
+<<<<<<< HEAD
 						Singleton.getInstance().nomeUsuario = rs.getString("nome");
 						Singleton.getInstance().cpfUsuario = rs.getString("cpf");
 						System.out.println(Singleton.getInstance().nomeUsuario);
@@ -115,19 +122,33 @@ public class TelaLogin extends JFrame {
 						exibir.setVisible(true);
 						setVisible(false);
 						
+=======
+						TelaOpcoes exibir = new TelaOpcoes();
+						exibir.setVisible(true);
+						setVisible(false);
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 					} else {
 						try {
 							
 							Connection con1 = Conexao.faz_conexao();
+<<<<<<< HEAD
 							String sql1 = "select * from cadastro_funcionario where email=? and senha=?";
+=======
+							String sql1 = "select *from cadastro_funcionario where email=? and senha=?";
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 							PreparedStatement stmt1 = con.prepareStatement(sql1);
 							stmt1.setString(1, tfUsuario.getText());
 							stmt1.setString(2, new String(pfSenha.getPassword()));
 							ResultSet rs1 = stmt1.executeQuery();
+<<<<<<< HEAD
 							
 							if(rs1.next()) {
 								JOptionPane.showMessageDialog(null, "Entrando!");
 								Singleton.getInstance().nomeFuncionario = rs1.getString("nome");
+=======
+							if(rs1.next()) {
+								JOptionPane.showMessageDialog(null, "Entrando!");
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 								TelaCadastroVagas exibir = new TelaCadastroVagas();
 								exibir.setVisible(true);
 								setVisible(false);
@@ -195,6 +216,7 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1);
+<<<<<<< HEAD
 		
 		btnSair = new JButton("SAIR");
 		btnSair.addActionListener(new ActionListener() {
@@ -209,3 +231,7 @@ public class TelaLogin extends JFrame {
 		contentPane.add(btnSair);
 	}
 }
+=======
+	}
+}
+>>>>>>> d33735987c57a237b51304faf108e4102168269c

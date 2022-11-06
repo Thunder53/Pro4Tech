@@ -23,7 +23,10 @@ public class TelaVagas extends JFrame {
 	public TelaVagas() {
 		getContentPane().setBackground(Color.WHITE);
 		getContentPane().setLayout(null);
+<<<<<<< HEAD
 		setExtendedState(MAXIMIZED_BOTH);
+=======
+>>>>>>> d33735987c57a237b51304faf108e4102168269c
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(10, 21, 579, 109);

@@ -63,10 +63,10 @@ public class vagasDAO {
 
 		try {
 			con = DriverManager.getConnection(url, user, password);
-            ps = con.prepareStatement("SELECT nome FROM cadastro_usuario");
+            ps = con.prepareStatement("SELECT * from candidato_vaga where nome_vaga = '" + Singleton.getInstance().nomeVaga + "'");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                candidato.add(rs.getString("nome"));
+                candidato.add(rs.getString("cpf"));
             }
             rs.close();
             ps.close();

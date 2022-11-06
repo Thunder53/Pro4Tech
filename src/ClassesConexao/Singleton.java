@@ -6,6 +6,7 @@ public class Singleton {
 	public String cpfUsuario;
 	public String nomeFuncionario;
 	public String nomeVaga;
+	public String VisuCurriculo;
 	
 	private static Singleton instance;
 	
