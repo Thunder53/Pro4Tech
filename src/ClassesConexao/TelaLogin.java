@@ -37,6 +37,7 @@ public class TelaLogin extends JFrame {
 	private JLabel lblOlSejaBemvindo;
 	private JLabel lblFaaSeuLogin_1;
 	private JLabel lblNewLabel_1;
+	private JButton btnSair;
 
 	/**
 	 * Launch the application.
@@ -67,6 +68,7 @@ public class TelaLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel = new JLabel("E-MAIL:");
 		lblNewLabel.setForeground(Color.BLACK);
@@ -106,21 +108,27 @@ public class TelaLogin extends JFrame {
 					ResultSet rs = stmt.executeQuery();
 					if(rs.next()) {
 						JOptionPane.showMessageDialog(null, "Entrando!");
+						Singleton.getInstance().nomeUsuario = rs.getString("nome");
+						Singleton.getInstance().cpfUsuario = rs.getString("cpf");
+						System.out.println(Singleton.getInstance().nomeUsuario);
 						TelaOpcoes exibir = new TelaOpcoes();
 						exibir.setVisible(true);
 						setVisible(false);
+						
 					} else {
 						try {
 							
 							Connection con1 = Conexao.faz_conexao();
-							String sql1 = "select *from cadastro_funcionario where email=? and senha=?";
+							String sql1 = "select * from cadastro_funcionario where email=? and senha=?";
 							PreparedStatement stmt1 = con.prepareStatement(sql1);
 							stmt1.setString(1, tfUsuario.getText());
 							stmt1.setString(2, new String(pfSenha.getPassword()));
 							ResultSet rs1 = stmt1.executeQuery();
+							
 							if(rs1.next()) {
 								JOptionPane.showMessageDialog(null, "Entrando!");
-								TelaCadastroVagas exibir = new TelaCadastroVagas();
+								Singleton.getInstance().nomeFuncionario = rs1.getString("nome");
+								TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
 								exibir.setVisible(true);
 								setVisible(false);
 							} else {
@@ -187,5 +195,17 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1);
+		
+		btnSair = new JButton("SAIR");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnSair.setForeground(Color.BLACK);
+		btnSair.setFont(new Font("Arial", Font.BOLD, 18));
+		btnSair.setBackground(new Color(255, 140, 0));
+		btnSair.setBounds(1320, 744, 183, 72);
+		contentPane.add(btnSair);
 	}
 }

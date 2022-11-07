@@ -19,8 +19,11 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
 public class TelaCadastroVagas extends JFrame {
 
@@ -65,6 +68,7 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.setBorder(null);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE CADASTRO DE VAGAS!\r\n");
 		lblNewLabel_1.setForeground(Color.BLACK);
@@ -124,7 +128,7 @@ public class TelaCadastroVagas extends JFrame {
 		JLabel lblNewLabel_10 = new JLabel("HARD SKILLS DESEJADAS");
 		lblNewLabel_10.setForeground(Color.BLACK);
 		lblNewLabel_10.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_10.setBounds(346, 534, 247, 28);
+		lblNewLabel_10.setBounds(346, 531, 247, 28);
 		contentPane.add(lblNewLabel_10);
 		
 		JLabel lblNewLabel_11 = new JLabel("RESPONSÁVEL");
@@ -190,10 +194,12 @@ public class TelaCadastroVagas extends JFrame {
 		contentPane.add(tHard);
 		
 		tResponsavel = new JTextField();
+		tResponsavel.setText(Singleton.getInstance().nomeFuncionario);
+		tResponsavel.setEditable(false);
 		tResponsavel.setFont(new Font("Arial", Font.PLAIN, 20));
 		tResponsavel.setForeground(Color.BLACK);
 		tResponsavel.setColumns(10);
-		tResponsavel.setBounds(589, 572, 400, 28);
+		tResponsavel.setBounds(589, 568, 400, 28);
 		contentPane.add(tResponsavel);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("SE ESTIVER TUDO CERTO, CLIQUE NO BOTÃO \"OK\"");
@@ -218,7 +224,7 @@ public class TelaCadastroVagas extends JFrame {
 				c1.setEscolaridade(tEscolaridade.getText());
 				c1.setSoft_skills(tSoft.getText());
 				c1.setHard_skills(tHard.getText());
-				c1.setResponsavel(tResponsavel.getText());			
+				c1.setResponsavel(Singleton.getInstance().nomeFuncionario);			
 				
 				try {
 					Connection con = Conexao.faz_conexao();

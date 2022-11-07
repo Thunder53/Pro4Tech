@@ -53,6 +53,7 @@ public class TelaPesquisa extends JFrame {
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("d:\\Users\\Henrique\\Desktop\\Pro4Tech-dev\\icons\\iconPro4Tech.jpg"));

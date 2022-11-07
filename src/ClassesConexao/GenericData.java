@@ -7,10 +7,6 @@ import java.sql.SQLException;
 public abstract class GenericData {
     private Connection connection;
 
-    protected GenericData() {
-        this.connection = Conexao.getConnection();
-    }
-
     protected Connection getConnection() {
         return connection;
     }

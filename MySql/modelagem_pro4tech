@@ -1,0 +1,134 @@
+CREATE TABLE Vagas 
+( 
+ nome_vaga INT PRIMARY KEY,  
+ responsavel VARCHAR(n),  
+ requisitos VARCHAR(n),  
+ carga_horaria INT,  
+ salario FLOAT,  
+ modelo VARCHAR(n),  
+); 
+
+CREATE TABLE Candidato 
+( 
+ CPF INT PRIMARY KEY,  
+ nome VARCHAR(n),  
+ cargo_interesse VARCHAR(n),  
+ pretensao_salarial FLOAT,  
+ data_nasc DATE,  
+ email VARCHAR(n),  
+ quem_sou_eu VARCHAR(n),  
+ senha VARCHAR(n),  
+ telefone INT,  
+ idRH INT NOT NULL,  
+); 
+
+CREATE TABLE RH 
+( 
+ email VARCHAR(n) PRIMARY KEY,  
+ nome_func VARCHAR(n),  
+ UNIQUE (nome_func)
+); 
+
+CREATE TABLE Inscricao 
+( 
+ id INT PRIMARY KEY,  
+ avaliacao VARCHAR(n),  
+ status_vaga VARCHAR(n),  
+ feedback_geral VARCHAR(n),  
+ feedback_pontual VARCHAR(n),  
+ idCandidato INT,  
+ idRH INT,  
+ UNIQUE (idCandidato: FK,idRH: FK)
+); 
+
+CREATE TABLE Experiencia_profissional 
+( 
+ cargo VARCHAR(n) PRIMARY KEY,  
+ tempo DATE,  
+ tipo VARCHAR(n),  
+ UNIQUE (tempo)
+); 
+
+CREATE TABLE soft_skill 
+( 
+ nome_soft VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE hard_skill 
+( 
+ nome_hard VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE escolaridade 
+( 
+ id_escol INT PRIMARY KEY,  
+ status_escol VARCHAR(n),  
+ nivel VARCHAR(n),  
+); 
+
+CREATE TABLE Formacao_academica 
+( 
+ nome_fa VARCHAR(n) PRIMARY KEY,  
+ status_fa VARCHAR(n),  
+ nivel_fa VARCHAR(n),  
+); 
+
+CREATE TABLE RH_vagas 
+( 
+ email IVARCHAR(n) PRIMARY KEY,  
+ nome_vaga VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE Candidato_experiencia 
+( 
+ CPF VARCHAR(n) PRIMARY KEY,  
+ cargo VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE Vagas_soft 
+( 
+ nome_vaga VARCHAR(n) PRIMARY KEY,  
+ nome_soft VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE Candidato_vagas 
+( 
+ CPF VARCHAR(n) PRIMARY KEY,  
+ nome_vaga VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE Vagas_hard 
+( 
+ nome_vaga VARCHAR(n) PRIMARY KEY,  
+ nome_hard VARCHAR(n) PRIMARY KEY,  
+); 
+
+CREATE TABLE Vagas_escolaridade 
+( 
+ nome_vaga VARCHAR(n) PRIMARY KEY,  
+ id_escol INT PRIMARY KEY,  
+); 
+
+CREATE TABLE Candidato_formacao 
+( 
+ CPF VARCHAR(n) PRIMARY KEY,  
+ nome_fa VARCHAR(n) PRIMARY KEY,  
+); 
+
+ALTER TABLE Candidato ADD FOREIGN KEY(idRH) REFERENCES RH (idRH)
+ALTER TABLE Inscricao ADD FOREIGN KEY(idCandidato) REFERENCES Candidato (idCandidato)
+ALTER TABLE Inscricao ADD FOREIGN KEY(idRH) REFERENCES RH (idRH)
+ALTER TABLE RH_vagas ADD FOREIGN KEY(email) REFERENCES RH (email)
+ALTER TABLE RH_vagas ADD FOREIGN KEY(nome_vaga) REFERENCES Vagas (nome_vaga)
+ALTER TABLE Candidato_experiencia ADD FOREIGN KEY(CPF) REFERENCES Candidato (CPF)
+ALTER TABLE Candidato_experiencia ADD FOREIGN KEY(cargo) REFERENCES Experiencia_profissional (cargo)
+ALTER TABLE Vagas_soft ADD FOREIGN KEY(nome_vaga) REFERENCES Vagas (nome_vaga)
+ALTER TABLE Vagas_soft ADD FOREIGN KEY(nome_soft) REFERENCES soft_skill (nome_soft)
+ALTER TABLE Candidato_vagas ADD FOREIGN KEY(CPF) REFERENCES Candidato (CPF)
+ALTER TABLE Candidato_vagas ADD FOREIGN KEY(nome_vaga) REFERENCES Vagas (nome_vaga)
+ALTER TABLE Vagas_hard ADD FOREIGN KEY(nome_vaga) REFERENCES Vagas (nome_vaga)
+ALTER TABLE Vagas_hard ADD FOREIGN KEY(nome_hard) REFERENCES hard_skill (nome_hard)
+ALTER TABLE Vagas_escolaridade ADD FOREIGN KEY(nome_vaga) REFERENCES Vagas (nome_vaga)
+ALTER TABLE Vagas_escolaridade ADD FOREIGN KEY(id_escol) REFERENCES escolaridade (id_escol)
+ALTER TABLE Candidato_formacao ADD FOREIGN KEY(CPF) REFERENCES Candidato (CPF)
+ALTER TABLE Candidato_formacao ADD FOREIGN KEY(nome_fa) REFERENCES Formacao_academica (nome_fa)

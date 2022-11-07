@@ -8,30 +8,28 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
 import java.awt.Font;
 import javax.swing.SwingConstants;
-import javax.swing.border.LineBorder;
-
-import com.mysql.cj.protocol.a.StringValueEncoder;
-
+import javax.swing.JTable;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
-import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
-public class TelaVisualizacao extends JFrame implements ActionListener {
-		
-		
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private static final String JLabel = null;
+public class TelaVisualizacao extends JFrame {
+
 	private JPanel contentPane;
+	private JTable tbDescVaga;
 
 	/**
 	 * Launch the application.
@@ -48,21 +46,7 @@ public class TelaVisualizacao extends JFrame implements ActionListener {
 			}
 		});
 	}
-	
-	JLabel lblNewLabel = new JLabel("");
-	JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZAÇÃO DE VAGAS!\r\n\r\n");
-	JLabel lblNewLabel_1_1 = new JLabel("SELECIONE ABAIXO A VAGA DE INTERESSE \r\n\r\n");
-	JLabel icon2 = new JLabel("");
-	JLabel lblNewLabel_3 = new JLabel("");
-	JLabel lblNewLabel_5 = new JLabel("");
-	JLabel lblNewLabel_7 = new JLabel("");
-	JLabel lblNewLabel_9 = new JLabel("");
-	private final JButton btnNewButton = new JButton("Detalhes");
-	
-	
-	
-	
-	
+
 	/**
 	 * Create the frame.
 	 */
@@ -74,86 +58,137 @@ public class TelaVisualizacao extends JFrame implements ActionListener {
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
+		setExtendedState(MAXIMIZED_BOTH);
 		
-		getContentPane().setBackground(Color.WHITE);
-		getContentPane().setLayout(null);
-		
-		lblNewLabel.setBounds(0, 0, 579, 109);
+		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
-		getContentPane().add(lblNewLabel);
+		lblNewLabel.setBounds(0, 0, 553, 90);
+		contentPane.add(lblNewLabel);
 		
-		lblNewLabel_1.setBounds(108, 119, 673, 46);
-		lblNewLabel_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
-		getContentPane().add(lblNewLabel_1);
+		JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE VISUALIZAÇÃO DE VAGAS!");
+		lblNewLabel_1.setFont(new Font("Arial", Font.BOLD, 20));
+		lblNewLabel_1.setBounds(144, 138, 634, 33);
+		contentPane.add(lblNewLabel_1);
 		
-		
-		lblNewLabel_1_1.setBounds(108, 159, 471, 46);
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_1_1.setForeground(Color.BLACK);
-		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 20));
-		getContentPane().add(lblNewLabel_1_1);
-		
-		vagasDAO c1 = new vagasDAO();
-		ArrayList<String >vg = c1.vagas();
+		JLabel lblNewLabel_1_1 = new JLabel("APERTE NO BOTÃO DE BUSCAR PARA VIZUALIZAR AS VAGAS ABERTAS!");
 		
 		
-
-		JComboBox<String> cbxvaga = new JComboBox<String>();
-		for(String item: vg) {
-			cbxvaga.addItem(item);
-		}
-		cbxvaga.setBounds(409, 237, 726, 55);
-		cbxvaga.addActionListener(this);
-		contentPane.add(cbxvaga);
+		JLabel lblNewLabel_1_11 = new JLabel("DIGITE O NOME DA VAGA DESEJADA E CLIQUE EM BUSCAR VAGAS.");
+		lblNewLabel_1_11.setFont(new Font("Arial", Font.BOLD, 20));
+		lblNewLabel_1_11.setBounds(144, 166, 840, 33);
+		contentPane.add(lblNewLabel_1_11);
 		
+		JLabel lblNewLabel_1_1_1 = new JLabel("SELECIONE A VAGA PARA VISUALIZAR DETALHES E SE CANDIDATAR.");
+		lblNewLabel_1_1_1.setFont(new Font("Arial", Font.BOLD, 20));
+		lblNewLabel_1_1_1.setBounds(144, 243, 910, 33);
+		contentPane.add(lblNewLabel_1_1_1);
 		
-		icon2.setBounds(284, 633, 48, 55);
-		getContentPane().add(icon2);
-		
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43 (2).jpeg"));
-		lblNewLabel_3.setBounds(307, 474, 53, 64);
-		contentPane.add(lblNewLabel_3);
-		
-		
-
-		
-		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43.jpeg"));
-		lblNewLabel_5.setBounds(307, 635, 53, 53);
-		contentPane.add(lblNewLabel_5);
-		
-		lblNewLabel_7.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.43 (1).jpeg"));
-		lblNewLabel_7.setBounds(822, 474, 53, 64);
-		contentPane.add(lblNewLabel_7);
-		
-		lblNewLabel_9.setIcon(new ImageIcon("C:\\Users\\TI ADCe\\Documents\\Tobias\\Dev\\Projeto Thunder\\WhatsApp Unknown 2022-10-04 at 21.32.56\\WhatsApp Image 2022-10-03 at 21.01.42.jpeg"));
-		lblNewLabel_9.setBounds(822, 624, 53, 64);
-		contentPane.add(lblNewLabel_9);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				TelaDescVaga exibir = new TelaDescVaga();
-				exibir.setVisible(true);
-				setVisible(false);
+		JComboBox cbxvagas = new JComboBox();
+		cbxvagas.setFont(new Font("Arial", Font.PLAIN, 18));
+		cbxvagas.addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent event) {
+				 vagasDAO dao = new vagasDAO();
+			        
+			        ArrayList <String> vg = dao.vagas();
+			        cbxvagas.removeAll();
+			        for(String f:vg){
+			            
+			            cbxvagas.addItem(f);
+			            
+			        }
+				
+			}
+			public void ancestorMoved(AncestorEvent event) {
+			}
+			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
-		btnNewButton.setBounds(1174, 241, 169, 46);
+		cbxvagas.setBounds(321, 320, 878, 43);
+		contentPane.add(cbxvagas);
 		
+		JButton btnNewButton = new JButton("CANDIDATAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "insert into candidato_vaga(cpf, nome_vaga) values (?, ?)";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					
+					Object vaga = cbxvagas.getSelectedItem();
+					String vagas = String.valueOf(vaga);
+					
+					stmt.setString(2, vagas);
+					stmt.setString(1, Singleton.getInstance().cpfUsuario);
+					stmt.execute();
+					stmt.close();
+					con.close();
+					
+				} catch (Exception e2) {
+					
+				}
+				
+				
+			}
+		});
+		btnNewButton.setBackground(new Color(255, 128, 64));
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
+		btnNewButton.setBounds(645, 746, 247, 60);
 		contentPane.add(btnNewButton);
-		setLocationRelativeTo(null);
-	}
+		
+		JButton btnVisualizar = new JButton("VISUALIZAR");
+		btnVisualizar.addActionListener(new ActionListener() {
 
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		CadastroVaga c1 = new CadastroVaga();
-		JComboBox comboBox = (JComboBox) e.getSource();
-		Object selected = comboBox.getSelectedItem();
-		String nome = String.valueOf(selected);
-		c1.setNome_vaga(nome);
-        System.out.println("Selected Item  = " + selected);
-
-
+			public void actionPerformed(ActionEvent e) {
+				Object vaga = cbxvagas.getSelectedItem();
+					try {
+					
+					Connection con = Conexao.faz_conexao();
+					
+					String sql = "select nome_vaga, carga_horaria, requisitos, escolaridade from Vagas where nome_vaga = '" + vaga + "'";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					ResultSet rs = stmt.executeQuery();
+					
+					
+					DefaultTableModel modelo = (DefaultTableModel) tbDescVaga.getModel();
+					modelo.setNumRows(0);
+					
+					while (rs.next()) {
+						modelo.addRow(new Object[] {rs.getString("nome_vaga"), rs.getString("carga_horaria"), rs.getString("requisitos"), rs.getString("escolaridade") });
+					}
+					rs.close();
+					con.close();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		btnVisualizar.setForeground(Color.BLACK);
+		btnVisualizar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVisualizar.setBackground(new Color(255, 128, 64));
+		btnVisualizar.setBounds(1219, 318, 241, 43);
+		contentPane.add(btnVisualizar);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setFont(new Font("Arial", Font.PLAIN, 17));
+		scrollPane_1.setBounds(321, 409, 878, 187);
+		contentPane.add(scrollPane_1);
+		
+		tbDescVaga = new JTable();
+		tbDescVaga.setBackground(Color.WHITE);
+		tbDescVaga.setFont(new Font("Arial", Font.PLAIN, 17));
+		tbDescVaga.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"NOME VAGA", "CARGA HOR\u00C1RIA", "REQUISITOS", "ESCOLARIDADE"
+			}
+		));
+		scrollPane_1.setViewportView(tbDescVaga);
+		
+		
 	}
 }

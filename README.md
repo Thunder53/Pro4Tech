@@ -183,6 +183,10 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
 ![image](https://user-images.githubusercontent.com/111543077/194675978-60d06b01-816f-4f7c-954c-bcdb204ec8c7.png)
 
+## Modelagem do Banco
+
+![Sprint03_Modelo_logico](https://user-images.githubusercontent.com/102201672/200177628-4c9fbe66-1714-42cf-aea0-4035a49b0ae1.png)
+
 ## User stories
 
 <table align="center">
@@ -206,6 +210,8 @@ A solução para essa demanda será a criação de um sistema desktop onde será
   </tr>
   
 </table>
+
+  ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
 
 ## Entregas
 

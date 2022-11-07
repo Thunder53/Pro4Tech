@@ -1,7 +1,7 @@
 package ClassesConexao;
 
 public class CadastroVaga {
-	private String nome_vaga;
+	public String nome_vaga;
 	private String carga_horaria;
 	private String modelo;
 	private String salario;
@@ -29,10 +29,10 @@ public class CadastroVaga {
 	}
 	
 	public String getNome_vaga() {
-		return nome_vaga;
+		return this.nome_vaga;
 	}
 	
-	public void setNome_vaga(String nome_vaga) {
+	void setNome_vaga(String nome_vaga) {
 		this.nome_vaga = nome_vaga;
 	}
 	
