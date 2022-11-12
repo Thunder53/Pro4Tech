@@ -47,7 +47,7 @@ public class TelaOpcoes extends JFrame {
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-
+		setExtendedState(MAXIMIZED_BOTH);
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
@@ -68,7 +68,7 @@ public class TelaOpcoes extends JFrame {
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaInfoVagas exibir = new TelaInfoVagas();
+				TelaVisualizacao exibir = new TelaVisualizacao();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
