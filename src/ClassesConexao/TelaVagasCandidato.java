@@ -28,6 +28,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
+import javax.swing.border.BevelBorder;
 
 public class TelaVagasCandidato extends JFrame {
 
@@ -218,5 +219,21 @@ public class TelaVagasCandidato extends JFrame {
 		tfCandidato.setBounds(361, 760, 318, 45);
 		contentPane.add(tfCandidato);
 		tfCandidato.setColumns(10);
+		
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(Color.ORANGE);
+		btnVoltar.setBounds(10, 774, 156, 52);
+		contentPane.add(btnVoltar);
 	}
 }
