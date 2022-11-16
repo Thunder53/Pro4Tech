@@ -212,6 +212,7 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
   ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
+<<<<<<< HEAD
   
   --------------------
   
@@ -260,6 +261,8 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
   
+=======
+>>>>>>> 56c04b2ce22b47b9bf55e6822026a5b72dc51b8f
 
 ## Entregas
 
