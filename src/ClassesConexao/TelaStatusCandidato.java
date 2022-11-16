@@ -28,6 +28,7 @@ import java.awt.Component;
 import javax.swing.JScrollPane;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+import javax.swing.border.BevelBorder;
 
 public class TelaStatusCandidato extends JFrame {
 		
@@ -59,6 +60,7 @@ public class TelaStatusCandidato extends JFrame {
 	JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE STATUS DE CANDIDATURA!\r\n\r\n");
 	private final JTable tbStsCandidato = new JTable();
 	private final JScrollPane scrollPane = new JScrollPane();
+	private final JButton btnVoltar = new JButton("VOLTAR");
 	
 	
 	
@@ -153,6 +155,21 @@ public class TelaStatusCandidato extends JFrame {
 		});
 		tbStsCandidato.getColumnModel().getColumn(0).setMinWidth(30);
 		scrollPane.setViewportView(tbStsCandidato);
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(Color.ORANGE);
+		btnVoltar.setBounds(10, 771, 156, 52);
+		
+		contentPane.add(btnVoltar);
 		
 		
 		DefaultTableModel modelo = (DefaultTableModel) tbStsCandidato.getModel();

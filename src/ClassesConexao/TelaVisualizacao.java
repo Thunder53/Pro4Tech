@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -25,6 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+import javax.swing.border.BevelBorder;
 
 public class TelaVisualizacao extends JFrame {
 
@@ -125,6 +127,8 @@ public class TelaVisualizacao extends JFrame {
 					stmt.close();
 					con.close();
 					
+					JOptionPane.showMessageDialog(null, "CANDIDATURA REALIZADA!");
+					
 				} catch (Exception e2) {
 					
 				}
@@ -188,6 +192,23 @@ public class TelaVisualizacao extends JFrame {
 			}
 		));
 		scrollPane_1.setViewportView(tbDescVaga);
+		
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
+		
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(Color.ORANGE);
+		btnVoltar.setBounds(10, 768, 156, 52);
+		contentPane.add(btnVoltar);
 		
 		
 	}
