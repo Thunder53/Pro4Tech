@@ -421,7 +421,11 @@ public class TelaCadastro extends JFrame implements ActionListener {
 					try {
 						Connection con = Conexao.faz_conexao();
 
+<<<<<<< HEAD
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu, cep, endereco, cidade, uf, numero, bairro) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+=======
+						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, MD5(?), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 						
 						PreparedStatement stmt = con.prepareStatement(sql);
 						stmt.setString(1, c1.getEmail());
@@ -470,6 +474,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblNewLabel_1);
 	}
 		
+<<<<<<< HEAD
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNewButton_1) {
 			do_btnNewButton_1_actionPerformed(e);
@@ -518,5 +523,116 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+=======
+		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO *");
+		lblDataNascimento.setBounds(815, 193, 194, 33);
+		lblDataNascimento.setForeground(Color.BLACK);
+		lblDataNascimento.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblDataNascimento);
+		
+		JLabel lblExperienciaProfissional = new JLabel("EXPERIÊNCIA PROFISSIONAL");
+		lblExperienciaProfissional.setBounds(742, 413, 267, 33);
+		lblExperienciaProfissional.setForeground(Color.BLACK);
+		lblExperienciaProfissional.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblExperienciaProfissional);
+		
+		JLabel lblCargo = new JLabel("CARGO DESEJADO");
+		lblCargo.setBounds(827, 236, 182, 33);
+		lblCargo.setForeground(Color.BLACK);
+		lblCargo.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblCargo);
+		
+		tfexperiencia = new JTextField();
+		tfexperiencia.setBounds(1009, 417, 351, 82);
+		tfexperiencia.setBounds(1009, 417, 489, 131);
+		tfexperiencia.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfexperiencia.setColumns(10);
+		contentPane.add(tfexperiencia);
+		
+		JLabel lblPretensoSalarial = new JLabel("PRETENSÃO SALARIAL");
+		lblPretensoSalarial.setBounds(20, 370, 210, 33);
+		lblPretensoSalarial.setForeground(Color.BLACK);
+		lblPretensoSalarial.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblPretensoSalarial);
+		
+		JLabel lblFormaoAcadmica = new JLabel("FORMAÇÃO ACADÊMICA *");
+		lblFormaoAcadmica.setBounds(0, 413, 241, 33);
+		lblFormaoAcadmica.setForeground(Color.BLACK);
+		lblFormaoAcadmica.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblFormaoAcadmica);
+		
+		JLabel lblTelefone = new JLabel("TELEFONE");
+		lblTelefone.setBounds(897, 370, 102, 33);
+		lblTelefone.setForeground(Color.BLACK);
+		lblTelefone.setFont(new Font("Arial", Font.PLAIN, 18));
+		contentPane.add(lblTelefone);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("");
+		lblNewLabel_1_1.setBounds(0, 0, 517, 100);
+		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
+		contentPane.add(lblNewLabel_1_1);
+		
+		JLabel lbfemail2 = new JLabel("CONFIRMAÇÃO E-MAIL*");
+		lbfemail2.setForeground(Color.BLACK);
+		lbfemail2.setFont(new Font("Arial", Font.PLAIN, 18));
+		lbfemail2.setBounds(20, 324, 221, 33);
+		contentPane.add(lbfemail2);
+		
+		tfemail2 = new JTextField();
+		tfemail2.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfemail2.setColumns(10);
+		tfemail2.setBounds(239, 324, 351, 33);
+		tfemail2.setBounds(239, 324, 489, 33);
+		contentPane.add(tfemail2);
+		
+		JLabel lblSenha2 = new JLabel("CONFIRMAÇÃO SENHA *");
+		lblSenha2.setForeground(Color.BLACK);
+		lblSenha2.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblSenha2.setBounds(786, 323, 223, 33);
+		contentPane.add(lblSenha2);
+		
+		pfsenha2 = new JPasswordField();
+		pfsenha2.setFont(new Font("Arial", Font.PLAIN, 18));
+		pfsenha2.setBounds(1009, 323, 351, 33);
+		contentPane.add(pfsenha2);
+		
+		tfquemsoueu = new JTextField();
+		tfquemsoueu.setHorizontalAlignment(SwingConstants.LEFT);
+		tfquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
+		tfquemsoueu.setColumns(10);
+		tfquemsoueu.setBounds(239, 585, 1259, 58);
+		contentPane.add(tfquemsoueu);
+		
+		JLabel lblquemsoueu = new JLabel("QUEM SOU EU? *");
+		lblquemsoueu.setForeground(Color.BLACK);
+		lblquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblquemsoueu.setBounds(79, 585, 162, 33);
+		contentPane.add(lblquemsoueu);
+		pfsenha2.setBounds(1009, 323, 489, 33);
+		contentPane.add(pfsenha2);
+		
+		JLabel lblCamposObrigatrios_1 = new JLabel("Campos obrigatórios *");
+		lblCamposObrigatrios_1.setForeground(Color.RED);
+		lblCamposObrigatrios_1.setFont(new Font("Arial", Font.PLAIN, 18));
+		lblCamposObrigatrios_1.setBounds(1009, 663, 194, 33);
+		contentPane.add(lblCamposObrigatrios_1);
+		
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaLogin exibir = new TelaLogin();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(Color.ORANGE);
+		btnVoltar.setBounds(20, 793, 156, 52);
+		contentPane.add(btnVoltar);
+		
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 	}
 }

@@ -29,9 +29,13 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import javax.swing.border.BevelBorder;
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+import javax.swing.border.BevelBorder;
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 
 public class TelaVisualizacaoCurriculo extends JFrame {
 
@@ -355,7 +359,10 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		lblNewLabel_5.setBounds(208, 10, 553, 90);
 		contentPane.add(lblNewLabel_5);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 		
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
@@ -372,6 +379,9 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 729, 156, 52);
 		contentPane.add(btnVoltar);
+<<<<<<< HEAD
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 	}
 }

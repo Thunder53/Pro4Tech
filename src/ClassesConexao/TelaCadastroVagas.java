@@ -246,11 +246,17 @@ public class TelaCadastroVagas extends JFrame {
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				TelaOpcoes exibir = new TelaOpcoes();
 				exibir.setVisible(true);
 				setVisible(false);
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 				
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -273,7 +279,10 @@ public class TelaCadastroVagas extends JFrame {
 		lblNewLabel_1_1.setBounds(0, 0, 500, 95);
 		contentPane.add(lblNewLabel_1_1);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 		
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
@@ -290,6 +299,9 @@ public class TelaCadastroVagas extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 783, 156, 52);
 		contentPane.add(btnVoltar);
+<<<<<<< HEAD
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 	}
 }

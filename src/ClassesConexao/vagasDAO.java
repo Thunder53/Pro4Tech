@@ -30,7 +30,7 @@ public class vagasDAO {
 	 //bd db4free.net
 	   String url = "jdbc:mysql://localhost/pro4tech";
 	   String user = "root";
-	   String password = "39339533";
+	   String password = "Tobias*2004";
 
 
 
@@ -81,8 +81,4 @@ public class vagasDAO {
     }
 	 	  	
 }
-
-
-
-
 

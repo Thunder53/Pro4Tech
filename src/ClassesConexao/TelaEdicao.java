@@ -23,6 +23,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.JComboBox;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TelaEdicao extends JFrame {
 
@@ -81,11 +83,11 @@ public class TelaEdicao extends JFrame {
 		lblNewLabel_3.setBounds(538, 325, 143, 28);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("CARGA HORÁRIA ");
-		lblNewLabel_4.setForeground(Color.BLACK);
-		lblNewLabel_4.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel_4.setBounds(498, 360, 180, 28);
-		contentPane.add(lblNewLabel_4);
+		JLabel tCarga = new JLabel("CARGA HORÁRIA ");
+		tCarga.setForeground(Color.BLACK);
+		tCarga.setFont(new Font("Arial", Font.PLAIN, 18));
+		tCarga.setBounds(498, 360, 180, 28);
+		contentPane.add(tCarga);
 		
 		JLabel lblNewLabel_5 = new JLabel("MODELO DE TRABALHO");
 		lblNewLabel_5.setForeground(Color.BLACK);
@@ -164,7 +166,7 @@ public class TelaEdicao extends JFrame {
 					PreparedStatement stmt = con.prepareStatement(sql);
 					ResultSet rs = stmt.executeQuery();
 					while(rs.next()) {
-						tNome.setText(rs.getString("experiencia_profissional"));
+						tNome.setText(rs.getString("nome_vaga"));
 					}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -256,9 +258,81 @@ public class TelaEdicao extends JFrame {
 		Salvar.setForeground(Color.BLACK);
 		Salvar.setFont(new Font("Arial", Font.BOLD, 18));
 		Salvar.setBorderPainted(false);
+		Salvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				CadastroVaga c1 = new CadastroVaga();
+				c1.setNome_vaga(tNome.getText());
+				c1.setCarga_horaria(tCargaHr.getText());
+				c1.setModelo(tModelo.getText());
+				c1.setSalario(tSalario.getText());
+				c1.setRequisitos(tRequisitos.getText());
+				c1.setEscolaridade(tEscolaridade.getText());
+				c1.setSoft_skills(tSoft.getText());
+				c1.setHard_skills(tHard.getText());
+				c1.setResponsavel(Singleton.getInstance().nomeFuncionario);			
+				
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "UPDATE Vagas SET nome_vaga = '" + c1.getNome_vaga() + "', carga_horaria = '" + c1.getCarga_horaria() +"'" 
+							+ ", modelo = '" + c1.getModelo()+ "'"
+							+ ", salario = '" + c1.getSalario()+ "'"
+							+ ", requisitos = '" + c1.getRequisitos()+ "'"
+							+ ", escolaridade = '" + c1.getEscolaridade()+ "'"
+							+ ", soft_skills = '" + c1.getSoft_skills()+ "'"
+							+ ", hard_skills = '" + c1.getHard_skills()+ "'"
+							+ " where nome_vaga = '" + Singleton.getInstance().nomeVaga + "'";
+					
+					PreparedStatement stmt = con.prepareStatement(sql);
+		
+					
+					
+				stmt.execute();
+				stmt.close();
+				con.close();
+				JOptionPane.showMessageDialog(null, "Atulizado com sucesso! Visualizando Vagas");
+				
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+				JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
+					
+				}
+				
+			}
+		}); 
 		Salvar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		Salvar.setBackground(new Color(241, 133, 36));
 		Salvar.setBounds(873, 709, 192, 52);
 		contentPane.add(Salvar);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object vaga = cbxvagas.getSelectedItem();
+				Singleton.getInstance().nomeVaga = String.valueOf(vaga);
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "select * from vagas where nome_vaga = '"+ Singleton.getInstance().nomeVaga + "'";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					ResultSet rs = stmt.executeQuery();
+					while(rs.next()) {
+						tNome.setText(rs.getString("nome_vaga"));
+						tCargaHr.setText(rs.getString("carga_horaria"));
+						tModelo.setText(rs.getString("modelo"));
+						tSalario.setText(rs.getString("salario"));
+						tRequisitos.setText(rs.getString("requisitos"));
+						tEscolaridade.setText(rs.getString("escolaridade"));
+						tSoft.setText(rs.getString("soft_skills"));
+						tHard.setText(rs.getString("hard_skills"));
+						
+					}
+				} catch (Exception e1) {
+					// TODO: handle exception
+				}
+			}
+		});
+		btnNewButton.setBounds(1131, 242, 85, 21);
+		contentPane.add(btnNewButton);
 	}
 }
