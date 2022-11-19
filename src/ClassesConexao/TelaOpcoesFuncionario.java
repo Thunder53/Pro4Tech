@@ -47,19 +47,9 @@ public class TelaOpcoesFuncionario extends JFrame {
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-<<<<<<< HEAD
-		setExtendedState(MAXIMIZED_BOTH);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
 		setExtendedState(MAXIMIZED_BOTH);
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
-		setExtendedState(MAXIMIZED_BOTH);
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);

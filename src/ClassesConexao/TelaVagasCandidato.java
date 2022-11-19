@@ -38,8 +38,7 @@ import javax.swing.border.BevelBorder;
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
 =======
 import javax.swing.border.BevelBorder;
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+
 
 public class TelaVagasCandidato extends JFrame {
 
@@ -230,15 +229,7 @@ public class TelaVagasCandidato extends JFrame {
 		tfCandidato.setBounds(361, 760, 318, 45);
 		contentPane.add(tfCandidato);
 		tfCandidato.setColumns(10);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
-		
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -254,12 +245,6 @@ public class TelaVagasCandidato extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 774, 156, 52);
 		contentPane.add(btnVoltar);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+
 	}
 }

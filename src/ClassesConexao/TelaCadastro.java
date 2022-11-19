@@ -421,15 +421,13 @@ public class TelaCadastro extends JFrame implements ActionListener {
 					try {
 						Connection con = Conexao.faz_conexao();
 
-<<<<<<< HEAD
+
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, MD5(?), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-=======
-<<<<<<< HEAD
+
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu, cep, endereco, cidade, uf, numero, bairro) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-=======
+
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, MD5(?), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+
 						
 						PreparedStatement stmt = con.prepareStatement(sql);
 						stmt.setString(1, c1.getEmail());
@@ -478,7 +476,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblNewLabel_1);
 	}
 		
-<<<<<<< HEAD
+
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNewButton_1) {
 			do_btnNewButton_1_actionPerformed(e);
@@ -527,7 +525,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-=======
+
 		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO *");
 		lblDataNascimento.setBounds(815, 193, 194, 33);
 		lblDataNascimento.setForeground(Color.BLACK);
@@ -620,11 +618,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		lblCamposObrigatrios_1.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblCamposObrigatrios_1.setBounds(1009, 663, 194, 33);
 		contentPane.add(lblCamposObrigatrios_1);
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -641,6 +635,5 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		btnVoltar.setBounds(20, 793, 156, 52);
 		contentPane.add(btnVoltar);
 		
->>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
 	}
 }

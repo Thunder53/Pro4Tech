@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package ClassesConexao;
 
 import java.awt.Color;
@@ -262,4 +262,4 @@ public class TelaMenuRH extends JFrame {
 		setExtendedState(MAXIMIZED_BOTH);
 	}
 }
->>>>>>> 368d2bdfbbf11fb8851f595623f6e4b986c7a21e
+
