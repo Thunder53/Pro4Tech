@@ -24,9 +24,21 @@ import javax.swing.JTable;
 import java.awt.Component;
 import javax.swing.JScrollPane;
 import javax.swing.event.AncestorListener;
+<<<<<<< HEAD
 import javax.swing.event.AncestorEvent;
 import javax.swing.border.BevelBorder;
 
+=======
+import javax.swing.event.AncestorEvent;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import javax.swing.border.BevelBorder;
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+import javax.swing.border.BevelBorder;
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 
 public class TelaStatusCandidato extends JFrame {
 		
@@ -57,9 +69,22 @@ public class TelaStatusCandidato extends JFrame {
 	JLabel lblNewLabel = new JLabel("");
 	JLabel lblNewLabel_1 = new JLabel("VOCÊ ESTÁ NA PÁGINA DE STATUS DE CANDIDATURA!\r\n\r\n");
 	private final JTable tbStsCandidato = new JTable();
+<<<<<<< HEAD
 	private final JScrollPane scrollPane = new JScrollPane();
 	private final JButton btnVoltar = new JButton("VOLTAR");
 
+=======
+	private final JScrollPane scrollPane = new JScrollPane();
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	private final JButton btnVoltar = new JButton("VOLTAR");
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+	private final JButton btnVoltar = new JButton("VOLTAR");
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+	
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 	
 	
 	/**
@@ -152,7 +177,16 @@ public class TelaStatusCandidato extends JFrame {
 			}
 		});
 		tbStsCandidato.getColumnModel().getColumn(0).setMinWidth(30);
+<<<<<<< HEAD
 		scrollPane.setViewportView(tbStsCandidato);
+=======
+		scrollPane.setViewportView(tbStsCandidato);
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaOpcoes exibir = new TelaOpcoes();
@@ -167,7 +201,14 @@ public class TelaStatusCandidato extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 771, 156, 52);
 		contentPane.add(btnVoltar);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 		
 		
 		DefaultTableModel modelo = (DefaultTableModel) tbStsCandidato.getModel();

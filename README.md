@@ -213,7 +213,14 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 
   ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
   
   --------------------
   
@@ -262,7 +269,16 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
   
+<<<<<<< HEAD
 >>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+<<<<<<< HEAD
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+=======
+>>>>>>> 56c04b2ce22b47b9bf55e6822026a5b72dc51b8f
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 
 ## Entregas
 

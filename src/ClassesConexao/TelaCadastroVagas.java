@@ -245,10 +245,25 @@ public class TelaCadastroVagas extends JFrame {
 				stmt.close();
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
+<<<<<<< HEAD
 				TelaOpcoes exibir = new TelaOpcoes();
 				exibir.setVisible(true);
 				setVisible(false);
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 				
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -270,6 +285,15 @@ public class TelaCadastroVagas extends JFrame {
 		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1_1.setBounds(0, 0, 500, 95);
 		contentPane.add(lblNewLabel_1_1);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+		
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -285,6 +309,13 @@ public class TelaCadastroVagas extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 783, 156, 52);
 		contentPane.add(btnVoltar);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 	}
 }
