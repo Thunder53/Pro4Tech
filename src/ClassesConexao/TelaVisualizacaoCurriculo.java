@@ -28,10 +28,8 @@ import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
-=======
 import javax.swing.border.BevelBorder;
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+
 
 public class TelaVisualizacaoCurriculo extends JFrame {
 
@@ -269,7 +267,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 				
 				try {
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into inscricao(nome_vaga, avaliacao, status_vaga, feedback_geral, feedback_pontual, cpf, email) values (?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into inscricao(nome_vaga, avaliacao, status_vaga, feedback_geral, , cpf, email) values (?, ?, ?, ?, ?, ?, ?)";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					
 					stmt.setString(1, Singleton.getInstance().nomeVaga);
@@ -354,8 +352,6 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(208, 10, 553, 90);
 		contentPane.add(lblNewLabel_5);
-<<<<<<< HEAD
-=======
 		
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
@@ -372,6 +368,5 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(10, 729, 156, 52);
 		contentPane.add(btnVoltar);
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
 	}
 }

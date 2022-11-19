@@ -224,11 +224,7 @@ public class TelaCadastro extends JFrame {
 					try {
 						Connection con = Conexao.faz_conexao();
 
-<<<<<<< HEAD
-						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-=======
 						String sql = "insert into cadastro_usuario(email, senha, nome, cpf, data_nasc, formaçao_acad, pretensao_salarial, cargo_interesse, experiencia_profissional, telefone, quem_sou_eu) values (?, MD5(?), ?, ?, ?, ?, ?, ?, ?, ?, ?)";
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
 						
 						PreparedStatement stmt = con.prepareStatement(sql);
 						stmt.setString(1, c1.getEmail());
@@ -363,9 +359,7 @@ public class TelaCadastro extends JFrame {
 		lblCamposObrigatrios_1.setFont(new Font("Arial", Font.PLAIN, 18));
 		lblCamposObrigatrios_1.setBounds(1009, 663, 194, 33);
 		contentPane.add(lblCamposObrigatrios_1);
-<<<<<<< HEAD
-=======
-		
+
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -381,7 +375,6 @@ public class TelaCadastro extends JFrame {
 		btnVoltar.setBackground(Color.ORANGE);
 		btnVoltar.setBounds(20, 793, 156, 52);
 		contentPane.add(btnVoltar);
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
 		
 	}
 }
