@@ -1,0 +1,27 @@
+Pro4Tech
+
+Somos uma consutoria de desenvolvimento de ferramentas agile com ferramentas da microsoft voltadas para BI centro de ferramentas power da micorsoft, transformação digital. 
+Proposto um desafio para esse semestre, 
+Rafael, PO
+Passando para ideia do problema q apareceu, a nossa empresa tem uma necessidade de gerenciar vagas de empregos disponiveis, necessitamos de relatorios do nosso desempenho pro RH. tudo bem cadastrado na base e nao perder canditados deixar eles salvos para tentar achar outras vagas mais pra frente
+requisitos funcionais, sistema de gerenciamento de vagas, crude de canditados, canditadura dos canditados, forma de analise do sistema do canditado, relatorios de vagas, relatorios de canditados, relatorio de canditados aprovados, 
+requisitos nao funcionais, java, documentação do sistema, 
+forma rapida de ver e gerenciar os canditados
+sistema desktop
+Eu vejo de uma forma q esse canditado vai precisar fazer o cadastro desses requisitos no sistema mas precisa de um arquivo
+tenha uma forma de dash 
+olhar a interface e ver o perfil 
+precisa ter niveis de acessos pro RH, acesso pro proprio canditado cadastras as informações 
+Não, só colocar os dados preencher os dados.
+Precisa de um sistema para cadastrar todas as vagas
+nao necessita de envio de email, mas pode ser um diferencial 
+Fato de conseguir aprovar o o canditado com base no curriculo e nos requisitos
+Meio de o canditado ter acesso a ver o status do processo no sistema
+O ideal é dentro do horario comercial, delay de um dia e tals, mas tentar estar spm presente nao a problema de cobrar o ideal horario comercial.
+duvidas postadas qualquer horario  chamadas horario comercial
+limite de idade minimo 16 
+Indicador pro RH ter ideia qnts vagas a pessoa colocou, quais vagas a pessoa colocou, quais aprovou, qnts reprovou. ideia mais avaliar a equipe do RH
+Analise dos requisitos feita pelo pessoal do Rh ter a facilidade de analisar o canditado e a vaga
+Há plataformas parecidas
+Aviso de colocar o status para o canditado 
+
