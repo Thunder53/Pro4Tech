@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 
-public class CadastroUsuario {
+public class CadastroUsuario<Interger> {
 	private String email;
 	private String senha;
 	private String nome;
@@ -17,13 +17,19 @@ public class CadastroUsuario {
 	private String experiencia_profissional;
 	private String telefone;
 	private String quemsoueu;
+	private String cep;
+	private String endereco;
+	private String bairro;
+	private String cidade;
+	private String uf;
+	private String numero;
     private static final String Formato = "###.###.###-##";
 	
 	public CadastroUsuario() {
 	}
 	    
 	public CadastroUsuario(String email, String senha, String nome, String cpf, Date data_nasc, String formaçao_acad, String pretensao_salarial,
-		String cargo_interesse, String experiencia_profissional, String telefone, String quemsoueu, Boolean isCPF) {
+		String cargo_interesse, String experiencia_profissional, String telefone, String quemsoueu, String cep, String endereco, String bairro, String cidade, String uf, String numero, Boolean isCPF) {
 	       this.email = email;
 	       this.senha = senha;
 	       this.nome = nome;
@@ -34,7 +40,13 @@ public class CadastroUsuario {
 	       this.cargo_interesse = cargo_interesse;
 	       this.experiencia_profissional = experiencia_profissional;
 	       this.telefone = telefone;
-	       this.quemsoueu = quemsoueu;     
+	       this.quemsoueu = quemsoueu;
+	   	   this.cep = cep;
+	   	   this.endereco = endereco;
+	   	   this.bairro = bairro;
+	   	   this.cidade = cidade;
+	   	   this.uf = uf;
+	   	   this.numero = numero;
 	}
 	    
 	
@@ -124,7 +136,49 @@ public class CadastroUsuario {
 	public void setQuemsoueu(String quemsoueu) {
 		this.quemsoueu = quemsoueu;
 	}
+	public String getCep() {
+		return this.cep;
+	}
 	
+	public void setCep(String cep) {
+		 this.cep= cep;
+	}
+	public String getEndereco() {
+		return this.endereco;
+	}
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public String getBairro() {
+		return this.bairro;
+	}
+	
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public String getCidade() {
+		return this.cidade;
+	}
+	
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	
+	}
+	public String getUf() {
+		return this.uf;
+	}
+	
+	public void setUf(String uf) {
+		this.uf = uf;
+	}
+	public String getNumero() {
+		return this.numero;
+	}
+	
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 
 	
 	public boolean isCPF(){

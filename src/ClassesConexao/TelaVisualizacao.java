@@ -26,6 +26,15 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+<<<<<<< HEAD
+import javax.swing.border.BevelBorder;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import javax.swing.border.BevelBorder;
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
 import javax.swing.border.BevelBorder;
 
 public class TelaVisualizacao extends JFrame {
@@ -126,9 +135,14 @@ public class TelaVisualizacao extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
+
+					JOptionPane.showMessageDialog(null, "CANDIDATURA REALIZADA!");
+
+		JOptionPane.showMessageDialog(null, "CANDIDATURA REALIZADA!");
 					
 					JOptionPane.showMessageDialog(null, "CANDIDATURA REALIZADA!");
 					
+
 				} catch (Exception e2) {
 					
 				}
@@ -192,7 +206,7 @@ public class TelaVisualizacao extends JFrame {
 			}
 		));
 		scrollPane_1.setViewportView(tbDescVaga);
-		
+
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
