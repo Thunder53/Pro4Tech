@@ -75,11 +75,6 @@ public class TelaOpcoes extends JFrame {
 
 				TelaVisualizacao exibir = new TelaVisualizacao();
 
-				TelaInfoVagas exibir = new TelaInfoVagas();
-
-				TelaVisualizacao exibir = new TelaVisualizacao();
-
-				TelaVisualizacao exibir = new TelaVisualizacao();
 
 				exibir.setVisible(true);
 				setVisible(false);

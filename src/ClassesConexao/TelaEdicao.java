@@ -306,7 +306,8 @@ public class TelaEdicao extends JFrame {
 		Salvar.setBounds(873, 709, 192, 52);
 		contentPane.add(Salvar);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("VISUALIZAR");
+		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 18));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object vaga = cbxvagas.getSelectedItem();
@@ -332,7 +333,23 @@ public class TelaEdicao extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(1131, 242, 85, 21);
+		btnNewButton.setBounds(1095, 225, 180, 54);
 		contentPane.add(btnNewButton);
+		
+		JButton voltar = new JButton("VOLTAR");
+		voltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaMenuRH exibir = new TelaMenuRH();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		voltar.setForeground(Color.BLACK);
+		voltar.setFont(new Font("Arial", Font.BOLD, 18));
+		voltar.setBorderPainted(false);
+		voltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		voltar.setBackground(new Color(241, 133, 36));
+		voltar.setBounds(10, 768, 192, 52);
+		contentPane.add(voltar);
 	}
 }

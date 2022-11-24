@@ -26,15 +26,10 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
-<<<<<<< HEAD
+
 import javax.swing.border.BevelBorder;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 import javax.swing.border.BevelBorder;
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
 import javax.swing.border.BevelBorder;
 
 public class TelaVisualizacao extends JFrame {

@@ -128,7 +128,7 @@ public class TelaLogin extends JFrame {
 							if(rs1.next()) {
 								JOptionPane.showMessageDialog(null, "Entrando!");
 								Singleton.getInstance().nomeFuncionario = rs1.getString("nome");
-								TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+								TelaMenuRH exibir = new TelaMenuRH();
 								exibir.setVisible(true);
 								setVisible(false);
 							} else {
