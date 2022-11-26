@@ -14,5 +14,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/grafico"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/calendario"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/CEP"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Mysql"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/GRAFICO"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/CALENDARIO"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -57,12 +57,12 @@ public class TelaMenuRH extends JFrame {
 		
 		JLabel TEXT1 = new JLabel("SEJA BEM VINDO!");
 		TEXT1.setHorizontalAlignment(SwingConstants.LEFT);
-		TEXT1.setFont(new Font("Arial", Font.PLAIN, 18));
+		TEXT1.setFont(new Font("Arial", Font.BOLD, 18));
 		TEXT1.setBounds(126, 169, 470, 65);
 		contentPane.add(TEXT1);
 		
 		JLabel TEXT2 = new JLabel("SELECIONE NOS BOTÕES ABAIXO O QUE DESEJA FAZER:");
-		TEXT2.setFont(new Font("Arial", Font.PLAIN, 18));
+		TEXT2.setFont(new Font("Arial", Font.BOLD, 18));
 		TEXT2.setBounds(125, 200, 577, 76);
 		contentPane.add(TEXT2);
 		
@@ -133,6 +133,45 @@ public class TelaMenuRH extends JFrame {
 		EditarVagas_1.setAutoscrolls(true);
 		EditarVagas_1.setBounds(427, 503, 245, 65);
 		contentPane.add(EditarVagas_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
+		lblNewLabel_1.setBounds(0, 0, 517, 100);
+		contentPane.add(lblNewLabel_1);
+		
+		JButton EditarVagas_1_1 = new JButton("SAIR");
+		EditarVagas_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaLogin exibir = new TelaLogin();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		EditarVagas_1_1.setForeground(Color.BLACK);
+		EditarVagas_1_1.setFont(new Font("Arial", Font.BOLD, 16));
+		EditarVagas_1_1.setBorderPainted(false);
+		EditarVagas_1_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		EditarVagas_1_1.setBackground(new Color(241, 133, 36));
+		EditarVagas_1_1.setAutoscrolls(true);
+		EditarVagas_1_1.setBounds(10, 781, 102, 54);
+		contentPane.add(EditarVagas_1_1);
+		
+		JButton EditarVagas_1_2 = new JButton("CADASTRAR USUARIOS PRO4TECH");
+		EditarVagas_1_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaCadastroRH exibir = new TelaCadastroRH();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		EditarVagas_1_2.setForeground(Color.BLACK);
+		EditarVagas_1_2.setFont(new Font("Arial", Font.BOLD, 16));
+		EditarVagas_1_2.setBorderPainted(false);
+		EditarVagas_1_2.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		EditarVagas_1_2.setBackground(new Color(241, 133, 36));
+		EditarVagas_1_2.setAutoscrolls(true);
+		EditarVagas_1_2.setBounds(415, 646, 655, 65);
+		contentPane.add(EditarVagas_1_2);
 		setLocationRelativeTo(null);
 		setExtendedState(MAXIMIZED_BOTH);
 	}

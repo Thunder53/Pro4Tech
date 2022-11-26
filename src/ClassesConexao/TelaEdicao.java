@@ -132,6 +132,7 @@ public class TelaEdicao extends JFrame {
 		contentPane.add(lblNewLabel_11);
 		
 		JComboBox cbxvagas = new JComboBox();
+		cbxvagas.setFont(new Font("Arial", Font.PLAIN, 18));
 		cbxvagas.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
 				 vagasDAO dao = new vagasDAO();
@@ -246,6 +247,24 @@ public class TelaEdicao extends JFrame {
 		
 		
 		JButton FinalizarVaga = new JButton("FINALIZAR VAGA");
+		FinalizarVaga.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object vaga = cbxvagas.getSelectedItem();
+				Singleton.getInstance().nomeVaga = String.valueOf(vaga);
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "UPDATE vagas SET status = 'ENCERRADO' WHERE nome_vaga = '" + Singleton.getInstance().nomeVaga + "'";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					stmt.execute();
+					stmt.close();
+					con.close();
+					JOptionPane.showMessageDialog(null, "Processo encerrado!!");
+					
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
 		FinalizarVaga.setForeground(Color.BLACK);
 		FinalizarVaga.setFont(new Font("Arial", Font.BOLD, 18));
 		FinalizarVaga.setBorderPainted(false);
@@ -290,7 +309,7 @@ public class TelaEdicao extends JFrame {
 				stmt.execute();
 				stmt.close();
 				con.close();
-				JOptionPane.showMessageDialog(null, "Atulizado com sucesso! Visualizando Vagas");
+				JOptionPane.showMessageDialog(null, "Atualizado com sucesso! Visualizando Vagas");
 				
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -307,7 +326,7 @@ public class TelaEdicao extends JFrame {
 		contentPane.add(Salvar);
 		
 		JButton btnNewButton = new JButton("VISUALIZAR");
-		btnNewButton.setFont(new Font("Arial", Font.PLAIN, 18));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object vaga = cbxvagas.getSelectedItem();
@@ -333,6 +352,7 @@ public class TelaEdicao extends JFrame {
 				}
 			}
 		});
+		btnNewButton.setBackground(new Color(241, 133, 36));
 		btnNewButton.setBounds(1095, 225, 180, 54);
 		contentPane.add(btnNewButton);
 		
@@ -351,5 +371,10 @@ public class TelaEdicao extends JFrame {
 		voltar.setBackground(new Color(241, 133, 36));
 		voltar.setBounds(10, 768, 192, 52);
 		contentPane.add(voltar);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("");
+		lblNewLabel_1_2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
+		lblNewLabel_1_2.setBounds(0, 0, 517, 100);
+		contentPane.add(lblNewLabel_1_2);
 	}
 }

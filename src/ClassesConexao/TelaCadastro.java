@@ -137,7 +137,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(tfcpf);
 		 
 		JFormattedTextField tftelefone = new JFormattedTextField();
-		tftelefone.setBounds(239, 236, 489, 33);
+		tftelefone.setBounds(239, 237, 489, 33);
 	    MaskFormatter mfTELEFONE = new MaskFormatter();
 	    try {
 	        mfTELEFONE.setMask("(##)#####-####");
@@ -152,7 +152,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(tftelefone);
 		
 		pfsenha = new JPasswordField();
-		pfsenha.setBounds(1009, 236, 361, 33);
+		pfsenha.setBounds(1150, 239, 361, 33);
 		pfsenha.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(pfsenha);
 		
@@ -163,27 +163,27 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblCpf);
 		
 		JLabel lblSenha = new JLabel("SENHA *");
-		lblSenha.setBounds(922, 236, 87, 33);
+		lblSenha.setBounds(1063, 239, 87, 33);
 		lblSenha.setForeground(Color.BLACK);
 		lblSenha.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblSenha);
 		
 		tfformaçao = new JTextField();
-		tfformaçao.setBounds(239, 497, 489, 71);
+		tfformaçao.setBounds(239, 498, 489, 71);
 		tfformaçao.setHorizontalAlignment(SwingConstants.LEFT);
 		tfformaçao.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfformaçao.setColumns(10);
 		contentPane.add(tfformaçao);
 		
 		tfprentensaosalarial = new JTextField();
-		tfprentensaosalarial.setBounds(239, 370, 489, 33);
+		tfprentensaosalarial.setBounds(239, 371, 489, 33);
 		tfprentensaosalarial.setHorizontalAlignment(SwingConstants.LEFT);
 	    tfprentensaosalarial.setFont(new Font("Arial", Font.PLAIN, 18));
 	    tfprentensaosalarial.setColumns(10);
 		contentPane.add(tfprentensaosalarial);
 	    
 		tfcargo = new JTextField();
-		tfcargo.setBounds(1009, 193, 361, 33);
+		tfcargo.setBounds(1150, 196, 361, 33);
 		tfcargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfcargo.setColumns(10);
 		contentPane.add(tfcargo);
@@ -191,7 +191,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		JDateChooser data_nasc = new JDateChooser();
 		data_nasc.setDateFormatString("dd'/' MM '/' yyyy");
 		data_nasc.setFont(new Font("Arial", Font.PLAIN, 18));
-		data_nasc.setBounds(1009, 149, 361, 33);
+		data_nasc.setBounds(1150, 152, 361, 33);
 		contentPane.add(data_nasc);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
@@ -200,25 +200,25 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblDataNascimento = new JLabel("DATA NASCIMENTO *");
-		lblDataNascimento.setBounds(815, 149, 194, 33);
+		lblDataNascimento.setBounds(956, 152, 194, 33);
 		lblDataNascimento.setForeground(Color.BLACK);
 		lblDataNascimento.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblDataNascimento);
 		
 		JLabel lblExperienciaProfissional = new JLabel("EXP. PROFISSIONAL");
-		lblExperienciaProfissional.setBounds(47, 414, 176, 40);
+		lblExperienciaProfissional.setBounds(47, 414, 213, 40);
 		lblExperienciaProfissional.setForeground(Color.BLACK);
 		lblExperienciaProfissional.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblExperienciaProfissional);
 		
 		JLabel lblCargo = new JLabel("CARGO DESEJADO");
-		lblCargo.setBounds(825, 193, 182, 33);
+		lblCargo.setBounds(966, 196, 182, 33);
 		lblCargo.setForeground(Color.BLACK);
 		lblCargo.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblCargo);
 		
 		tfexperiencia = new JTextField();
-		tfexperiencia.setBounds(239, 414, 489, 71);
+		tfexperiencia.setBounds(239, 416, 489, 71);
 		tfexperiencia.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfexperiencia.setColumns(10);
 		contentPane.add(tfexperiencia);
@@ -230,7 +230,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblPretensoSalarial);
 		
 		JLabel lblFormaoAcadmica = new JLabel("FORMAÇÃO ACADÊMICA *");
-		lblFormaoAcadmica.setBounds(10, 497, 228, 33);
+		lblFormaoAcadmica.setBounds(10, 497, 260, 33);
 		lblFormaoAcadmica.setForeground(Color.BLACK);
 		lblFormaoAcadmica.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblFormaoAcadmica);
@@ -242,7 +242,7 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		contentPane.add(lblTelefone);
 		
 		JLabel lblCamposObrigatrios = new JLabel("Campos obrigatórios *");
-		lblCamposObrigatrios.setBounds(1028, 699, 194, 33);
+		lblCamposObrigatrios.setBounds(239, 691, 194, 33);
 		lblCamposObrigatrios.setForeground(Color.RED);
 		lblCamposObrigatrios.setFont(new Font("Arial", Font.PLAIN, 18));
 		contentPane.add(lblCamposObrigatrios);
@@ -261,18 +261,18 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		tfemail2 = new JTextField();
 		tfemail2.setFont(new Font("Arial", Font.PLAIN, 18));
 		tfemail2.setColumns(10);
-		tfemail2.setBounds(239, 324, 489, 33);
+		tfemail2.setBounds(239, 327, 489, 33);
 		contentPane.add(tfemail2);
 		
 		JLabel lblSenha2 = new JLabel("CONFIRMAÇÃO SENHA *");
 		lblSenha2.setForeground(Color.BLACK);
 		lblSenha2.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblSenha2.setBounds(788, 280, 223, 33);
+		lblSenha2.setBounds(929, 283, 223, 33);
 		contentPane.add(lblSenha2);
 		
 		pfsenha2 = new JPasswordField();
 		pfsenha2.setFont(new Font("Arial", Font.PLAIN, 18));
-		pfsenha2.setBounds(1009, 280, 361, 33);
+		pfsenha2.setBounds(1150, 283, 361, 33);
 		contentPane.add(pfsenha2);
 		
 		lblQuemsoueu = new JLabel("QUEM SOU EU? *");
@@ -282,22 +282,23 @@ public class TelaCadastro extends JFrame implements ActionListener {
 		
 		tfquemsoueu = new JTextField();
 		tfquemsoueu.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfquemsoueu.setBounds(239, 579, 1131, 71);
+		tfquemsoueu.setBounds(239, 579, 1272, 102);
 		contentPane.add(tfquemsoueu);
 		tfquemsoueu.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("CEP *");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblNewLabel.setBounds(948, 324, 61, 24);
+		lblNewLabel.setBounds(1089, 327, 61, 24);
 		contentPane.add(lblNewLabel);
 		
 		tfcep = new JTextField();
 		tfcep.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfcep.setBounds(1009, 324, 254, 33);
+		tfcep.setBounds(1150, 327, 254, 33);
 		contentPane.add(tfcep);
 		tfcep.setColumns(10);
 		
 		btnNewButton_1 = new JButton("BUSCAR");
+		btnNewButton_1.setFont(new Font("Arial", Font.PLAIN, 10));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if( tfcep.getText().equals("")) {
@@ -353,66 +354,66 @@ public class TelaCadastro extends JFrame implements ActionListener {
 			}
 	});
 	
-		btnNewButton_1.setBounds(1273, 324, 87, 33);
+		btnNewButton_1.setBounds(1414, 327, 87, 33);
 		contentPane.add(btnNewButton_1);
 		
 		lblendereco = new JLabel("ENDEREÇO *");
 		lblendereco.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblendereco.setBounds(884, 370, 124, 33);
+		lblendereco.setBounds(1025, 373, 124, 33);
 		contentPane.add(lblendereco);
 		
 		tfendereco = new JTextField();
 		tfendereco.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfendereco.setBounds(1009, 371, 361, 62);
+		tfendereco.setBounds(1150, 374, 361, 62);
 		contentPane.add(tfendereco);
 		tfendereco.setColumns(10);
 		
 		lblnumero = new JLabel("NÚMERO *");
 		lblnumero.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblnumero.setBounds(907, 447, 102, 24);
+		lblnumero.setBounds(1048, 450, 102, 24);
 		contentPane.add(lblnumero);
 		
 		tfnumero = new JTextField();
 		tfnumero.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfnumero.setBounds(1009, 444, 229, 35);
+		tfnumero.setBounds(1150, 447, 229, 35);
 		contentPane.add(tfnumero);
 		tfnumero.setColumns(10);
 		
 		lblbairro = new JLabel("BAIRRO *");
 		lblbairro.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblbairro.setBounds(922, 489, 87, 33);
+		lblbairro.setBounds(1063, 492, 87, 33);
 		contentPane.add(lblbairro);
 		
 		tfbairro = new JTextField();
 		tfbairro.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfbairro.setBounds(1009, 491, 361, 33);
+		tfbairro.setBounds(1150, 494, 361, 33);
 		contentPane.add(tfbairro);
 		tfbairro.setColumns(10);
 		
 		lblcidade = new JLabel("CIDADE *");
 		lblcidade.setFont(new Font("Arial", Font.PLAIN, 18));
-		lblcidade.setBounds(922, 535, 87, 33);
+		lblcidade.setBounds(1063, 538, 87, 33);
 		contentPane.add(lblcidade);
 		
 		tfcidade = new JTextField();
 		tfcidade.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfcidade.setBounds(1009, 535, 361, 33);
+		tfcidade.setBounds(1150, 538, 361, 33);
 		contentPane.add(tfcidade);
 		tfcidade.setColumns(10);
 		
 		lbluf = new JLabel("UF *");
 		lbluf.setFont(new Font("Arial", Font.PLAIN, 18));
-		lbluf.setBounds(1248, 444, 46, 33);
+		lbluf.setBounds(1389, 447, 46, 33);
 		contentPane.add(lbluf);
 		
 		tfuf = new JTextField();
 		tfuf.setFont(new Font("Arial", Font.PLAIN, 18));
-		tfuf.setBounds(1296, 444, 74, 34);
+		tfuf.setBounds(1437, 447, 74, 34);
 		contentPane.add(tfuf);
 		tfuf.setColumns(10);
 		
 		JButton btnNewButton = new JButton("CADASTRAR");
-		btnNewButton.setBounds(683, 661, 210, 71);
+		btnNewButton.setBounds(765, 739, 210, 71);
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

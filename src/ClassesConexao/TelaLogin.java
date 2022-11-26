@@ -37,7 +37,6 @@ public class TelaLogin extends JFrame {
 	private JLabel lblOlSejaBemvindo;
 	private JLabel lblFaaSeuLogin_1;
 	private JLabel lblNewLabel_1;
-	private JButton btnSair;
 
 	/**
 	 * Launch the application.
@@ -76,6 +75,12 @@ public class TelaLogin extends JFrame {
 		lblNewLabel.setBounds(359, 324, 86, 33);
 		contentPane.add(lblNewLabel);
 		
+		JLabel message = new JLabel("");
+		message.setForeground(Color.RED);
+		message.setFont(new Font("Arial", Font.PLAIN, 18));
+		message.setBounds(455, 435, 644, 33);
+		contentPane.add(message);
+		
 		JLabel lblSenha = new JLabel("SENHA:");
 		lblSenha.setForeground(Color.BLACK);
 		lblSenha.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -99,9 +104,8 @@ public class TelaLogin extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					try {
-					
 					Connection con = Conexao.faz_conexao();
-					String sql = "select *from cadastro_usuario where email=? and senha=?";
+					String sql = "select *from cadastro_usuario where email=? and senha= ?";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, tfUsuario.getText());
 					stmt.setString(2, new String(pfSenha.getPassword()));
@@ -114,39 +118,48 @@ public class TelaLogin extends JFrame {
 						TelaOpcoes exibir = new TelaOpcoes();
 						exibir.setVisible(true);
 						setVisible(false);
-						
 					} else {
 						try {
-							
-							Connection con1 = Conexao.faz_conexao();
-							String sql1 = "select * from cadastro_funcionario where email=? and senha=?";
+							String sql1 = "select * from cadastro_funcionario where email=? and senha= ?";
 							PreparedStatement stmt1 = con.prepareStatement(sql1);
 							stmt1.setString(1, tfUsuario.getText());
 							stmt1.setString(2, new String(pfSenha.getPassword()));
 							ResultSet rs1 = stmt1.executeQuery();
-							
 							if(rs1.next()) {
 								JOptionPane.showMessageDialog(null, "Entrando!");
 								Singleton.getInstance().nomeFuncionario = rs1.getString("nome");
-								TelaMenuRH exibir = new TelaMenuRH();
+								TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
 								exibir.setVisible(true);
 								setVisible(false);
 							} else {
-								JOptionPane.showMessageDialog(null, "E-mail ou senha incorreto!");
+								try {
+									String sql2 = "select * from cadastro_admin where email = ? and senha= ?";
+									PreparedStatement stmt2 = con.prepareStatement(sql2);
+									stmt2.setString(1, tfUsuario.getText());
+									stmt2.setString(2, new String(pfSenha.getPassword()));
+									ResultSet rs2 = stmt2.executeQuery();
+									if(rs2.next()) {
+										JOptionPane.showMessageDialog(null, "Entrando!");
+										Singleton.getInstance().nomeFuncionario = rs2.getString("nome");
+										TelaMenuRH exibir = new TelaMenuRH();
+										exibir.setVisible(true);
+										setVisible(false);
+									} else {
+										message.setText("E-mail ou senha incorreta!!");
+									}
+									stmt2.close();		
+								} catch (Exception e2) {
+									e2.printStackTrace();
+								}
 							}
 							stmt1.close();
-							con1.close();
-									
 						} catch (SQLException e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 						}
 					}
 					stmt.close();
-					con.close();
-							
+					con.close();	
 				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -195,17 +208,6 @@ public class TelaLogin extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1);
-		
-		btnSair = new JButton("SAIR");
-		btnSair.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		btnSair.setForeground(Color.BLACK);
-		btnSair.setFont(new Font("Arial", Font.BOLD, 18));
-		btnSair.setBackground(new Color(255, 140, 0));
-		btnSair.setBounds(1320, 744, 183, 72);
-		contentPane.add(btnSair);
+
 	}
 }

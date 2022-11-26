@@ -54,19 +54,6 @@ public class TelaOpcoesFuncionario extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("SEJA BEM VINDO!");
-		lblNewLabel_1.setForeground(Color.BLACK);
-		lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(490, 206, 211, 40);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("SELECIONE \r\nNOS BOTÕES ABAIXO O QUE DESEJA FAZER:");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setForeground(Color.BLACK);
-		lblNewLabel_1_1.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(0, 246, 1540, 52);
-		contentPane.add(lblNewLabel_1_1);
-		
 		JButton btnNewButton = new JButton("CADASTRAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,9 +66,9 @@ public class TelaOpcoesFuncionario extends JFrame {
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setAutoscrolls(true);
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBackground(new Color(241, 133, 36));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 16));
-		btnNewButton.setBounds(506, 360, 195, 72);
+		btnNewButton.setBounds(486, 341, 195, 72);
 		contentPane.add(btnNewButton);
 		
 		JButton btnVisualizarStatus = new JButton("AVALIAR CANDIDATOS");
@@ -97,13 +84,55 @@ public class TelaOpcoesFuncionario extends JFrame {
 		btnVisualizarStatus.setFont(new Font("Arial", Font.BOLD, 16));
 		btnVisualizarStatus.setBorderPainted(false);
 		btnVisualizarStatus.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVisualizarStatus.setBackground(Color.ORANGE);
-		btnVisualizarStatus.setBounds(783, 359, 195, 75);
+		btnVisualizarStatus.setBackground(new Color(241, 133, 36));
+		btnVisualizarStatus.setBounds(852, 340, 195, 75);
 		contentPane.add(btnVisualizarStatus);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("");
 		lblNewLabel_1_2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1_2.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1_2);
+		
+		JButton btnEditarVagas = new JButton("EDITAR VAGAS");
+		btnEditarVagas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEditarVagas.setForeground(Color.BLACK);
+		btnEditarVagas.setFont(new Font("Arial", Font.BOLD, 16));
+		btnEditarVagas.setBorderPainted(false);
+		btnEditarVagas.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnEditarVagas.setBackground(new Color(241, 133, 36));
+		btnEditarVagas.setAutoscrolls(true);
+		btnEditarVagas.setBounds(670, 524, 195, 72);
+		contentPane.add(btnEditarVagas);
+		
+		JLabel TEXT1 = new JLabel("SEJA BEM VINDO!");
+		TEXT1.setHorizontalAlignment(SwingConstants.LEFT);
+		TEXT1.setFont(new Font("Arial", Font.BOLD, 18));
+		TEXT1.setBounds(80, 146, 470, 65);
+		contentPane.add(TEXT1);
+		
+		JLabel TEXT2 = new JLabel("SELECIONE NOS BOTÕES ABAIXO O QUE DESEJA FAZER:");
+		TEXT2.setFont(new Font("Arial", Font.BOLD, 18));
+		TEXT2.setBounds(79, 177, 577, 76);
+		contentPane.add(TEXT2);
+		
+		JButton EditarVagas_1_1 = new JButton("SAIR");
+		EditarVagas_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaLogin exibir = new TelaLogin();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		EditarVagas_1_1.setForeground(Color.BLACK);
+		EditarVagas_1_1.setFont(new Font("Arial", Font.BOLD, 16));
+		EditarVagas_1_1.setBorderPainted(false);
+		EditarVagas_1_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		EditarVagas_1_1.setBackground(new Color(241, 133, 36));
+		EditarVagas_1_1.setAutoscrolls(true);
+		EditarVagas_1_1.setBounds(10, 729, 102, 54);
+		contentPane.add(EditarVagas_1_1);
 	}
 }
