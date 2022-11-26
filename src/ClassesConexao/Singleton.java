@@ -9,6 +9,11 @@ public class Singleton {
 	public String Candidato;
 	public String CandidatoCPF;
 	public String FuncionarioEMAIL;
+	public int tempo;
+	public int formacao;
+	public int perfil;
+	public int modelo;
+	public int salario;
 	
 	private static Singleton instance;
 	

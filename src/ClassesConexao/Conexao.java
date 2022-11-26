@@ -14,10 +14,6 @@ public class Conexao {
 
 		return DriverManager.getConnection("jdbc:mysql://localhost/pro4tech","root",".Bethinha19");
 
-		return DriverManager.getConnection("jdbc:mysql://localhost/pro4tech","root","123456");
-
-		return DriverManager.getConnection("jdbc:mysql://localhost/pro4tech","root","Tobias*2004");
-
 			
 		} catch (ClassNotFoundException e) {
 			
