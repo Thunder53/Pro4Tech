@@ -24,18 +24,14 @@ import javax.swing.JTable;
 import java.awt.Component;
 import javax.swing.JScrollPane;
 import javax.swing.event.AncestorListener;
-<<<<<<< HEAD
+
 import javax.swing.event.AncestorEvent;
 import javax.swing.border.BevelBorder;
 
-=======
 import javax.swing.event.AncestorEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 import javax.swing.border.BevelBorder;
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
+
 import javax.swing.border.BevelBorder;
 
 public class TelaStatusCandidato extends JFrame {
@@ -71,11 +67,6 @@ public class TelaStatusCandidato extends JFrame {
 	private final JScrollPane scrollPane = new JScrollPane();
 	private final JButton btnVoltar = new JButton("VOLTAR");
 
-	private final JScrollPane scrollPane = new JScrollPane();
-
-	private final JButton btnVoltar = new JButton("VOLTAR");
-
-	private final JButton btnVoltar = new JButton("VOLTAR");
 
 	
 	

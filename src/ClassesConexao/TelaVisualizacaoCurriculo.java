@@ -27,18 +27,10 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
-<<<<<<< HEAD
 import java.awt.event.ActionEvent;
 import javax.swing.border.BevelBorder;
-
-=======
 import java.awt.event.ActionEvent;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import javax.swing.border.BevelBorder;
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
 import javax.swing.border.BevelBorder;
 
 
@@ -366,22 +358,19 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		contentPane.add(lblNewLabel_5);
 
 		contentPane.add(lblNewLabel_5);
-
-		JButton btnVoltar = new JButton("VOLTAR");
-		btnVoltar.addActionListener(new ActionListener() {
+		
+		JButton voltar = new JButton("VOLTAR");
+		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+				TelaMenuRH exibir = new TelaMenuRH();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
 		});
-		btnVoltar.setForeground(Color.BLACK);
-		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
-		btnVoltar.setBorderPainted(false);
-		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVoltar.setBackground(Color.ORANGE);
-		btnVoltar.setBounds(10, 729, 156, 52);
-		contentPane.add(btnVoltar);
-		contentPane.add(btnVoltar);
+		voltar.setForeground(Color.BLACK);
+		voltar.setFont(new Font("Arial", Font.PLAIN, 18));
+		voltar.setBackground(new Color(241, 133, 36));
+		voltar.setBounds(10, 729, 156, 52);
+		contentPane.add(voltar);
 	}
 }

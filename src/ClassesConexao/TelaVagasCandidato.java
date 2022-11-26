@@ -28,15 +28,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
-<<<<<<< HEAD
+
 import javax.swing.border.BevelBorder;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import javax.swing.border.BevelBorder;
->>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
-=======
 import javax.swing.border.BevelBorder;
 
 
