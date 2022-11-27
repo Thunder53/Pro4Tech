@@ -199,8 +199,6 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					}
 					stmt.close();
 					con.close();
-					
-					setVisible(false);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "ERRO!");
@@ -222,10 +220,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
-					JOptionPane.showMessageDialog(null, "Avaliação realizada. Voltando a tela de Opções!");
-					TelaOpcoesFuncionario abrir = new TelaOpcoesFuncionario();
-					abrir.setVisible(true);
-					setVisible(false);
+					JOptionPane.showMessageDialog(null, "Avaliação realizada");
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 				}
@@ -262,7 +257,6 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.close();
 					con.close();
 					
-					setVisible(false);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "ERRO!");
@@ -270,7 +264,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 				
 				try {
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into inscricao(nome_vaga, avaliacao, status_vaga, feedback_geral, , cpf, email) values (?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into inscricao(nome_vaga, avaliacao, status_vaga, feedback_geral, feedback_pontual, cpf, email) values (?, ?, ?, ?, ?, ?, ?)";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					
 					stmt.setString(1, Singleton.getInstance().nomeVaga);
@@ -284,10 +278,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
-					JOptionPane.showMessageDialog(null, "Avaliação realizada. Voltando a tela de Opções!");
-					TelaOpcoesFuncionario abrir = new TelaOpcoesFuncionario();
-					abrir.setVisible(true);
-					setVisible(false);
+					JOptionPane.showMessageDialog(null, "Avaliação realizada!");
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 				}
@@ -362,9 +353,15 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		JButton voltar = new JButton("VOLTAR");
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaMenuRH exibir = new TelaMenuRH();
-				exibir.setVisible(true);
-				setVisible(false);
+				if(Singleton.getInstance().nomeFuncionario  == "vitoria") {
+					TelaMenuRH exibir = new TelaMenuRH();
+					exibir.setVisible(true);
+					setVisible(false);
+				} else {
+					TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+					exibir.setVisible(true);
+					setVisible(false);
+				}
 			}
 		});
 		voltar.setForeground(Color.BLACK);

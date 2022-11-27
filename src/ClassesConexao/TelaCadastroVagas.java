@@ -246,9 +246,6 @@ public class TelaCadastroVagas extends JFrame {
 				stmt.close();
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
-				TelaOpcoes exibir = new TelaOpcoes();
-				exibir.setVisible(true);
-				setVisible(false);
 
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
@@ -274,9 +271,15 @@ public class TelaCadastroVagas extends JFrame {
 		JButton btnVoltar = new JButton("VOLTAR");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
-				exibir.setVisible(true);
-				setVisible(false);
+				if(Singleton.getInstance().nomeFuncionario == "vitoria") {
+					TelaMenuRH exibir = new TelaMenuRH();
+					exibir.setVisible(true);
+					setVisible(false);
+				} else {
+					TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+					exibir.setVisible(true);
+					setVisible(false);
+				}
 			}
 		});
 		btnVoltar.setForeground(Color.BLACK);

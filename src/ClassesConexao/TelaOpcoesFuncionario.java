@@ -96,6 +96,9 @@ public class TelaOpcoesFuncionario extends JFrame {
 		JButton btnEditarVagas = new JButton("EDITAR VAGAS");
 		btnEditarVagas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				TelaEdicao exibir = new TelaEdicao();
+				exibir.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnEditarVagas.setForeground(Color.BLACK);

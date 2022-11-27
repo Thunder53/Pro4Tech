@@ -140,7 +140,7 @@ public class TelaLogin extends JFrame {
 									ResultSet rs2 = stmt2.executeQuery();
 									if(rs2.next()) {
 										JOptionPane.showMessageDialog(null, "Entrando!");
-										Singleton.getInstance().nomeFuncionario = rs2.getString("nome");
+										Singleton.getInstance().nomeFuncionario = "vitoria";
 										TelaMenuRH exibir = new TelaMenuRH();
 										exibir.setVisible(true);
 										setVisible(false);
@@ -148,11 +148,13 @@ public class TelaLogin extends JFrame {
 										message.setText("E-mail ou senha incorreta!!");
 									}
 									stmt2.close();		
+									con.close();	
 								} catch (Exception e2) {
 									e2.printStackTrace();
 								}
 							}
 							stmt1.close();
+							con.close();	
 						} catch (SQLException e1) {
 							e1.printStackTrace();
 						}

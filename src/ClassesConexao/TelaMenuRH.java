@@ -69,7 +69,7 @@ public class TelaMenuRH extends JFrame {
 		JButton AvaliarCandidatos = new JButton("AVALIAR CANDIDATOS");
 		AvaliarCandidatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaVisualizacaoCurriculo exibir = new TelaVisualizacaoCurriculo();
+				TelaVagasCandidato exibir = new TelaVagasCandidato();
 				exibir.setVisible(true);
 				setVisible(false);
 			}

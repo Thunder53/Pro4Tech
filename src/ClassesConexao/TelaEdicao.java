@@ -359,9 +359,15 @@ public class TelaEdicao extends JFrame {
 		JButton voltar = new JButton("VOLTAR");
 		voltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaMenuRH exibir = new TelaMenuRH();
-				exibir.setVisible(true);
-				setVisible(false);
+				if(Singleton.getInstance().nomeFuncionario  == "vitoria") {
+					TelaMenuRH exibir = new TelaMenuRH();
+					exibir.setVisible(true);
+					setVisible(false);
+				} else {
+					TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+					exibir.setVisible(true);
+					setVisible(false);
+				}
 			}
 		});
 		voltar.setForeground(Color.BLACK);
