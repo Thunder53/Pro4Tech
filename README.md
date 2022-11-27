@@ -212,13 +212,80 @@ A solução para essa demanda será a criação de um sistema desktop onde será
 </table>
 
   ![Sprint03_BurnDown](https://user-images.githubusercontent.com/102201672/200177425-26fd6744-d663-4735-9439-4306274f591e.png)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
+  
+  --------------------
+  
+  ## Sprint 03
+* Tela de dashboard de reprovação por motivo
+* Tela de opções para o RH
+* Tela de edição/finalização da vaga
+
+## Wireframe
+* Tela de consulta do dashboard
+
+![image](https://user-images.githubusercontent.com/111543077/200208909-ea334a78-93b6-4ad7-849d-20db1ed1deb0.png)
+
+
+* Tela de opções do RH
+
+![image](https://user-images.githubusercontent.com/111543077/200209098-5a04ecf4-b9ec-46aa-b993-8cc9ce2a01be.png)
+
+* Tela de edição/finalização da vaga
+
+![image](https://user-images.githubusercontent.com/111543077/200209173-7723f284-82da-476c-a524-67a7616f03dd.png)
+
+
+## User stories
+
+<table align="center">
+  <tr>
+   <td>User stories</td>
+   <td>Importância</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador desejo consultar as o númeor de reprovações para entender os motivos principais</td>
+   <td>01</td>
+  </tr>
+
+  <tr>
+   <td>Como administrador editar/finalizar vaga no sistema para corrigir ou encerrar uma vaga</td>
+   <td>02</td>
+  </tr>
+    <tr>
+   <td>Como administrador desejo escolher o que eu quero fazer clusterizado em uma tela com todas as opções para facilitar a navegação</td>
+   <td>03</td>
+  </tr>
+  
+</table>
+
+  
+<<<<<<< HEAD
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+<<<<<<< HEAD
+>>>>>>> afe0cdae6d49d8007ca0ed4ba6870dd284a2e912
+=======
+=======
+>>>>>>> 56c04b2ce22b47b9bf55e6822026a5b72dc51b8f
+>>>>>>> 322a9936030b9c344c21c16d7e507bc9f2e2c06f
+>>>>>>> 9e39f517243bc70c0af4be67628828012637e400
 
 ## Entregas
 
 - [x] **Kick-off** - 18/08/2022
 - [x] **Sprint 01** - 18/09/2022
 - [x] **Sprint 02** - 09/10/2022
-- [ ] **Sprint 03** - 06/11/2022
+- [x] **Sprint 03** - 06/11/2022
 - [ ] **Sprint 04** - 27/11/2022
 
 

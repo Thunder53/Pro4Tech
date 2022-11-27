@@ -28,6 +28,11 @@ import javax.swing.SwingConstants;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.border.BevelBorder;
+import java.awt.event.ActionEvent;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.BevelBorder;
+
 
 public class TelaVisualizacaoCurriculo extends JFrame {
 
@@ -194,8 +199,6 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					}
 					stmt.close();
 					con.close();
-					
-					setVisible(false);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "ERRO!");
@@ -217,10 +220,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
-					JOptionPane.showMessageDialog(null, "Avaliação realizada. Voltando a tela de Opções!");
-					TelaOpcoesFuncionario abrir = new TelaOpcoesFuncionario();
-					abrir.setVisible(true);
-					setVisible(false);
+					JOptionPane.showMessageDialog(null, "Avaliação realizada");
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 				}
@@ -257,7 +257,6 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.close();
 					con.close();
 					
-					setVisible(false);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 					JOptionPane.showMessageDialog(null, "ERRO!");
@@ -279,10 +278,7 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 					stmt.execute();
 					stmt.close();
 					con.close();
-					JOptionPane.showMessageDialog(null, "Avaliação realizada. Voltando a tela de Opções!");
-					TelaOpcoesFuncionario abrir = new TelaOpcoesFuncionario();
-					abrir.setVisible(true);
-					setVisible(false);
+					JOptionPane.showMessageDialog(null, "Avaliação realizada!");
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Faltando informações obrigatórias!!");
 				}
@@ -349,6 +345,29 @@ public class TelaVisualizacaoCurriculo extends JFrame {
 		
 		JLabel lblNewLabel_5 = new JLabel("");
 		lblNewLabel_5.setBounds(208, 10, 553, 90);
+
 		contentPane.add(lblNewLabel_5);
+
+		contentPane.add(lblNewLabel_5);
+		
+		JButton voltar = new JButton("VOLTAR");
+		voltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Singleton.getInstance().nomeFuncionario  == "vitoria") {
+					TelaMenuRH exibir = new TelaMenuRH();
+					exibir.setVisible(true);
+					setVisible(false);
+				} else {
+					TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+					exibir.setVisible(true);
+					setVisible(false);
+				}
+			}
+		});
+		voltar.setForeground(Color.BLACK);
+		voltar.setFont(new Font("Arial", Font.PLAIN, 18));
+		voltar.setBackground(new Color(241, 133, 36));
+		voltar.setBounds(10, 729, 156, 52);
+		contentPane.add(voltar);
 	}
 }

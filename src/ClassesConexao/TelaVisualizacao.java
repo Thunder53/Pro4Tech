@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -25,6 +26,13 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.AncestorEvent;
+
+import javax.swing.border.BevelBorder;
+
+import javax.swing.border.BevelBorder;
+import javax.swing.border.BevelBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TelaVisualizacao extends JFrame {
 
@@ -85,69 +93,15 @@ public class TelaVisualizacao extends JFrame {
 		lblNewLabel_1_1_1.setBounds(144, 243, 910, 33);
 		contentPane.add(lblNewLabel_1_1_1);
 		
-		JComboBox cbxvagas = new JComboBox();
-		cbxvagas.setFont(new Font("Arial", Font.PLAIN, 18));
-		cbxvagas.addAncestorListener(new AncestorListener() {
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent event) {
-				 vagasDAO dao = new vagasDAO();
-			        
-			        ArrayList <String> vg = dao.vagas();
-			        cbxvagas.removeAll();
-			        for(String f:vg){
-			            
-			            cbxvagas.addItem(f);
-			            
-			        }
-				
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
-		cbxvagas.setBounds(321, 320, 878, 43);
-		contentPane.add(cbxvagas);
-		
-		JButton btnNewButton = new JButton("CANDIDATAR");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
 				try {
-					Connection con = Conexao.faz_conexao();
-					String sql = "insert into candidato_vaga(cpf, nome_vaga) values (?, ?)";
-					PreparedStatement stmt = con.prepareStatement(sql);
-					
-					Object vaga = cbxvagas.getSelectedItem();
-					String vagas = String.valueOf(vaga);
-					
-					stmt.setString(2, vagas);
-					stmt.setString(1, Singleton.getInstance().cpfUsuario);
-					stmt.execute();
-					stmt.close();
-					con.close();
-					
-				} catch (Exception e2) {
-					
-				}
-				
-				
-			}
-		});
-		btnNewButton.setBackground(new Color(255, 128, 64));
-		btnNewButton.setForeground(new Color(0, 0, 0));
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
-		btnNewButton.setBounds(645, 746, 247, 60);
-		contentPane.add(btnNewButton);
-		
-		JButton btnVisualizar = new JButton("VISUALIZAR");
-		btnVisualizar.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				Object vaga = cbxvagas.getSelectedItem();
-					try {
 					
 					Connection con = Conexao.faz_conexao();
 					
-					String sql = "select nome_vaga, carga_horaria, requisitos, escolaridade from Vagas where nome_vaga = '" + vaga + "'";
+					String sql = "select nome_vaga, carga_horaria, requisitos, escolaridade from Vagas";
 					PreparedStatement stmt = con.prepareStatement(sql);
 					ResultSet rs = stmt.executeQuery();
 					
@@ -163,21 +117,32 @@ public class TelaVisualizacao extends JFrame {
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
-				
+			}
+			public void ancestorMoved(AncestorEvent event) {
+			}
+			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
-		btnVisualizar.setForeground(Color.BLACK);
-		btnVisualizar.setFont(new Font("Arial", Font.BOLD, 18));
-		btnVisualizar.setBackground(new Color(255, 128, 64));
-		btnVisualizar.setBounds(1219, 318, 241, 43);
-		contentPane.add(btnVisualizar);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setFont(new Font("Arial", Font.PLAIN, 17));
-		scrollPane_1.setBounds(321, 409, 878, 187);
+		scrollPane_1.setBounds(321, 318, 878, 385);
 		contentPane.add(scrollPane_1);
 		
 		tbDescVaga = new JTable();
+		tbDescVaga.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Singleton.getInstance().nomeVaga = tbDescVaga.getValueAt(tbDescVaga.getSelectedRow(), 0).toString();
+			}
+		});
+		tbDescVaga.addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent event) {
+					
+			}
+			public void ancestorMoved(AncestorEvent event) {
+			}
+			public void ancestorRemoved(AncestorEvent event) {
+			}
+		});
 		tbDescVaga.setBackground(Color.WHITE);
 		tbDescVaga.setFont(new Font("Arial", Font.PLAIN, 17));
 		tbDescVaga.setModel(new DefaultTableModel(
@@ -188,7 +153,52 @@ public class TelaVisualizacao extends JFrame {
 			}
 		));
 		scrollPane_1.setViewportView(tbDescVaga);
+
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaOpcoes exibir = new TelaOpcoes();
+				exibir.setVisible(true);
+				setVisible(false);
 		
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(new Color(255, 140, 0));
+		btnVoltar.setBounds(10, 768, 156, 52);
+		contentPane.add(btnVoltar);
+		
+		JButton btnNewButton = new JButton("CANDIDATAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Connection con = Conexao.faz_conexao();
+					String sql = "insert into candidato_vaga(cpf, nome_vaga, status) values (?, ?, ?)";
+					PreparedStatement stmt = con.prepareStatement(sql);
+					
+					stmt.setString(2, Singleton.getInstance().nomeVaga);
+					stmt.setString(1, Singleton.getInstance().cpfUsuario);
+					stmt.setString(3, "ANDAMENTO");
+					stmt.execute();
+					stmt.close();
+					con.close();
+
+					JOptionPane.showMessageDialog(null, "CANDIDATURA REALIZADA!");
+				} catch (Exception e2) {
+					
+				}
+				
+				
+			}
+		});
+		btnNewButton.setBackground(new Color(255, 140, 0));
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
+		btnNewButton.setBounds(645, 746, 247, 60);
+		contentPane.add(btnNewButton);
 		
 	}
 }

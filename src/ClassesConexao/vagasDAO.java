@@ -82,7 +82,3 @@ public class vagasDAO {
 	 	  	
 }
 
-
-
-
-

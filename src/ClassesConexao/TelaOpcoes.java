@@ -47,6 +47,10 @@ public class TelaOpcoes extends JFrame {
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setForeground(new Color(255, 255, 255));
 		contentPane.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		setExtendedState(MAXIMIZED_BOTH);
+
+
+		setExtendedState(MAXIMIZED_BOTH);
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -68,7 +72,7 @@ public class TelaOpcoes extends JFrame {
 		JButton btnNewButton = new JButton("VISUALIZAR VAGAS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TelaInfoVagas exibir = new TelaInfoVagas();
+				TelaVisualizacao exibir = new TelaVisualizacao();
 				exibir.setVisible(true);
 				setVisible(false);
 			}
@@ -77,7 +81,7 @@ public class TelaOpcoes extends JFrame {
 		btnNewButton.setBorderPainted(false);
 		btnNewButton.setAutoscrolls(true);
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBackground(new Color(241, 133, 36));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 16));
 		btnNewButton.setBounds(506, 360, 195, 72);
 		contentPane.add(btnNewButton);
@@ -95,7 +99,7 @@ public class TelaOpcoes extends JFrame {
 		btnVisualizarStatus.setFont(new Font("Arial", Font.BOLD, 16));
 		btnVisualizarStatus.setBorderPainted(false);
 		btnVisualizarStatus.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnVisualizarStatus.setBackground(Color.ORANGE);
+		btnVisualizarStatus.setBackground(new Color(241, 133, 36));
 		btnVisualizarStatus.setBounds(783, 359, 195, 75);
 		contentPane.add(btnVisualizarStatus);
 		
@@ -103,5 +107,22 @@ public class TelaOpcoes extends JFrame {
 		lblNewLabel_1_2.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1_2.setBounds(0, 0, 517, 100);
 		contentPane.add(lblNewLabel_1_2);
+		
+		JButton EditarVagas_1_1 = new JButton("SAIR");
+		EditarVagas_1_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaLogin exibir = new TelaLogin();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		EditarVagas_1_1.setForeground(Color.BLACK);
+		EditarVagas_1_1.setFont(new Font("Arial", Font.BOLD, 16));
+		EditarVagas_1_1.setBorderPainted(false);
+		EditarVagas_1_1.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		EditarVagas_1_1.setBackground(new Color(241, 133, 36));
+		EditarVagas_1_1.setAutoscrolls(true);
+		EditarVagas_1_1.setBounds(10, 745, 102, 54);
+		contentPane.add(EditarVagas_1_1);
 	}
 }

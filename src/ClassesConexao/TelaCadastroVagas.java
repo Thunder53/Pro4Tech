@@ -228,7 +228,7 @@ public class TelaCadastroVagas extends JFrame {
 				
 				try {
 					Connection con = Conexao.faz_conexao();
-					String sql = "insert into Vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+					String sql = "insert into Vagas(nome_vaga, carga_horaria, modelo, salario, responsavel, requisitos, escolaridade, soft_skills, hard_skills, status) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 					
 					PreparedStatement stmt = con.prepareStatement(sql);
 					stmt.setString(1, c1.getNome_vaga());
@@ -240,12 +240,13 @@ public class TelaCadastroVagas extends JFrame {
 					stmt.setString(7, c1.getEscolaridade());
 					stmt.setString(8, c1.getSoft_skills());
 					stmt.setString(9, c1.getHard_skills());
+					stmt.setString(10, "ANDAMENTO");
 					
 				stmt.execute();
 				stmt.close();
 				con.close();
 				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso! Visualizando Vagas");
-				
+
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -257,7 +258,7 @@ public class TelaCadastroVagas extends JFrame {
 		});
 		btnNewButton.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnNewButton.setFont(new Font("Arial", Font.BOLD, 18));
-		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBackground(new Color(255, 140, 0));
 		btnNewButton.setBounds(833, 623, 156, 52);
 		btnNewButton.setForeground(Color.BLACK);
 		contentPane.add(btnNewButton);
@@ -266,5 +267,28 @@ public class TelaCadastroVagas extends JFrame {
 		lblNewLabel_1_1.setIcon(new ImageIcon("C:\\Users\\Ariane Sousa\\Desktop\\PROJETOS\\Pro4Tech\\icons\\iconPro4Tech.jpg"));
 		lblNewLabel_1_1.setBounds(0, 0, 500, 95);
 		contentPane.add(lblNewLabel_1_1);
+
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(Singleton.getInstance().nomeFuncionario == "vitoria") {
+					TelaMenuRH exibir = new TelaMenuRH();
+					exibir.setVisible(true);
+					setVisible(false);
+				} else {
+					TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+					exibir.setVisible(true);
+					setVisible(false);
+				}
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(new Color(255, 140, 0));
+		btnVoltar.setBounds(10, 783, 156, 52);
+		contentPane.add(btnVoltar);
+
 	}
 }

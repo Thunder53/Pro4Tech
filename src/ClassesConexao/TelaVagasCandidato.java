@@ -29,6 +29,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JTextField;
 
+import javax.swing.border.BevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.BevelBorder;
+
+
 public class TelaVagasCandidato extends JFrame {
 
 	private JPanel contentPane;
@@ -101,7 +106,7 @@ public class TelaVagasCandidato extends JFrame {
 			public void ancestorRemoved(AncestorEvent event) {
 			}
 		});
-		cbxVaga.setBounds(541, 289, 400, 45);
+		cbxVaga.setBounds(344, 289, 630, 45);
 		contentPane.add(cbxVaga);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -179,15 +184,15 @@ public class TelaVagasCandidato extends JFrame {
 			}
 			}
 		});
-		btnNewButton.setBackground(Color.ORANGE);
+		btnNewButton.setBackground(new Color(255, 140, 0));
 		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		btnNewButton.setBounds(1160, 288, 180, 45);
+		btnNewButton.setBounds(1019, 288, 180, 45);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewLabel_2 = new JLabel("VAGAS");
 		lblNewLabel_2.setForeground(Color.BLACK);
 		lblNewLabel_2.setFont(new Font("Arial", Font.BOLD, 18));
-		lblNewLabel_2.setBounds(453, 289, 87, 45);
+		lblNewLabel_2.setBounds(247, 289, 87, 45);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnVisualizarCurrculo = new JButton("VISUALIZAR CURRÍCULO");
@@ -201,7 +206,7 @@ public class TelaVagasCandidato extends JFrame {
 			}
 		});
 		btnVisualizarCurrculo.setFont(new Font("Arial Black", Font.PLAIN, 18));
-		btnVisualizarCurrculo.setBackground(Color.ORANGE);
+		btnVisualizarCurrculo.setBackground(new Color(255, 140, 0));
 		btnVisualizarCurrculo.setBounds(900, 759, 297, 45);
 		contentPane.add(btnVisualizarCurrculo);
 		
@@ -218,5 +223,22 @@ public class TelaVagasCandidato extends JFrame {
 		tfCandidato.setBounds(361, 760, 318, 45);
 		contentPane.add(tfCandidato);
 		tfCandidato.setColumns(10);
+
+		JButton btnVoltar = new JButton("VOLTAR");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaOpcoesFuncionario exibir = new TelaOpcoesFuncionario();
+				exibir.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnVoltar.setForeground(Color.BLACK);
+		btnVoltar.setFont(new Font("Arial", Font.BOLD, 18));
+		btnVoltar.setBorderPainted(false);
+		btnVoltar.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnVoltar.setBackground(new Color(255, 140, 0));
+		btnVoltar.setBounds(10, 774, 156, 52);
+		contentPane.add(btnVoltar);
+
 	}
 }
